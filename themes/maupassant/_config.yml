@@ -32,7 +32,7 @@ widgets: ## Six widgets in sidebar provided: search, category, tag, recent_posts
   - tag
   - category
   - recent_posts
-  - recent_comments
+#  - recent_comments
   - links
 
 links:
