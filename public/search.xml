@@ -1,0 +1,2255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[hexo博客里使用图片方法]]></title>
+      <url>https://www.mufen.me/Docs-markdown-img0.html</url>
+      <content type="html"><![CDATA[<h4 id="hexo-图片的问题如何"><a href="#hexo-图片的问题如何" class="headerlink" title="hexo 图片的问题如何"></a>hexo 图片的问题如何</h4><ul>
+<li>在主题根目录的source目录下<em>新建个目录</em> <strong>s</strong></li>
+<li>复制图片进去改好名字</li>
+<li>在markdown里面使用图片</li>
+</ul>
+<h4 id="下面的的图片代码如下注意是-s-x-jpg"><a href="#下面的的图片代码如下注意是-s-x-jpg" class="headerlink" title="下面的的图片代码如下注意是..s/x.jpg"></a>下面的的图片代码如下注意是..s/x.jpg</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![OVERPIGU](../s/pigu.jpg)</div></pre></td></tr></table></figure>
+<p><img src="../s/pigu.jpg" alt="OVERPIGU"></p>
+<p><strong>搞定</strong><br>然后使用rsync方式部署到nginx服务器就行了。<br>至于使用git的方式应该没问题吧</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title></title>
+      <url>https://www.mufen.me/Docs-nginx%20rewrite.html</url>
+      <content type="html"><![CDATA[<p>nginx rewrite</p>
+<h5 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h5><h5 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h5><h5 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h5><h5 id="深入扩展"><a href="#深入扩展" class="headerlink" title="深入扩展"></a>深入扩展</h5>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[aliyun 使用 ubuntu 16.04镜像]]></title>
+      <url>https://www.mufen.me/Docs-aliyun-ubuntu-xenial.html</url>
+      <content type="html"><![CDATA[<h4 id="aliyun获取ubuntu16-04"><a href="#aliyun获取ubuntu16-04" class="headerlink" title="aliyun获取ubuntu16.04"></a>aliyun获取ubuntu16.04</h4><p><em>截止到2016年阿里云还没在ECS新建实例里提供Ubuntu16.04版本</em><br>因为最近docker的发展，很多新东西都是使用ubuntu16.04.<br>比如kubernetes.io 里面的guides 使用的ubuntu16.04，其实 14.04也行。</p>
+<p>废话不多说。在阿里云使用ubuntu16.04 LTS版本目前我就知道一种<br>先购买一台使用ubuntu 14.04镜像的ECS，然后升级到16.04，如果机器很多，可以一台升级，然后做<br>成自定义镜像。这样以后都可以直接部署了。和VM一样。</p>
+<p><em>那么问题来了，怎么升级呢</em><br><strong>Easy！</strong><br>1, 先更新系统保证更新过程不出错。（依赖问题）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt update \</div><div class="line">&amp;&amp; apt dist-upgrade</div></pre></td></tr></table></figure></p>
+<p>2, 然后使用screen -S update 新建个screen<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">screen -S update</div></pre></td></tr></table></figure></p>
+<p>3, 升级！ (保障有外网哦)<br>#TIPS 可以删除/etc/apt/source.list.d/sources-aliyun-1.list 或者改名非.list<br># 这样可以使用阿里云提供的内网镜像仓库，加快速度。<br><em>GO!</em><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">do</span>-release-upgrade</div></pre></td></tr></table></figure></p>
+<h5 id="一路上YES-YES-YES-回车回车就行。-也可以根据提示自己判断。升级完成后（20分钟左右。）"><a href="#一路上YES-YES-YES-回车回车就行。-也可以根据提示自己判断。升级完成后（20分钟左右。）" class="headerlink" title="一路上YES YES YES 回车回车就行。 也可以根据提示自己判断。升级完成后（20分钟左右。）"></a>一路上YES YES YES 回车回车就行。 也可以根据提示自己判断。升级完成后（20分钟左右。）</h5><h5 id="重启后，检查没问题就可以创建自定义镜像"><a href="#重启后，检查没问题就可以创建自定义镜像" class="headerlink" title="重启后，检查没问题就可以创建自定义镜像"></a>重启后，检查没问题就可以创建自定义镜像</h5><p><a href="https://help.aliyun.com/knowledge_detail/40549.html" target="_blank" rel="external">自定义镜像官网指导</a></p>
+<h2 id="搞定。"><a href="#搞定。" class="headerlink" title="搞定。"></a>搞定。</h2><p>@skipper</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Sublime Text 使用]]></title>
+      <url>https://www.mufen.me/Docs-sublime-text.html</url>
+      <content type="html"><![CDATA[<h2 id="下载安装-Sublime-Text"><a href="#下载安装-Sublime-Text" class="headerlink" title="下载安装 Sublime Text"></a>下载安装 Sublime Text</h2><p><a href="https://www.google.com" target="_blank" rel="external">google 知道</a><br>官网导航<a href="http://www.sublimetext.com/3" target="_blank" rel="external">Sublime Text 3</a></p>
+<h3 id="安装Package-Control"><a href="#安装Package-Control" class="headerlink" title="安装Package Control"></a>安装Package Control</h3><p>官网传送门 <a href="https://packagecontrol.io/installation" target="_blank" rel="external">install</a></p>
+<h4 id="sublime-text-3-安装-Package-Control"><a href="#sublime-text-3-安装-Package-Control" class="headerlink" title="sublime-text 3 安装 Package Control"></a>sublime-text 3 安装 Package Control</h4><p>以OS X为例子，打开sublime text 3 按住control + ~<br>输入以下内容 ##tips: 在代码上面三连击鼠标 左键就可以选择改行。复制了。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> urllib.request,os,hashlib; h = <span class="string">'df21e130d211cfc94d9b0905775a7c0f'</span> + <span class="string">'1e3d39e33b79698005270310898eea76'</span>; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( <span class="string">'http://packagecontrol.io/'</span> + pf.replace(<span class="string">' '</span>, <span class="string">'%20'</span>)).read(); dh = hashlib.sha256(by).hexdigest(); print(<span class="string">'Error validating download (got %s instead of %s), please try manual install'</span> % (dh, h)) <span class="keyword">if</span> dh != h <span class="keyword">else</span> open(os.path.join( ipp, pf), <span class="string">'wb'</span> ).write(by)</div></pre></td></tr></table></figure></p>
+<h4 id="完成后就可以command-shift-p-然后输入-PPIP-不是PPAP"><a href="#完成后就可以command-shift-p-然后输入-PPIP-不是PPAP" class="headerlink" title="完成后就可以command + shift + p 然后输入 PPIP 不是PPAP ^_^)"></a>完成后就可以command + shift + p 然后输入 PPIP 不是PPAP ^_^)</h4><p>   打开PPIP 后输入ChineseLocalization 安装后就可以用中文了。<br>为了对中文文档的支持，还要安装ConvertToUTF8 这个插件</p>
+<p>##自己用的插件</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[ready to use markdown]]></title>
+      <url>https://www.mufen.me/plan-%E6%94%BE%E5%BC%83wordpress%EF%BC%8C%E6%8B%A5%E6%8A%B1hexo.html</url>
+      <content type="html"><![CDATA[<h2 id="新的开始，使用markdown来书写博客"><a href="#新的开始，使用markdown来书写博客" class="headerlink" title="新的开始，使用markdown来书写博客"></a>新的开始，使用markdown来书写博客</h2><p>  因为工作的时候还是平时的记录，习惯用md的后缀来存储日常的记录，脚本啊，架构方案，<br>亦或是没事写两句，有时候想弄到wordpress太麻烦，一直想弄个静态博客，却因为最近忙于工作<br>没什么时间，近日终于得闲，研究了2天的hexo，终于算是确定好新的家了。</p>
+<h2 id="以前的博客也要慢慢的迁移过来，具体是"><a href="#以前的博客也要慢慢的迁移过来，具体是" class="headerlink" title="以前的博客也要慢慢的迁移过来，具体是"></a>以前的博客也要慢慢的迁移过来，具体是</h2><ul>
+<li>筛选以前有意义的文章或者记录。</li>
+<li>确定新的分类和标签规则 ##以前的太乱。</li>
+<li>开始重新书写博客，顺便练习这个markdown。</li>
+<li>启用新的域名 mufen.me 取义木玢和我 （木玢是我对爱人的简称）</li>
+<li>新博客将添加我的非工作学习内容，如娱乐之类。</li>
+</ul>
+<h2 id="ready-go"><a href="#ready-go" class="headerlink" title="ready go"></a>ready go</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">import</span> sys</div><div class="line"></div><div class="line"></div><div class="line">print()</div></pre></td></tr></table></figure>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[linux常用指令记录]]></title>
+      <url>https://www.mufen.me/linux-linux%20%E5%B8%B8%E7%94%A8shell%E5%91%BD%E4%BB%A4.html</url>
+      <content type="html"><![CDATA[<p>此片文章将会记录日常工作学习到有用shell。方便日后查询</p>
+<p>&nbsp;</p>
+<p>查看进程按照内存大小排序</p>
+<pre class="lang:sh decode:true ">ps -e -o "%C : %p : %z : %a"|sort -k5 -nr</pre>
+按照CPU排序
+<pre class="lang:default decode:true ">ps -e -o "%C : %p : %z : %a"|sort -nr</pre>
+剩余内存
+<pre class="lang:default decode:true ">free -m |grep "Mem" | awk "{print $2}"</pre>
+连接数
+<pre class="lang:default decode:true ">netstat -an|awk '/^tcp/ {++S[$NF]} END {for (a in S) print a,S[a]}'</pre>
+当前目录所有文件按照大小排序
+<pre class="lang:default decode:true ">ll |awk '{print $9}'|grep -Ev '^\.'|xargs du -h|sort -h</pre>
+curl使用用户名密码访问
+<pre class="lang:default decode:true ">curl -u username:password url</pre>
+
+<p>过滤掉attac<em>,ucser</em> 还有当前目录根.</p>
+<p><pre class="lang:sh decode:true">ll |grep -e ‘^d’|awk ‘{print $9}’|grep -vE ‘(attac<em>|uc_ser</em>|.)’|xargs du -sh</pre><br>&nbsp;</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[api.ntp.bz最近好像不能用了?更换新的ntp服务器地址]]></title>
+      <url>https://www.mufen.me/Docs-new-ntp-server-domain.html</url>
+      <content type="html"><![CDATA[<p>最近线上几台机器出现莫名的时间有也偏差，查询了一下采用的ntp服务器有些问题</p>
+<p><a href="http://api.bz" target="_blank" rel="external">ntp.api.bz</a>好像不能用了。</p>
+<p>多好的东西啊。现在已经更换成<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ntpdate 0.pool.ntp.org</div></pre></td></tr></table></figure></p>
+<p>这个了。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[运维从业第一黑 ----加强安全方面的管理知识]]></title>
+      <url>https://www.mufen.me/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99-%E8%BF%90%E7%BB%B4%E7%AC%AC%E4%B8%80%E9%BB%91.html</url>
+      <content type="html"><![CDATA[<p>待续。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[.gitignore忽略规则以及不生效的方法(转)]]></title>
+      <url>https://www.mufen.me/OSX/%E9%85%8D%E7%BD%AE-gitignore%E6%97%A0%E6%95%88.html</url>
+      <content type="html"><![CDATA[<p>在git中如果想忽略掉某个文件，不让这个文件提交到版本库中，可以使用修改根目录中 .gitignore 文件的方法（如无，则需自己手工建立此文件）。这个文件每一行保存了一个匹配的规则例如：</p>
+<p><pre class="lang:default decode:true"><em>.a # 忽略所有 .a 结尾的文件<br>!lib.a # 但 lib.a 除外<br>/TODO # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO<br>build/ # 忽略 build/ 目录下的所有文件<br>doc/</em>.txt # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt</pre><br>有时候在项目开发过程中，<strong>突然心血来潮想把某些目录或文件加入忽略规则，按照上述方法定义后发现并未生效，</strong></p>
+<p>原因是<strong>.gitignore只能忽略那些原来没有被track的文件。</strong></p>
+<p>如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。那么解决方法就是先把本地缓存删除（改变成未track状态），然后再提交：</p>
+<p><pre class="lang:default decode:true ">git rm -r –cached .</pre></p>
+<p>git add .</p>
+<p>git commit -m “update .gitignore”<br>&nbsp;</p>
+<p><a href="http://www.pfeng.org/archives/840" target="_blank" rel="external">原贴链接</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Ubuntu Openvpn访问局域网资源]]></title>
+      <url>https://www.mufen.me/Docs-ubuntu-openvpn-route.html</url>
+      <content type="html"><![CDATA[<p>在一台非网关设备架设openvpn<br>在配置好服务器后客户端无法访问局域网资源<br>*openvpn 客户端IP地址段是按照默认的配置即10.8.0.0/8网段</p>
+<p><em>以下所有配置都在服务器端</em><br><em>默认已经安装好服务端配置好证书</em><br>如果没有请参考如下链接自行翻译<br>传送门:<a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-an-openvpn-server-on-ubuntu-14-04" title="openvpn" target="_blank" rel="external">openvpen on ubuntu 14.04</a></p>
+<p>服务器接口信息如下<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">eth0 <span class="number">192.168</span><span class="number">.1</span><span class="number">.0</span>/<span class="number">24</span> 内网资源</div><div class="line">eth1 公网ip地址</div></pre></td></tr></table></figure></p>
+<p>配置openvpn server配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /etc/openvpn/server.conf</div></pre></td></tr></table></figure></p>
+<p>添加两条<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">push</span> "<span class="selector-tag">route</span> 192<span class="selector-class">.168</span><span class="selector-class">.1</span><span class="selector-class">.0</span> 255<span class="selector-class">.255</span><span class="selector-class">.255</span><span class="selector-class">.0</span>"</div><div class="line"><span class="selector-tag">push</span> "<span class="selector-tag">route</span> 外网网段 255<span class="selector-class">.255</span><span class="selector-class">.255</span><span class="selector-class">.128</span>"</div></pre></td></tr></table></figure></p>
+<p>让客户端添加两条路由信息<br>启动ip转发<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> 1 &gt; /proc/sys/net/ipv4/ip_forward</div></pre></td></tr></table></figure></p>
+<h5 id="若要永久生效请手动修改sysctl-conf文件"><a href="#若要永久生效请手动修改sysctl-conf文件" class="headerlink" title="若要永久生效请手动修改sysctl.conf文件"></a>若要永久生效请手动修改sysctl.conf文件</h5><p>修改防火墙以ubuntu ufw为例<br>让客户端可以访问这两个网卡<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">vim /etc/ufw/before.rules</div><div class="line">增加</div><div class="line"># START OPENVPN RULES</div><div class="line"># # NAT table rules</div><div class="line">*nat</div><div class="line">:POSTROUTING ACCEPT [0:0]</div><div class="line"># Allow traffic from OpenVPN client to eth0</div><div class="line">-A POSTROUTING -s 10.8.0.0/8 -o eth1 -j MASQUERADE</div><div class="line">-A POSTROUTING -s 10.8.0.0/8 -o eth0 -j MASQUERADE</div><div class="line">COMMIT</div></pre></td></tr></table></figure></p>
+<p><em>不要删除这个文件上面的\</em>filter这条信息*</p>
+<p>重启ufw<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ufw reload</div></pre></td></tr></table></figure></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Iterm2 使用rz sz]]></title>
+      <url>https://www.mufen.me/OSX-iterm2%E4%BD%BF%E7%94%A8lrzsz.html</url>
+      <content type="html"><![CDATA[<p>首先你肯定是OS X or MacOS<br>os x自带的终端或者iterm2在使用rz sz的时候会卡主</p>
+<p>iterm2给了个解决方案<br>传送门:<a href="https://github.com/mmastrac/iterm2-zmodem" title="github" target="_blank" rel="external">https://github.com/mmastrac/iterm2-zmodem</a></p>
+<p>首先安装好Iterm2 还有Homebrew</p>
+<p>然后<br>安装lrzsz<br>brew install lrzsz</p>
+<p>然后呢下载文件<a href="https://codeload.github.com/mmastrac/iterm2-zmodem/zip/master" title="rzsz" target="_blank" rel="external">https://codeload.github.com/mmastrac/iterm2-zmodem/zip/master</a></p>
+<p>解压然后将两个文件复制到/usr/loca/bin目录</p>
+<p>然后打开iterm2 快捷键 command + , 或者找到首选项（preferences）-&gt;Profiles -&gt;Advanced -&gt;Triggers -Edit<br><a href="http://www.inpeace.cn/wp-content/uploads/2016/09/1_full.png" target="_blank" rel="external"><img src="http://www.inpeace.cn/wp-content/uploads/2016/09/1.png" alt=""></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>添加两条触发<br>第一条 发送<br>Regular expression: rz waiting to receive.**B0100<br> Action: Run Silent Coprocess<br>  Parameters: /usr/local/bin/iterm2-send-zmodem.sh<br>  Instant: checked</p>
+<p>第二条接收文件<br>   Regular expression: **B00000000000000<br>    Action: Run Silent Coprocess<br>    Parameters: /usr/local/bin/iterm2-recv-zmodem.sh<br>    Instant: checked</p>
+<p><a href="http://www.inpeace.cn/wp-content/uploads/2016/09/2_full.png" target="_blank" rel="external"><img src="http://www.inpeace.cn/wp-content/uploads/2016/09/2.png" alt=""></a></p>
+<p>然后就可以在iterm2里面使用rz sz命令了<br>在iterm2和OS X 10.11.6测试通过 </p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[一篇写的很不错的ubuntu下的shadowsocks client配置博客]]></title>
+      <url>https://www.mufen.me/Docs-ubuntu-shadowsocks-client.html</url>
+      <content type="html"><![CDATA[<p>原贴地址直接粘贴<br><a href="https://aitanlu.com/ubuntu-shadowsocks-ke-hu-duan-pei-zhi.html" target="_blank" rel="external">点击链接，坐飞机</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[ubuntu 永久DNS设置]]></title>
+      <url>https://www.mufen.me/Docs-resolv-config.html</url>
+      <content type="html"><![CDATA[<p>如果简单修改 /etc/resolv.conf, 在机器重启后，会失效，您的修改会被默认配置覆盖掉。</p>
+<p>比较持久的做法是，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vim /etc/resolvconf/resolv.conf.d/tail</div></pre></td></tr></table></figure></p>
+<p>增加2条<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">nameserver 114.114.114.114</div><div class="line">nameserver 119.29.29.29</div></pre></td></tr></table></figure></p>
+<p>然后重启一下名称服务 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo /etc/init.d/resolvconf restart</div></pre></td></tr></table></figure>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[mysql 5.7 相关错误解决]]></title>
+      <url>https://www.mufen.me/%E6%8E%92%E9%94%99-mysql%205.7%20%E7%9B%B8%E5%85%B3%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3.html</url>
+      <content type="html"><![CDATA[<p>在使用备份工具备份到时候报错</p>
+<p>Table ‘performance_schema.session_variables’ doesn’t exist</p>
+<p>解决方法</p>
+<p>使用root账户登录</p>
+<p>mysql&gt; set @@global.show_compatibility_56=ON;</p>
+<p>搞定！</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[解决使用centos7.1作为基础镜像构建docker镜像的报错]]></title>
+      <url>https://www.mufen.me/docker/linux/%E6%8E%92%E9%94%99-%E8%A7%A3%E5%86%B3%E4%BD%BF%E7%94%A8centos7.1%E4%BD%9C%E4%B8%BA%E5%9F%BA%E7%A1%80%E9%95%9C%E5%83%8F%E6%9E%84%E5%BB%BAdocker%E9%95%9C%E5%83%8F%E7%9A%84%E6%8A%A5%E9%94%99.html</url>
+      <content type="html"><![CDATA[<p>fakesystemd-1-17.el7.centos.noarch has installed conflicts systemd: fakesystemd-1-17.el7.centos.noarch</p>
+<p>在Dockerfile里面增加</p>
+<pre><code>RUN yum swap -y fakesystemd systemd &amp;amp;&amp;amp; \
+    yum install -y systemd-devel
+</code></pre>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[logstash 2.3 启动脚本 简陋版]]></title>
+      <url>https://www.mufen.me/linux/shells-logstash%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC%E7%AE%80%E9%99%8B.html</url>
+      <content type="html"><![CDATA[<p>本脚本是用于启动logstash的脚本在ubuntu 14.04.3测试通过</p>
+<p>根据自己的需要<br>请修改一下内容:</p>
+<pre class="lang:sh decode:true ">logstash_bin=""
+logstash_conf=""
+logstash_log=""
+pid_file=""</pre> 
+
+<p><strong>的值为你的logstash bin目录路径 配置文件绝对路径 log绝对路径</strong></p>
+<pre class="lang:sh decode:true" title="logstash.init">#!/bin/bash
+#www.inpeace.cn
+#skipper i@inpeace.cn for logstash 2.3.1
+#please check your java env right
+#v0.1 20160510
+logstash_bin=""
+logstash_conf=""
+logstash_log=""
+pid_file=""
+pid=$(ps -ef|grep java|grep logstash|awk '{print $2}')
+
+start () {
+    echo "Now starting logstash it will cost a little time"
+        ${logstash_bin}/logstash -f ${logstash_conf} -r -l ${logstash_log} &amp; &gt;/dev/null 2&gt;&amp;1
+    echo $pid &gt; ${pid_file} 
+}
+
+stop () {
+    echo "Stoping logstash"
+    kill $pid
+}
+
+restart () {
+    stop
+    start
+}
+
+case $1 in
+        start)
+                start
+                ;;
+        stop)
+                stop
+                ;;
+        restart)
+                stop
+                start
+                ;;
+        *)
+                echo "Usage: $0 {start|stop|restart|}"
+                exit 1
+                ;;
+esac
+
+exit 0
+</pre>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[修复因为dpkg 导致的apt-get无法安装软件]]></title>
+      <url>https://www.mufen.me/Docs-dpkg-rescure.html</url>
+      <content type="html"><![CDATA[<p> 2条命令搞定。<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo aptitude update   </div><div class="line">sudo aptitude <span class="_">-f</span> install</div></pre></td></tr></table></figure></p>
+<p>感谢<a href="http://blog.csdn.net/ling1874/article/details/5733883" target="_blank" rel="external">http://blog.csdn.net/ling1874/article/details/5733883</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[ubuntu下的shell坑]]></title>
+      <url>https://www.mufen.me/Docs-ubuntu-tips.html</url>
+      <content type="html"><![CDATA[<p>今天使用一个nginx日志切割脚本做日志切割工作，有一句定义log文件名数组的就是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">log_files_name=(www.belle8.com nginx_error)</div></pre></td></tr></table></figure></p>
+<p>然后测试的时候使用sh 去执行总是不行报错Syntax error: “(” unexpected<br>因为我每次都是使用sh 去执行脚本<br>换成bash 去执行脚本就行了。<br>就是sh和bash还是存在差异的。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[ubuntu 14.04.3 安装rtl8192cu 无线网卡驱动]]></title>
+      <url>https://www.mufen.me/Docs-ubuntu-rt1819cu.html</url>
+      <content type="html"><![CDATA[<p>都在这里面<br><a href="https://github.com/pvaret/rtl8192cu-fixes" target="_blank" rel="external">https://github.com/pvaret/rtl8192cu-fixes</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[常见服务性能监控项目]]></title>
+      <url>https://www.mufen.me/Docs-monitor-items.html</url>
+      <content type="html"><![CDATA[<p>Apache性能监控支持以下指标：</p>
+<p>Apache吞吐率<br>Apache并发连接数<br>Apache并发连接数详细统计，包括读取请求、持久连接、发送响应内容、关闭连接、等待连接<br><img src="http://www.inpeace.cn/wp-content/uploads/2016/03/apache_1.png" alt="apache_1"><br><a id="more"></a></p>
+<p>Nginx性能监控</p>
+<p>nginx吞吐率<br>nginx并发连接数<br>nginx并发连接数详细统计：包括读取请求，处理请求和发送响应，持久连接<br>nginx持久连接利用率</p>
+<p>Apache性能监控支持以下指标：</p>
+<p>Apache吞吐率<br>Apache并发连接数<br>Apache并发连接数详细统计，包括读取请求、持久连接、发送响应内容、关闭连接、等待连接</p>
+<p>mysql性能监控:</p>
+<pre><code>MySQL查询吞吐率，包括Change DB、Select、Insert、Update、Delete
+MySQL持久连接利用率
+MySQL查询缓存空间使用率
+MySQL查询缓存命中率
+MySQL缓存查询数
+MySQL索引缓存命中率
+MySQL索引读取统计
+MySQL连接吞吐率
+MySQL连接缓存命中率
+MySQL并发连接数，包括最大允许连接数、实际最大连接数、当前连接数、活跃连接数、缓存连接数
+MySQL流量统计
+MySQL表统计锁定
+</code></pre><p><img src="http://www.inpeace.cn/wp-content/uploads/2016/03/mysql_1.png" alt="mysql_1"></p>
+<p>Memcache性能监控：</p>
+<p>Memcache缓存命中率，即单位总命中次数除以总命中次数与未命中次数之和；<br>Memcache当前链接数，即当前已经建立的链接数量；<br>Memcache链接数每秒，即单位时间内新建立的链接数量；<br>Memcache使用内存，即当前存储的items所占用的字节数；<br>Memcache当前条目数量，即当前存储的items数量；<br>Memcache读写每秒，分为读每秒和写每秒，读每秒是指单位时间内新增的读的次数，写每秒是指单位时间内新增的写的次数；</p>
+<p>Tomcat性能监控：</p>
+<p>JVM内存，包括JVM可使用内存、JVM所使用内存、JVM最大可使用内存；<br>Tomcat请求数，包括每秒请求数，每秒出错数；<br>Tomcat网络流量统计，包括进流量统计，出流量统计；<br>Tomcat线程，包括最大线程数，当前线程数，当前繁忙线程数；<br>Tomcat处理时间，包括最大处理时间，平均处理时间；<br>Memcache空间使用率，当前存储的items所占用的字节数除以系统分配给Memcache的内存大小</p>
+<p>MongoDB性能监控：</p>
+<p>MongoDB全局锁时间比例。此指标反映MongoDB进入锁状态的时间比例。<br>MongoDB当前等待锁总数。是读锁数和写锁数的总和。<br>MongoDB当前等待读锁数。因读请求过高时触发的锁数。<br>MongoDB当前等待写锁数。因写请求过高时触发的锁数。<br>MongoDB查询吞吐率。也就是MongoDB每秒处理的请求数，根据请求类别的不一样细分有query，update，delete，getmore吞吐率。<br>MongoDB使用内存，使用磁盘空间。此指标能反映MongoDB使用内存，磁盘空间的状况。<br>MongoDB分页次数，此指标反映内存分页的次数，有助于对MongoDB的性能分析。<br>MongoDB索引命中率，即单位总命中次数除以总命中次数与未命中次数之和。<br>MongoDB索引访问次数每秒，此指标反映索引的使用频率。<br>MongoDB当前链接数，可用链接数。</p>
+<p>Memcache性能监控指标：</p>
+<p>Memcache缓存命中率，即单位总命中次数除以总命中次数与未命中次数之和；<br>Memcache当前链接数，即当前已经建立的链接数量；<br>Memcache链接数每秒，即单位时间内新建立的链接数量；<br>Memcache使用内存，即当前存储的items所占用的字节数；<br>Memcache当前条目数量，即当前存储的items数量；<br>Memcache读写每秒，分为读每秒和写每秒，读每秒是指单位时间内新增的读的次数，写每秒是指单位时间内新增的写的次数；<br>Memcache空间使用率，当前存储的items所占用的字节数除以系统分配给Memcache的内存大小</p>
+<p>Redis性能监控：</p>
+<p>Redis链接客户数。<br>Redis链接从库数。此指标反映Redis的从库链接数。<br>Redis链接数每分钟。此指标反映Redis的请求频率。<br>Redis阻塞客户数。当并发请求数过高时触发阻塞。此指标反映Redis的并发请求状况。<br>Redis Pub/Sub通道数。<br>Redis Pub/Sub模式数。<br>Redis命中率。即单位总命中次数除以总命中次数与未命中次数之和。<br>Redis使用内存。此指标反映Redis当前占用内存量。<br>Redis执行命令数每分钟。此指标反映Redis执行命令频率。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[mysql监控items]]></title>
+      <url>https://www.mufen.me/Docs-mysql-monitor-items.html</url>
+      <content type="html"><![CDATA[<div class="Blog_wz1"><br><div id="blog_text" class="cnt"><br><br>&nbsp;<br><br> 1，系统mysql进程数<br><pre class="lang:sh decode:true ">ps -ef | grep “mysql” | grep -v “grep” | wc –l</pre><br>&nbsp;<br><br> 2.从库运行状态，Slave_running<br><pre class="lang:sh decode:true ">mysql &gt; show status like ‘Slave_running’;</pre><br>&nbsp;<br><br>如果系统有一个从复制服务器，这个值指明了从服务器的健康度<br><br> 3.线程连接数，Threads_connected<br><pre class="lang:sh decode:true ">mysql &gt; show status like ‘Threads_connected’;</pre><br>&nbsp;<br><br>当前客户端已连接的数量。这个值会少于预设的值，但你也能监视到这个值较大，这可保证客户端是处在活跃状态。<br><a id="more"></a><br><br> 4.Threads_running<br><br> mysql &gt; show status like ‘Threads_running’;<br><br>如果数据库超负荷了，你将会得到一个正在（查询的语句持续）增长的数值。这个值也可以少于预先设定的值。这个值在很短的时间内超过限定值是没问题的。当Threads_running值超过预设值时并且该值在5秒内没有回落时， 要同时监视其他的一些值。<br><br>&nbsp;<br><br> 5.Aborted_clients<br><br> mysql &gt; show status like ‘Aborted<em>clients’;<br><br>客户端被异常中断的数值，即连接到mysql服务器的客户端没有正常地断开或关闭。对于一些应用程序是没有影响的，但对于另一些应用程序可能你要跟踪该值，因为异常中断连接可能表明了一些应用程序有问题。<br><br> 6.Questions<br><br> mysql&gt; show status like ‘Questions’;<br><br>每秒钟获得的查询数量，也可以是全部查询的数量，根据你输入不同的命令会得到你想要的不同的值。<br><br> 7.Handler</em> <em><br><br> mysql&gt; show status like ‘Handler_%’;<br><br>如果你想监视底层（low-level）数据库负载，这些值是值得去跟踪的。<br><br>如果Handler_read_rnd_next值相对于你认为是正常值相差悬殊，可能会告诉你需要优化或索引出问题了。Handler_rollback表明事务被回滚的查询数量。你可能想调查一下原因。<br><br> 8.Opened_tables<br><br> mysql&gt; show status like ‘Opened_tables’;<br><br>表缓存没有命中的数量。如果该值很大，你可能需要增加table_cache的数值。典型地，你可能想要这个值每秒打开的表数量少于1或2。<br><br> 9.Select_full_join<br><br> mysql&gt; show status like ‘Select_full_join’;<br><br>没有主键（key）联合（Join）的执行。该值可能是零。这是捕获开发错误的好方法，因为一些这样的查询可能降低系统的性能。<br><br> 10.Select_scan<br><br> mysql&gt; show status like ‘Select_scan’;<br><br>执行全表搜索查询的数量。在某些情况下是没问题的，但占总查询数量该比值应该是常量（即Select_scan/总查询数量商应该是常数）。如果你发现该值持续增长，说明需要优化，缺乏必要的索引或其他问题。<br><br> 11.Slow_queries<br><br> mysql&gt; show status like ‘Slow_queries’;<br><br>超过该值（–long-query-time）的查询数量，或没有使用索引查询数量。对于全部查询会有小的冲突。如果该值增长，表明系统有性能问题。<br><br> 12.Threads_created<br><br> mysql&gt; show status like ‘Threads_created’;<br><br>该值应该是低的。较高的值可能意味着你需要增加thread_cache的数值，或你遇到了持续增加的连接，表明了潜在的问题。<br><br> 13.  客户端连接进程数<br><br> shell&gt; mysqladmin processlist<br><br> mysql&gt; show processlist;<br><br>你可以通过使用其他的统计信息得到已连接线程数量和正在运行线程的数量，检查正在运行的查询花了多长时间是一个好主意。如果有一些长时间的查询，管理员可以被通知。你可能也想了解多少个查询是在”Locked”的状态——该值作为正在运行的查询不被计算在内而是作为非活跃的。一个用户正在等待一个数据库响应。<br><br> 14.innodb  状态<br><br> mysql&gt; show innodb status;<br><br>该语句产生很多信息，从中你可以得到你感兴趣的。首先你要检查的就是“从最近的XX秒计算出来的每秒的平均负载”。<br><br> (1)Pending normal aio reads:  该值是innodb io请求查询的大小（size）。如果该值大到超过了10—20，你可能有一些瓶颈。<br><br> (2)reads/s, avg bytes/read, writes/s, fsyncs/s: 这些值是io统计。对于reads/writes大值意味着io子系统正在被装载。适当的值取决于你系统的配置。<br><br> (3)Buffer pool hit rate: 这个命中率非常依赖于你的应用程序。当你觉得有问题时请检查你的命中率<br><br> (4)inserts/s, updates/s, deletes/s, reads/s: 有一些Innodb的底层操作。你可以用这些值检查你的负载情况查看是否是期待的数值范围。<br><br> 15.  主机性能状态<br><br> shell&gt; uptime<br><br> 16.CPU  使用率<br><br> shell&gt; top<br><br> shell&gt; vmstat<br><br> 17.  磁盘  IO<br><br> shell&gt; vmstat<br><br> shell&gt; iostat<br><br> 18.swap  进出量  (  内存  )<br><br> shell&gt; free<br><br> 19.MySQL  错误日志<br><br>在服务器正常完成初始化后，什么都不会写到错误日志中，因此任何在该日志中的信息都要引起管理员的注意。<br> 20.InnoDB  表空间信息<br><br>InnoDB仅有的危险情况就是表空间填满—-日志不会填满。检查的最好方式就是：show table status;你可以用任何InnoDB表来监视InnoDB表的剩余空间。<br><br> 21.QPS  每秒  Query  量<br><br>QPS = Questions(or Queries) / seconds<br><br> mysql &gt; show /</em> global <em>/ status like ‘Question’;<br><br> 22.TPS(  每秒事务量  )<br><br>TPS = (Com_commit + Com_rollback) / seconds<br><br> mysql &gt; show status like ‘Com_commit’;<br><br> mysql &gt; show status like ‘Com_rollback’;<br><br> 23.key Buffer   命中率<br><br>key_buffer_read_hits = (1-key_reads / key_read_requests) </em> 100%<br><br>key_buffer_write_hits = (1-key_writes / key_write_requests) <em> 100%<br><br> mysql&gt; show status like ‘Key%’;<br><br> 24.InnoDB Buffer  命中率<br><br>Innodb_buffer_read_hits = (1 - innodb_buffer_pool_reads / innodb_buffer_pool_read_requests) </em> 100%<br><br> mysql&gt; show status like ‘innodb_buffer_pool_read%’;<br><br> 25.Query Cache  命中率<br><br>Query_cache_hits = (Qcahce_hits / (Qcache_hits + Qcache_inserts )) <em> 100%;<br><br> mysql&gt; show status like ‘Qcache%’;<br><br> 26.Table Cache  状态量<br><br> mysql&gt; show status like ‘open%’;<br><br> 27.Thread Cache   命中率<br><br>Thread_cache_hits = (1 - Threads_created / connections ) </em> 100%<br><br> mysql&gt; show status like ‘Thread%’;<br><br> mysql&gt; show status like ‘Connections’;<br><br> 28.  锁定状态<br><br> mysql&gt; show status like ‘%lock%’;<br><br> 29.  复制延时量<br><br> mysql &gt; show slave status<br><br> 30.Tmp Table  状况  (  临时表状况  )<br><br> mysql &gt; show status like ‘Create_tmp%’;<br><br> 31.Binlog Cache  使用状况<br><br> mysql &gt; show status like ‘Binlog_cache%’;<br><br> 32.Innodb_log_waits  量<br><br> mysql &gt; show status like ‘innodb_log_waits’;<br><br></div><br></div><br><!--more--><br><br><!--more--><br><br><!--more--><br><br><!--more--><br><div class="Blog_con2_1 Blog_con3_2"></div>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[解决问题的思路和思想才是关键。]]></title>
+      <url>https://www.mufen.me/%E9%9A%8F%E7%AC%94-thoughts.html</url>
+      <content type="html"><![CDATA[<p>技术的积累只是时间问题。</p>
+<p>运维1年有感。</p>
+<p>&nbsp;</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[saltstack执行salt命令时很慢]]></title>
+      <url>https://www.mufen.me/Docs-salt-slow.html</url>
+      <content type="html"><![CDATA[<p>今天有个小伙伴问我为啥他的salt在执行命令的时候感觉响应的很慢。就是敲个命令半天才反应过来。</p>
+<p>&nbsp;</p>
+<p>原因: 没有做主机名解析。master端一定要能解析自己的主机名，可以使用dns，可以用hosts文件。</p>
+<p>解决办法:</p>
+<p>在hosts文件中添加本机的主机名解析。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[找到自己擅长的能力，然后就是加强它就是了。]]></title>
+      <url>https://www.mufen.me/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99-%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83.html</url>
+      <content type="html"><![CDATA[<p>每个人都有自己突出的能力，我相信我也有。加油。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[aliyun，1G内存的mysql配置文件]]></title>
+      <url>https://www.mufen.me/mysql/%E9%85%8D%E7%BD%AE-aliyun1G%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.html</url>
+      <content type="html"><![CDATA[<p>文件下载:<a href="http://file.inpeace.cn/mysql/my-lowm.cnf" target="_blank" rel="external">my-lowm.cnf</a></p>
+<p>使用的mysql版本:5.6</p>
+<p>最近帮小伙伴搭建自己的wordpress环境，在阿里云上的最小的配置，因为mysql默认配置不太适合1G内存的环境就找了个不错的配置分享一下。</p>
+<p>以下是配置详解，写的也是非常详细。</p>
+<a id="more"></a>
+<p><pre class="lang:sh decode:true" title="my.cnf">[client]</pre></p>
+<p>port = 3306</p>
+<p>socket = /tmp/mysql.sock</p>
+<p>[mysqld]</p>
+<p>port = 3306</p>
+<p>socket = /tmp/mysql.sock</p>
+<p>basedir = /usr/local/mysql</p>
+<p>datadir = /data/mysql</p>
+<p>pid-file = /data/mysql/mysql.pid</p>
+<p>user = mysql</p>
+<p>bind-address = 0.0.0.0</p>
+<p>server-id = 1 #表示是本机的序号为1,一般来讲就是master的意思</p>
+<p>skip-name-resolve</p>
+<h1 id="禁止MySQL对外部连接进行DNS解析，使用这一选项可以消除MySQL进行DNS解析的时间。但需要注意，如果开启该选项，"><a href="#禁止MySQL对外部连接进行DNS解析，使用这一选项可以消除MySQL进行DNS解析的时间。但需要注意，如果开启该选项，" class="headerlink" title="禁止MySQL对外部连接进行DNS解析，使用这一选项可以消除MySQL进行DNS解析的时间。但需要注意，如果开启该选项，"></a>禁止MySQL对外部连接进行DNS解析，使用这一选项可以消除MySQL进行DNS解析的时间。但需要注意，如果开启该选项，</h1><h1 id="则所有远程主机连接授权都要使用IP地址方式，否则MySQL将无法正常处理连接请求"><a href="#则所有远程主机连接授权都要使用IP地址方式，否则MySQL将无法正常处理连接请求" class="headerlink" title="则所有远程主机连接授权都要使用IP地址方式，否则MySQL将无法正常处理连接请求"></a>则所有远程主机连接授权都要使用IP地址方式，否则MySQL将无法正常处理连接请求</h1><p>#skip-networking</p>
+<p>back_log = 600</p>
+<h1 id="MySQL能有的连接数量。当主要MySQL线程在一个很短时间内得到非常多的连接请求，这就起作用，"><a href="#MySQL能有的连接数量。当主要MySQL线程在一个很短时间内得到非常多的连接请求，这就起作用，" class="headerlink" title="MySQL能有的连接数量。当主要MySQL线程在一个很短时间内得到非常多的连接请求，这就起作用，"></a>MySQL能有的连接数量。当主要MySQL线程在一个很短时间内得到非常多的连接请求，这就起作用，</h1><h1 id="然后主线程花些时间-尽管很短-检查连接并且启动一个新线程。back-log值指出在MySQL暂时停止回答新请求之前的短时间内多少个请求可以被存在堆栈中。"><a href="#然后主线程花些时间-尽管很短-检查连接并且启动一个新线程。back-log值指出在MySQL暂时停止回答新请求之前的短时间内多少个请求可以被存在堆栈中。" class="headerlink" title="然后主线程花些时间(尽管很短)检查连接并且启动一个新线程。back_log值指出在MySQL暂时停止回答新请求之前的短时间内多少个请求可以被存在堆栈中。"></a>然后主线程花些时间(尽管很短)检查连接并且启动一个新线程。back_log值指出在MySQL暂时停止回答新请求之前的短时间内多少个请求可以被存在堆栈中。</h1><h1 id="如果期望在一个短时间内有很多连接，你需要增加它。也就是说，如果MySQL的连接数据达到max-connections时，新来的请求将会被存在堆栈中，"><a href="#如果期望在一个短时间内有很多连接，你需要增加它。也就是说，如果MySQL的连接数据达到max-connections时，新来的请求将会被存在堆栈中，" class="headerlink" title="如果期望在一个短时间内有很多连接，你需要增加它。也就是说，如果MySQL的连接数据达到max_connections时，新来的请求将会被存在堆栈中，"></a>如果期望在一个短时间内有很多连接，你需要增加它。也就是说，如果MySQL的连接数据达到max_connections时，新来的请求将会被存在堆栈中，</h1><h1 id="以等待某一连接释放资源，该堆栈的数量即back-log，如果等待连接的数量超过back-log，将不被授予连接资源。"><a href="#以等待某一连接释放资源，该堆栈的数量即back-log，如果等待连接的数量超过back-log，将不被授予连接资源。" class="headerlink" title="以等待某一连接释放资源，该堆栈的数量即back_log，如果等待连接的数量超过back_log，将不被授予连接资源。"></a>以等待某一连接释放资源，该堆栈的数量即back_log，如果等待连接的数量超过back_log，将不被授予连接资源。</h1><h1 id="另外，这值（back-log）限于您的操作系统对到来的TCP-IP连接的侦听队列的大小。"><a href="#另外，这值（back-log）限于您的操作系统对到来的TCP-IP连接的侦听队列的大小。" class="headerlink" title="另外，这值（back_log）限于您的操作系统对到来的TCP/IP连接的侦听队列的大小。"></a>另外，这值（back_log）限于您的操作系统对到来的TCP/IP连接的侦听队列的大小。</h1><h1 id="你的操作系统在这个队列大小上有它自己的限制（可以检查你的OS文档找出这个变量的最大值），试图设定back-log高于你的操作系统的限制将是无效的。"><a href="#你的操作系统在这个队列大小上有它自己的限制（可以检查你的OS文档找出这个变量的最大值），试图设定back-log高于你的操作系统的限制将是无效的。" class="headerlink" title="你的操作系统在这个队列大小上有它自己的限制（可以检查你的OS文档找出这个变量的最大值），试图设定back_log高于你的操作系统的限制将是无效的。"></a>你的操作系统在这个队列大小上有它自己的限制（可以检查你的OS文档找出这个变量的最大值），试图设定back_log高于你的操作系统的限制将是无效的。</h1><p>max_connections = 1000</p>
+<h1 id="MySQL的最大连接数，如果服务器的并发连接请求量比较大，建议调高此值，以增加并行连接数量，当然这建立在机器能支撑的情况下，因为如果连接数越多，介于MySQL会为每个连接提供连接缓冲区，就会开销越多的内存，所以要适当调整该值，不能盲目提高设值。可以过’conn-’通配符查看当前状态的连接数量，以定夺该值的大小。"><a href="#MySQL的最大连接数，如果服务器的并发连接请求量比较大，建议调高此值，以增加并行连接数量，当然这建立在机器能支撑的情况下，因为如果连接数越多，介于MySQL会为每个连接提供连接缓冲区，就会开销越多的内存，所以要适当调整该值，不能盲目提高设值。可以过’conn-’通配符查看当前状态的连接数量，以定夺该值的大小。" class="headerlink" title="MySQL的最大连接数，如果服务器的并发连接请求量比较大，建议调高此值，以增加并行连接数量，当然这建立在机器能支撑的情况下，因为如果连接数越多，介于MySQL会为每个连接提供连接缓冲区，就会开销越多的内存，所以要适当调整该值，不能盲目提高设值。可以过’conn%’通配符查看当前状态的连接数量，以定夺该值的大小。"></a>MySQL的最大连接数，如果服务器的并发连接请求量比较大，建议调高此值，以增加并行连接数量，当然这建立在机器能支撑的情况下，因为如果连接数越多，介于MySQL会为每个连接提供连接缓冲区，就会开销越多的内存，所以要适当调整该值，不能盲目提高设值。可以过’conn%’通配符查看当前状态的连接数量，以定夺该值的大小。</h1><p>max_connect_errors = 6000</p>
+<h1 id="对于同一主机，如果有超出该参数值个数的中断错误连接，则该主机将被禁止连接。如需对该主机进行解禁，执行：FLUSH-HOST。"><a href="#对于同一主机，如果有超出该参数值个数的中断错误连接，则该主机将被禁止连接。如需对该主机进行解禁，执行：FLUSH-HOST。" class="headerlink" title="对于同一主机，如果有超出该参数值个数的中断错误连接，则该主机将被禁止连接。如需对该主机进行解禁，执行：FLUSH HOST。"></a>对于同一主机，如果有超出该参数值个数的中断错误连接，则该主机将被禁止连接。如需对该主机进行解禁，执行：FLUSH HOST。</h1><p>open_files_limit = 65535</p>
+<h1 id="MySQL打开的文件描述符限制，默认最小1024-当open-files-limit没有被配置的时候，比较max-connections-5和ulimit-n的值，哪个大用哪个，"><a href="#MySQL打开的文件描述符限制，默认最小1024-当open-files-limit没有被配置的时候，比较max-connections-5和ulimit-n的值，哪个大用哪个，" class="headerlink" title="MySQL打开的文件描述符限制，默认最小1024;当open_files_limit没有被配置的时候，比较max_connections*5和ulimit -n的值，哪个大用哪个，"></a>MySQL打开的文件描述符限制，默认最小1024;当open_files_limit没有被配置的时候，比较max_connections*5和ulimit -n的值，哪个大用哪个，</h1><h1 id="当open-file-limit被配置的时候，比较open-files-limit和max-connections-5的值，哪个大用哪个。"><a href="#当open-file-limit被配置的时候，比较open-files-limit和max-connections-5的值，哪个大用哪个。" class="headerlink" title="当open_file_limit被配置的时候，比较open_files_limit和max_connections*5的值，哪个大用哪个。"></a>当open_file_limit被配置的时候，比较open_files_limit和max_connections*5的值，哪个大用哪个。</h1><p>table_open_cache = 128</p>
+<h1 id="MySQL每打开一个表，都会读入一些数据到table-open-cache缓存中，当MySQL在这个缓存中找不到相应信息时，才会去磁盘上读取。默认值64"><a href="#MySQL每打开一个表，都会读入一些数据到table-open-cache缓存中，当MySQL在这个缓存中找不到相应信息时，才会去磁盘上读取。默认值64" class="headerlink" title="MySQL每打开一个表，都会读入一些数据到table_open_cache缓存中，当MySQL在这个缓存中找不到相应信息时，才会去磁盘上读取。默认值64"></a>MySQL每打开一个表，都会读入一些数据到table_open_cache缓存中，当MySQL在这个缓存中找不到相应信息时，才会去磁盘上读取。默认值64</h1><h1 id="假定系统有200个并发连接，则需将此参数设置为200-N-N为每个连接所需的文件描述符数目-；"><a href="#假定系统有200个并发连接，则需将此参数设置为200-N-N为每个连接所需的文件描述符数目-；" class="headerlink" title="假定系统有200个并发连接，则需将此参数设置为200*N(N为每个连接所需的文件描述符数目)；"></a>假定系统有200个并发连接，则需将此参数设置为200*N(N为每个连接所需的文件描述符数目)；</h1><h1 id="当把table-open-cache设置为很大时，如果系统处理不了那么多文件描述符，那么就会出现客户端失效，连接不上"><a href="#当把table-open-cache设置为很大时，如果系统处理不了那么多文件描述符，那么就会出现客户端失效，连接不上" class="headerlink" title="当把table_open_cache设置为很大时，如果系统处理不了那么多文件描述符，那么就会出现客户端失效，连接不上"></a>当把table_open_cache设置为很大时，如果系统处理不了那么多文件描述符，那么就会出现客户端失效，连接不上</h1><p>max_allowed_packet = 4M</p>
+<h1 id="接受的数据包大小；增加该变量的值十分安全，这是因为仅当需要时才会分配额外内存。例如，仅当你发出长查询或MySQLd必须返回大的结果行时MySQLd才会分配更多内存。"><a href="#接受的数据包大小；增加该变量的值十分安全，这是因为仅当需要时才会分配额外内存。例如，仅当你发出长查询或MySQLd必须返回大的结果行时MySQLd才会分配更多内存。" class="headerlink" title="接受的数据包大小；增加该变量的值十分安全，这是因为仅当需要时才会分配额外内存。例如，仅当你发出长查询或MySQLd必须返回大的结果行时MySQLd才会分配更多内存。"></a>接受的数据包大小；增加该变量的值十分安全，这是因为仅当需要时才会分配额外内存。例如，仅当你发出长查询或MySQLd必须返回大的结果行时MySQLd才会分配更多内存。</h1><h1 id="该变量之所以取较小默认值是一种预防措施，以捕获客户端和服务器之间的错误信息包，并确保不会因偶然使用大的信息包而导致内存溢出。"><a href="#该变量之所以取较小默认值是一种预防措施，以捕获客户端和服务器之间的错误信息包，并确保不会因偶然使用大的信息包而导致内存溢出。" class="headerlink" title="该变量之所以取较小默认值是一种预防措施，以捕获客户端和服务器之间的错误信息包，并确保不会因偶然使用大的信息包而导致内存溢出。"></a>该变量之所以取较小默认值是一种预防措施，以捕获客户端和服务器之间的错误信息包，并确保不会因偶然使用大的信息包而导致内存溢出。</h1><p>binlog_cache_size = 1M</p>
+<h1 id="一个事务，在没有提交的时候，产生的日志，记录到Cache中；等到事务提交需要提交的时候，则把日志持久化到磁盘。默认binlog-cache-size大小32K"><a href="#一个事务，在没有提交的时候，产生的日志，记录到Cache中；等到事务提交需要提交的时候，则把日志持久化到磁盘。默认binlog-cache-size大小32K" class="headerlink" title="一个事务，在没有提交的时候，产生的日志，记录到Cache中；等到事务提交需要提交的时候，则把日志持久化到磁盘。默认binlog_cache_size大小32K"></a>一个事务，在没有提交的时候，产生的日志，记录到Cache中；等到事务提交需要提交的时候，则把日志持久化到磁盘。默认binlog_cache_size大小32K</h1><p>max_heap_table_size = 8M</p>
+<h1 id="定义了用户可以创建的内存表-memory-table-的大小。这个值用来计算内存表的最大行数值。这个变量支持动态改变"><a href="#定义了用户可以创建的内存表-memory-table-的大小。这个值用来计算内存表的最大行数值。这个变量支持动态改变" class="headerlink" title="定义了用户可以创建的内存表(memory table)的大小。这个值用来计算内存表的最大行数值。这个变量支持动态改变"></a>定义了用户可以创建的内存表(memory table)的大小。这个值用来计算内存表的最大行数值。这个变量支持动态改变</h1><p>tmp_table_size = 16M</p>
+<h1 id="MySQL的heap（堆积）表缓冲大小。所有联合在一个DML指令内完成，并且大多数联合甚至可以不用临时表即可以完成。"><a href="#MySQL的heap（堆积）表缓冲大小。所有联合在一个DML指令内完成，并且大多数联合甚至可以不用临时表即可以完成。" class="headerlink" title="MySQL的heap（堆积）表缓冲大小。所有联合在一个DML指令内完成，并且大多数联合甚至可以不用临时表即可以完成。"></a>MySQL的heap（堆积）表缓冲大小。所有联合在一个DML指令内完成，并且大多数联合甚至可以不用临时表即可以完成。</h1><h1 id="大多数临时表是基于内存的-HEAP-表。具有大的记录长度的临时表-所有列的长度的和-或包含BLOB列的表存储在硬盘上。"><a href="#大多数临时表是基于内存的-HEAP-表。具有大的记录长度的临时表-所有列的长度的和-或包含BLOB列的表存储在硬盘上。" class="headerlink" title="大多数临时表是基于内存的(HEAP)表。具有大的记录长度的临时表 (所有列的长度的和)或包含BLOB列的表存储在硬盘上。"></a>大多数临时表是基于内存的(HEAP)表。具有大的记录长度的临时表 (所有列的长度的和)或包含BLOB列的表存储在硬盘上。</h1><h1 id="如果某个内部heap（堆积）表大小超过tmp-table-size，MySQL可以根据需要自动将内存中的heap表改为基于硬盘的MyISAM表。还可以通过设置tmp-table-size选项来增加临时表的大小。也就是说，如果调高该值，MySQL同时将增加heap表的大小，可达到提高联接查询速度的效果"><a href="#如果某个内部heap（堆积）表大小超过tmp-table-size，MySQL可以根据需要自动将内存中的heap表改为基于硬盘的MyISAM表。还可以通过设置tmp-table-size选项来增加临时表的大小。也就是说，如果调高该值，MySQL同时将增加heap表的大小，可达到提高联接查询速度的效果" class="headerlink" title="如果某个内部heap（堆积）表大小超过tmp_table_size，MySQL可以根据需要自动将内存中的heap表改为基于硬盘的MyISAM表。还可以通过设置tmp_table_size选项来增加临时表的大小。也就是说，如果调高该值，MySQL同时将增加heap表的大小，可达到提高联接查询速度的效果"></a>如果某个内部heap（堆积）表大小超过tmp_table_size，MySQL可以根据需要自动将内存中的heap表改为基于硬盘的MyISAM表。还可以通过设置tmp_table_size选项来增加临时表的大小。也就是说，如果调高该值，MySQL同时将增加heap表的大小，可达到提高联接查询速度的效果</h1><p>read_buffer_size = 2M</p>
+<h1 id="MySQL读入缓冲区大小。对表进行顺序扫描的请求将分配一个读入缓冲区，MySQL会为它分配一段内存缓冲区。read-buffer-size变量控制这一缓冲区的大小。"><a href="#MySQL读入缓冲区大小。对表进行顺序扫描的请求将分配一个读入缓冲区，MySQL会为它分配一段内存缓冲区。read-buffer-size变量控制这一缓冲区的大小。" class="headerlink" title="MySQL读入缓冲区大小。对表进行顺序扫描的请求将分配一个读入缓冲区，MySQL会为它分配一段内存缓冲区。read_buffer_size变量控制这一缓冲区的大小。"></a>MySQL读入缓冲区大小。对表进行顺序扫描的请求将分配一个读入缓冲区，MySQL会为它分配一段内存缓冲区。read_buffer_size变量控制这一缓冲区的大小。</h1><h1 id="如果对表的顺序扫描请求非常频繁，并且你认为频繁扫描进行得太慢，可以通过增加该变量值以及内存缓冲区大小提高其性能"><a href="#如果对表的顺序扫描请求非常频繁，并且你认为频繁扫描进行得太慢，可以通过增加该变量值以及内存缓冲区大小提高其性能" class="headerlink" title="如果对表的顺序扫描请求非常频繁，并且你认为频繁扫描进行得太慢，可以通过增加该变量值以及内存缓冲区大小提高其性能"></a>如果对表的顺序扫描请求非常频繁，并且你认为频繁扫描进行得太慢，可以通过增加该变量值以及内存缓冲区大小提高其性能</h1><p>read_rnd_buffer_size = 8M</p>
+<h1 id="MySQL的随机读缓冲区大小。当按任意顺序读取行时-例如，按照排序顺序-，将分配一个随机读缓存区。进行排序查询时，"><a href="#MySQL的随机读缓冲区大小。当按任意顺序读取行时-例如，按照排序顺序-，将分配一个随机读缓存区。进行排序查询时，" class="headerlink" title="MySQL的随机读缓冲区大小。当按任意顺序读取行时(例如，按照排序顺序)，将分配一个随机读缓存区。进行排序查询时，"></a>MySQL的随机读缓冲区大小。当按任意顺序读取行时(例如，按照排序顺序)，将分配一个随机读缓存区。进行排序查询时，</h1><h1 id="MySQL会首先扫描一遍该缓冲，以避免磁盘搜索，提高查询速度，如果需要排序大量数据，可适当调高该值。但MySQL会为每个客户连接发放该缓冲空间，所以应尽量适当设置该值，以避免内存开销过大"><a href="#MySQL会首先扫描一遍该缓冲，以避免磁盘搜索，提高查询速度，如果需要排序大量数据，可适当调高该值。但MySQL会为每个客户连接发放该缓冲空间，所以应尽量适当设置该值，以避免内存开销过大" class="headerlink" title="MySQL会首先扫描一遍该缓冲，以避免磁盘搜索，提高查询速度，如果需要排序大量数据，可适当调高该值。但MySQL会为每个客户连接发放该缓冲空间，所以应尽量适当设置该值，以避免内存开销过大"></a>MySQL会首先扫描一遍该缓冲，以避免磁盘搜索，提高查询速度，如果需要排序大量数据，可适当调高该值。但MySQL会为每个客户连接发放该缓冲空间，所以应尽量适当设置该值，以避免内存开销过大</h1><p>sort_buffer_size = 8M</p>
+<h1 id="MySQL执行排序使用的缓冲大小。如果想要增加ORDER-BY的速度，首先看是否可以让MySQL使用索引而不是额外的排序阶段。"><a href="#MySQL执行排序使用的缓冲大小。如果想要增加ORDER-BY的速度，首先看是否可以让MySQL使用索引而不是额外的排序阶段。" class="headerlink" title="MySQL执行排序使用的缓冲大小。如果想要增加ORDER BY的速度，首先看是否可以让MySQL使用索引而不是额外的排序阶段。"></a>MySQL执行排序使用的缓冲大小。如果想要增加ORDER BY的速度，首先看是否可以让MySQL使用索引而不是额外的排序阶段。</h1><h1 id="如果不能，可以尝试增加sort-buffer-size变量的大小"><a href="#如果不能，可以尝试增加sort-buffer-size变量的大小" class="headerlink" title="如果不能，可以尝试增加sort_buffer_size变量的大小"></a>如果不能，可以尝试增加sort_buffer_size变量的大小</h1><p>join_buffer_size = 8M</p>
+<h1 id="联合查询操作所能使用的缓冲区大小，和sort-buffer-size一样，该参数对应的分配内存也是每连接独享"><a href="#联合查询操作所能使用的缓冲区大小，和sort-buffer-size一样，该参数对应的分配内存也是每连接独享" class="headerlink" title="联合查询操作所能使用的缓冲区大小，和sort_buffer_size一样，该参数对应的分配内存也是每连接独享"></a>联合查询操作所能使用的缓冲区大小，和sort_buffer_size一样，该参数对应的分配内存也是每连接独享</h1><p>thread_cache_size = 8</p>
+<h1 id="这个值（默认8）表示可以重新利用保存在缓存中线程的数量，当断开连接时如果缓存中还有空间，那么客户端的线程将被放到缓存中，"><a href="#这个值（默认8）表示可以重新利用保存在缓存中线程的数量，当断开连接时如果缓存中还有空间，那么客户端的线程将被放到缓存中，" class="headerlink" title="这个值（默认8）表示可以重新利用保存在缓存中线程的数量，当断开连接时如果缓存中还有空间，那么客户端的线程将被放到缓存中，"></a>这个值（默认8）表示可以重新利用保存在缓存中线程的数量，当断开连接时如果缓存中还有空间，那么客户端的线程将被放到缓存中，</h1><h1 id="如果线程重新被请求，那么请求将从缓存中读取-如果缓存中是空的或者是新的请求，那么这个线程将被重新创建-如果有很多新的线程，"><a href="#如果线程重新被请求，那么请求将从缓存中读取-如果缓存中是空的或者是新的请求，那么这个线程将被重新创建-如果有很多新的线程，" class="headerlink" title="如果线程重新被请求，那么请求将从缓存中读取,如果缓存中是空的或者是新的请求，那么这个线程将被重新创建,如果有很多新的线程，"></a>如果线程重新被请求，那么请求将从缓存中读取,如果缓存中是空的或者是新的请求，那么这个线程将被重新创建,如果有很多新的线程，</h1><h1 id="增加这个值可以改善系统性能-通过比较Connections和Threads-created状态的变量，可以看到这个变量的作用。-–-gt-表示要调整的值"><a href="#增加这个值可以改善系统性能-通过比较Connections和Threads-created状态的变量，可以看到这个变量的作用。-–-gt-表示要调整的值" class="headerlink" title="增加这个值可以改善系统性能.通过比较Connections和Threads_created状态的变量，可以看到这个变量的作用。(–&gt;表示要调整的值)"></a>增加这个值可以改善系统性能.通过比较Connections和Threads_created状态的变量，可以看到这个变量的作用。(–&gt;表示要调整的值)</h1><h1 id="根据物理内存设置规则如下："><a href="#根据物理内存设置规则如下：" class="headerlink" title="根据物理内存设置规则如下："></a>根据物理内存设置规则如下：</h1><h1 id="1G-—-gt-8"><a href="#1G-—-gt-8" class="headerlink" title="1G  —&gt; 8"></a>1G  —&gt; 8</h1><h1 id="2G-—-gt-16"><a href="#2G-—-gt-16" class="headerlink" title="2G  —&gt; 16"></a>2G  —&gt; 16</h1><h1 id="3G-—-gt-32"><a href="#3G-—-gt-32" class="headerlink" title="3G  —&gt; 32"></a>3G  —&gt; 32</h1><h1 id="大于3G-—-gt-64"><a href="#大于3G-—-gt-64" class="headerlink" title="大于3G  —&gt; 64"></a>大于3G  —&gt; 64</h1><p>query_cache_size = 8M</p>
+<p>#MySQL的查询缓冲大小（从4.0.1开始，MySQL提供了查询缓冲机制）使用查询缓冲，MySQL将SELECT语句和查询结果存放在缓冲区中，</p>
+<h1 id="今后对于同样的SELECT语句（区分大小写），将直接从缓冲区中读取结果。根据MySQL用户手册，使用查询缓冲最多可以达到238-的效率。"><a href="#今后对于同样的SELECT语句（区分大小写），将直接从缓冲区中读取结果。根据MySQL用户手册，使用查询缓冲最多可以达到238-的效率。" class="headerlink" title="今后对于同样的SELECT语句（区分大小写），将直接从缓冲区中读取结果。根据MySQL用户手册，使用查询缓冲最多可以达到238%的效率。"></a>今后对于同样的SELECT语句（区分大小写），将直接从缓冲区中读取结果。根据MySQL用户手册，使用查询缓冲最多可以达到238%的效率。</h1><h1 id="通过检查状态值’Qcache-’，可以知道query-cache-size设置是否合理：如果Qcache-lowmem-prunes的值非常大，则表明经常出现缓冲不够的情况，"><a href="#通过检查状态值’Qcache-’，可以知道query-cache-size设置是否合理：如果Qcache-lowmem-prunes的值非常大，则表明经常出现缓冲不够的情况，" class="headerlink" title="通过检查状态值’Qcache_%’，可以知道query_cache_size设置是否合理：如果Qcache_lowmem_prunes的值非常大，则表明经常出现缓冲不够的情况，"></a>通过检查状态值’Qcache_%’，可以知道query_cache_size设置是否合理：如果Qcache_lowmem_prunes的值非常大，则表明经常出现缓冲不够的情况，</h1><h1 id="如果Qcache-hits的值也非常大，则表明查询缓冲使用非常频繁，此时需要增加缓冲大小；如果Qcache-hits的值不大，则表明你的查询重复率很低，"><a href="#如果Qcache-hits的值也非常大，则表明查询缓冲使用非常频繁，此时需要增加缓冲大小；如果Qcache-hits的值不大，则表明你的查询重复率很低，" class="headerlink" title="如果Qcache_hits的值也非常大，则表明查询缓冲使用非常频繁，此时需要增加缓冲大小；如果Qcache_hits的值不大，则表明你的查询重复率很低，"></a>如果Qcache_hits的值也非常大，则表明查询缓冲使用非常频繁，此时需要增加缓冲大小；如果Qcache_hits的值不大，则表明你的查询重复率很低，</h1><h1 id="这种情况下使用查询缓冲反而会影响效率，那么可以考虑不用查询缓冲。此外，在SELECT语句中加入SQL-NO-CACHE可以明确表示不使用查询缓冲"><a href="#这种情况下使用查询缓冲反而会影响效率，那么可以考虑不用查询缓冲。此外，在SELECT语句中加入SQL-NO-CACHE可以明确表示不使用查询缓冲" class="headerlink" title="这种情况下使用查询缓冲反而会影响效率，那么可以考虑不用查询缓冲。此外，在SELECT语句中加入SQL_NO_CACHE可以明确表示不使用查询缓冲"></a>这种情况下使用查询缓冲反而会影响效率，那么可以考虑不用查询缓冲。此外，在SELECT语句中加入SQL_NO_CACHE可以明确表示不使用查询缓冲</h1><p>query_cache_limit = 2M</p>
+<p>#指定单个查询能够使用的缓冲区大小，默认1M</p>
+<p>key_buffer_size = 4M</p>
+<p>#指定用于索引的缓冲区大小，增加它可得到更好处理的索引(对所有读和多重写)，到你能负担得起那样多。如果你使它太大，</p>
+<h1 id="系统将开始换页并且真的变慢了。对于内存在4GB左右的服务器该参数可设置为384M或512M。通过检查状态值Key-read-requests和Key-reads，"><a href="#系统将开始换页并且真的变慢了。对于内存在4GB左右的服务器该参数可设置为384M或512M。通过检查状态值Key-read-requests和Key-reads，" class="headerlink" title="系统将开始换页并且真的变慢了。对于内存在4GB左右的服务器该参数可设置为384M或512M。通过检查状态值Key_read_requests和Key_reads，"></a>系统将开始换页并且真的变慢了。对于内存在4GB左右的服务器该参数可设置为384M或512M。通过检查状态值Key_read_requests和Key_reads，</h1><h1 id="可以知道key-buffer-size设置是否合理。比例key-reads-key-read-requests应该尽可能的低，"><a href="#可以知道key-buffer-size设置是否合理。比例key-reads-key-read-requests应该尽可能的低，" class="headerlink" title="可以知道key_buffer_size设置是否合理。比例key_reads/key_read_requests应该尽可能的低，"></a>可以知道key_buffer_size设置是否合理。比例key_reads/key_read_requests应该尽可能的低，</h1><h1 id="至少是1-100，1-1000更好-上述状态值可以使用SHOW-STATUS-LIKE-‘key-read-’获得-。注意：该参数值设置的过大反而会是服务器整体效率降低"><a href="#至少是1-100，1-1000更好-上述状态值可以使用SHOW-STATUS-LIKE-‘key-read-’获得-。注意：该参数值设置的过大反而会是服务器整体效率降低" class="headerlink" title="至少是1:100，1:1000更好(上述状态值可以使用SHOW STATUS LIKE ‘key_read%’获得)。注意：该参数值设置的过大反而会是服务器整体效率降低"></a>至少是1:100，1:1000更好(上述状态值可以使用SHOW STATUS LIKE ‘key_read%’获得)。注意：该参数值设置的过大反而会是服务器整体效率降低</h1><p>ft_min_word_len = 4</p>
+<h1 id="分词词汇最小长度，默认4"><a href="#分词词汇最小长度，默认4" class="headerlink" title="分词词汇最小长度，默认4"></a>分词词汇最小长度，默认4</h1><p>transaction_isolation = REPEATABLE-READ</p>
+<h1 id="MySQL支持4种事务隔离级别，他们分别是："><a href="#MySQL支持4种事务隔离级别，他们分别是：" class="headerlink" title="MySQL支持4种事务隔离级别，他们分别是："></a>MySQL支持4种事务隔离级别，他们分别是：</h1><h1 id="READ-UNCOMMITTED-READ-COMMITTED-REPEATABLE-READ-SERIALIZABLE"><a href="#READ-UNCOMMITTED-READ-COMMITTED-REPEATABLE-READ-SERIALIZABLE" class="headerlink" title="READ-UNCOMMITTED, READ-COMMITTED, REPEATABLE-READ, SERIALIZABLE."></a>READ-UNCOMMITTED, READ-COMMITTED, REPEATABLE-READ, SERIALIZABLE.</h1><h1 id="如没有指定，MySQL默认采用的是REPEATABLE-READ，ORACLE默认的是READ-COMMITTED"><a href="#如没有指定，MySQL默认采用的是REPEATABLE-READ，ORACLE默认的是READ-COMMITTED" class="headerlink" title="如没有指定，MySQL默认采用的是REPEATABLE-READ，ORACLE默认的是READ-COMMITTED"></a>如没有指定，MySQL默认采用的是REPEATABLE-READ，ORACLE默认的是READ-COMMITTED</h1><p>log_bin = mysql-bin #开启bin log用于主从复制等</p>
+<p>binlog_format = mixed</p>
+<p>expire_logs_days = 30 #超过30天的binlog删除</p>
+<p>log_error = /data/mysql/mysql-error.log #错误日志路径</p>
+<p>slow_query_log = 1</p>
+<p>long_query_time = 1 #慢查询时间 超过1秒则为慢查询</p>
+<p>slow_query_log_file = /data/mysql/mysql-slow.log</p>
+<p>performance_schema = 0</p>
+<p>explicit_defaults_for_timestamp</p>
+<p>#lower_case_table_names = 1 #不区分大小写</p>
+<p>skip-external-locking #MySQL选项以避免外部锁定。该选项默认开启</p>
+<p>default-storage-engine = InnoDB #默认存储引擎</p>
+<p>innodb_file_per_table = 1</p>
+<h1 id="InnoDB为独立表空间模式，每个数据库的每个表都会生成一个数据空间"><a href="#InnoDB为独立表空间模式，每个数据库的每个表都会生成一个数据空间" class="headerlink" title="InnoDB为独立表空间模式，每个数据库的每个表都会生成一个数据空间"></a>InnoDB为独立表空间模式，每个数据库的每个表都会生成一个数据空间</h1><h1 id="独立表空间优点："><a href="#独立表空间优点：" class="headerlink" title="独立表空间优点："></a>独立表空间优点：</h1><h1 id="1．每个表都有自已独立的表空间。"><a href="#1．每个表都有自已独立的表空间。" class="headerlink" title="1．每个表都有自已独立的表空间。"></a>1．每个表都有自已独立的表空间。</h1><h1 id="2．每个表的数据和索引都会存在自已的表空间中。"><a href="#2．每个表的数据和索引都会存在自已的表空间中。" class="headerlink" title="2．每个表的数据和索引都会存在自已的表空间中。"></a>2．每个表的数据和索引都会存在自已的表空间中。</h1><h1 id="3．可以实现单表在不同的数据库中移动。"><a href="#3．可以实现单表在不同的数据库中移动。" class="headerlink" title="3．可以实现单表在不同的数据库中移动。"></a>3．可以实现单表在不同的数据库中移动。</h1><h1 id="4．空间可以回收（除drop-table操作处，表空不能自已回收）"><a href="#4．空间可以回收（除drop-table操作处，表空不能自已回收）" class="headerlink" title="4．空间可以回收（除drop table操作处，表空不能自已回收）"></a>4．空间可以回收（除drop table操作处，表空不能自已回收）</h1><h1 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h1><h1 id="单表增加过大，如超过100G"><a href="#单表增加过大，如超过100G" class="headerlink" title="单表增加过大，如超过100G"></a>单表增加过大，如超过100G</h1><h1 id="结论："><a href="#结论：" class="headerlink" title="结论："></a>结论：</h1><h1 id="共享表空间在Insert操作上少有优势。其它都没独立表空间表现好。当启用独立表空间时，请合理调整：innodb-open-files"><a href="#共享表空间在Insert操作上少有优势。其它都没独立表空间表现好。当启用独立表空间时，请合理调整：innodb-open-files" class="headerlink" title="共享表空间在Insert操作上少有优势。其它都没独立表空间表现好。当启用独立表空间时，请合理调整：innodb_open_files"></a>共享表空间在Insert操作上少有优势。其它都没独立表空间表现好。当启用独立表空间时，请合理调整：innodb_open_files</h1><p>innodb_open_files = 500</p>
+<h1 id="限制Innodb能打开的表的数据，如果库里的表特别多的情况，请增加这个。这个值默认是300"><a href="#限制Innodb能打开的表的数据，如果库里的表特别多的情况，请增加这个。这个值默认是300" class="headerlink" title="限制Innodb能打开的表的数据，如果库里的表特别多的情况，请增加这个。这个值默认是300"></a>限制Innodb能打开的表的数据，如果库里的表特别多的情况，请增加这个。这个值默认是300</h1><p>innodb_buffer_pool_size = 64M</p>
+<h1 id="InnoDB使用一个缓冲池来保存索引和原始数据-不像MyISAM"><a href="#InnoDB使用一个缓冲池来保存索引和原始数据-不像MyISAM" class="headerlink" title="InnoDB使用一个缓冲池来保存索引和原始数据, 不像MyISAM."></a>InnoDB使用一个缓冲池来保存索引和原始数据, 不像MyISAM.</h1><h1 id="这里你设置越大-你在存取表里面数据时所需要的磁盘I-O越少"><a href="#这里你设置越大-你在存取表里面数据时所需要的磁盘I-O越少" class="headerlink" title="这里你设置越大,你在存取表里面数据时所需要的磁盘I/O越少."></a>这里你设置越大,你在存取表里面数据时所需要的磁盘I/O越少.</h1><h1 id="在一个独立使用的数据库服务器上-你可以设置这个变量到服务器物理内存大小的80"><a href="#在一个独立使用的数据库服务器上-你可以设置这个变量到服务器物理内存大小的80" class="headerlink" title="在一个独立使用的数据库服务器上,你可以设置这个变量到服务器物理内存大小的80%"></a>在一个独立使用的数据库服务器上,你可以设置这个变量到服务器物理内存大小的80%</h1><h1 id="不要设置过大-否则-由于物理内存的竞争可能导致操作系统的换页颠簸"><a href="#不要设置过大-否则-由于物理内存的竞争可能导致操作系统的换页颠簸" class="headerlink" title="不要设置过大,否则,由于物理内存的竞争可能导致操作系统的换页颠簸."></a>不要设置过大,否则,由于物理内存的竞争可能导致操作系统的换页颠簸.</h1><h1 id="注意在32位系统上你每个进程可能被限制在-2-3-5G-用户层面内存限制"><a href="#注意在32位系统上你每个进程可能被限制在-2-3-5G-用户层面内存限制" class="headerlink" title="注意在32位系统上你每个进程可能被限制在 2-3.5G 用户层面内存限制,"></a>注意在32位系统上你每个进程可能被限制在 2-3.5G 用户层面内存限制,</h1><h1 id="所以不要设置的太高"><a href="#所以不要设置的太高" class="headerlink" title="所以不要设置的太高."></a>所以不要设置的太高.</h1><p>innodb_write_io_threads = 4</p>
+<p>innodb_read_io_threads = 4</p>
+<h1 id="innodb使用后台线程处理数据页上的读写-I-O-输入输出-请求-根据你的-CPU-核数来更改-默认是4"><a href="#innodb使用后台线程处理数据页上的读写-I-O-输入输出-请求-根据你的-CPU-核数来更改-默认是4" class="headerlink" title="innodb使用后台线程处理数据页上的读写 I/O(输入输出)请求,根据你的 CPU 核数来更改,默认是4"></a>innodb使用后台线程处理数据页上的读写 I/O(输入输出)请求,根据你的 CPU 核数来更改,默认是4</h1><h1 id="注-这两个参数不支持动态改变-需要把该参数加入到my-cnf里，修改完后重启MySQL服务-允许值的范围从-1-64"><a href="#注-这两个参数不支持动态改变-需要把该参数加入到my-cnf里，修改完后重启MySQL服务-允许值的范围从-1-64" class="headerlink" title="注:这两个参数不支持动态改变,需要把该参数加入到my.cnf里，修改完后重启MySQL服务,允许值的范围从 1-64"></a>注:这两个参数不支持动态改变,需要把该参数加入到my.cnf里，修改完后重启MySQL服务,允许值的范围从 1-64</h1><p>innodb_thread_concurrency = 0</p>
+<h1 id="默认设置为-0-表示不限制并发数，这里推荐设置为0，更好去发挥CPU多核处理能力，提高并发量"><a href="#默认设置为-0-表示不限制并发数，这里推荐设置为0，更好去发挥CPU多核处理能力，提高并发量" class="headerlink" title="默认设置为 0,表示不限制并发数，这里推荐设置为0，更好去发挥CPU多核处理能力，提高并发量"></a>默认设置为 0,表示不限制并发数，这里推荐设置为0，更好去发挥CPU多核处理能力，提高并发量</h1><p>innodb_purge_threads = 1</p>
+<h1 id="InnoDB中的清除操作是一类定期回收无用数据的操作。在之前的几个版本中，清除操作是主线程的一部分，这意味着运行时它可能会堵塞其它的数据库操作。"><a href="#InnoDB中的清除操作是一类定期回收无用数据的操作。在之前的几个版本中，清除操作是主线程的一部分，这意味着运行时它可能会堵塞其它的数据库操作。" class="headerlink" title="InnoDB中的清除操作是一类定期回收无用数据的操作。在之前的几个版本中，清除操作是主线程的一部分，这意味着运行时它可能会堵塞其它的数据库操作。"></a>InnoDB中的清除操作是一类定期回收无用数据的操作。在之前的几个版本中，清除操作是主线程的一部分，这意味着运行时它可能会堵塞其它的数据库操作。</h1><h1 id="从MySQL5-5-X版本开始，该操作运行于独立的线程中-并支持更多的并发数。用户可通过设置innodb-purge-threads配置参数来选择清除操作是否使用单"><a href="#从MySQL5-5-X版本开始，该操作运行于独立的线程中-并支持更多的并发数。用户可通过设置innodb-purge-threads配置参数来选择清除操作是否使用单" class="headerlink" title="从MySQL5.5.X版本开始，该操作运行于独立的线程中,并支持更多的并发数。用户可通过设置innodb_purge_threads配置参数来选择清除操作是否使用单"></a>从MySQL5.5.X版本开始，该操作运行于独立的线程中,并支持更多的并发数。用户可通过设置innodb_purge_threads配置参数来选择清除操作是否使用单</h1><h1 id="独线程-默认情况下参数设置为0-不使用单独线程-设置为-1-时表示使用单独的清除线程。建议为1"><a href="#独线程-默认情况下参数设置为0-不使用单独线程-设置为-1-时表示使用单独的清除线程。建议为1" class="headerlink" title="独线程,默认情况下参数设置为0(不使用单独线程),设置为 1 时表示使用单独的清除线程。建议为1"></a>独线程,默认情况下参数设置为0(不使用单独线程),设置为 1 时表示使用单独的清除线程。建议为1</h1><p>innodb_flush_log_at_trx_commit = 2</p>
+<h1 id="0：如果innodb-flush-log-at-trx-commit的值为0-log-buffer每秒就会被刷写日志文件到磁盘，提交事务的时候不做任何操作（执行是由mysql的master-thread线程来执行的。"><a href="#0：如果innodb-flush-log-at-trx-commit的值为0-log-buffer每秒就会被刷写日志文件到磁盘，提交事务的时候不做任何操作（执行是由mysql的master-thread线程来执行的。" class="headerlink" title="0：如果innodb_flush_log_at_trx_commit的值为0,log buffer每秒就会被刷写日志文件到磁盘，提交事务的时候不做任何操作（执行是由mysql的master thread线程来执行的。"></a>0：如果innodb_flush_log_at_trx_commit的值为0,log buffer每秒就会被刷写日志文件到磁盘，提交事务的时候不做任何操作（执行是由mysql的master thread线程来执行的。</h1><h1 id="主线程中每秒会将重做日志缓冲写入磁盘的重做日志文件-REDO-LOG-中。不论事务是否已经提交）默认的日志文件是ib-logfile0-ib-logfile1"><a href="#主线程中每秒会将重做日志缓冲写入磁盘的重做日志文件-REDO-LOG-中。不论事务是否已经提交）默认的日志文件是ib-logfile0-ib-logfile1" class="headerlink" title="主线程中每秒会将重做日志缓冲写入磁盘的重做日志文件(REDO LOG)中。不论事务是否已经提交）默认的日志文件是ib_logfile0,ib_logfile1"></a>主线程中每秒会将重做日志缓冲写入磁盘的重做日志文件(REDO LOG)中。不论事务是否已经提交）默认的日志文件是ib_logfile0,ib_logfile1</h1><h1 id="1：当设为默认值1的时候，每次提交事务的时候，都会将log-buffer刷写到日志。"><a href="#1：当设为默认值1的时候，每次提交事务的时候，都会将log-buffer刷写到日志。" class="headerlink" title="1：当设为默认值1的时候，每次提交事务的时候，都会将log buffer刷写到日志。"></a>1：当设为默认值1的时候，每次提交事务的时候，都会将log buffer刷写到日志。</h1><h1 id="2：如果设为2-每次提交事务都会写日志，但并不会执行刷的操作。每秒定时会刷到日志文件。要注意的是，并不能保证100-每秒一定都会刷到磁盘，这要取决于进程的调度。"><a href="#2：如果设为2-每次提交事务都会写日志，但并不会执行刷的操作。每秒定时会刷到日志文件。要注意的是，并不能保证100-每秒一定都会刷到磁盘，这要取决于进程的调度。" class="headerlink" title="2：如果设为2,每次提交事务都会写日志，但并不会执行刷的操作。每秒定时会刷到日志文件。要注意的是，并不能保证100%每秒一定都会刷到磁盘，这要取决于进程的调度。"></a>2：如果设为2,每次提交事务都会写日志，但并不会执行刷的操作。每秒定时会刷到日志文件。要注意的是，并不能保证100%每秒一定都会刷到磁盘，这要取决于进程的调度。</h1><h1 id="每次事务提交的时候将数据写入事务日志，而这里的写入仅是调用了文件系统的写入操作，而文件系统是有-缓存的，所以这个写入并不能保证数据已经写入到物理磁盘"><a href="#每次事务提交的时候将数据写入事务日志，而这里的写入仅是调用了文件系统的写入操作，而文件系统是有-缓存的，所以这个写入并不能保证数据已经写入到物理磁盘" class="headerlink" title="每次事务提交的时候将数据写入事务日志，而这里的写入仅是调用了文件系统的写入操作，而文件系统是有 缓存的，所以这个写入并不能保证数据已经写入到物理磁盘"></a>每次事务提交的时候将数据写入事务日志，而这里的写入仅是调用了文件系统的写入操作，而文件系统是有 缓存的，所以这个写入并不能保证数据已经写入到物理磁盘</h1><h1 id="默认值1是为了保证完整的ACID。当然，你可以将这个配置项设为1以外的值来换取更高的性能，但是在系统崩溃的时候，你将会丢失1秒的数据。"><a href="#默认值1是为了保证完整的ACID。当然，你可以将这个配置项设为1以外的值来换取更高的性能，但是在系统崩溃的时候，你将会丢失1秒的数据。" class="headerlink" title="默认值1是为了保证完整的ACID。当然，你可以将这个配置项设为1以外的值来换取更高的性能，但是在系统崩溃的时候，你将会丢失1秒的数据。"></a>默认值1是为了保证完整的ACID。当然，你可以将这个配置项设为1以外的值来换取更高的性能，但是在系统崩溃的时候，你将会丢失1秒的数据。</h1><h1 id="设为0的话，mysqld进程崩溃的时候，就会丢失最后1秒的事务。设为2-只有在操作系统崩溃或者断电的时候才会丢失最后1秒的数据。InnoDB在做恢复的时候会忽略这个值。"><a href="#设为0的话，mysqld进程崩溃的时候，就会丢失最后1秒的事务。设为2-只有在操作系统崩溃或者断电的时候才会丢失最后1秒的数据。InnoDB在做恢复的时候会忽略这个值。" class="headerlink" title="设为0的话，mysqld进程崩溃的时候，就会丢失最后1秒的事务。设为2,只有在操作系统崩溃或者断电的时候才会丢失最后1秒的数据。InnoDB在做恢复的时候会忽略这个值。"></a>设为0的话，mysqld进程崩溃的时候，就会丢失最后1秒的事务。设为2,只有在操作系统崩溃或者断电的时候才会丢失最后1秒的数据。InnoDB在做恢复的时候会忽略这个值。</h1><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><h1 id="设为1当然是最安全的，但性能页是最差的（相对其他两个参数而言，但不是不能接受）。如果对数据一致性和完整性要求不高，完全可以设为2，如果只最求性能，例如高并发写的日志服务器，设为0来获得更高性能"><a href="#设为1当然是最安全的，但性能页是最差的（相对其他两个参数而言，但不是不能接受）。如果对数据一致性和完整性要求不高，完全可以设为2，如果只最求性能，例如高并发写的日志服务器，设为0来获得更高性能" class="headerlink" title="设为1当然是最安全的，但性能页是最差的（相对其他两个参数而言，但不是不能接受）。如果对数据一致性和完整性要求不高，完全可以设为2，如果只最求性能，例如高并发写的日志服务器，设为0来获得更高性能"></a>设为1当然是最安全的，但性能页是最差的（相对其他两个参数而言，但不是不能接受）。如果对数据一致性和完整性要求不高，完全可以设为2，如果只最求性能，例如高并发写的日志服务器，设为0来获得更高性能</h1><p>innodb_log_buffer_size = 2M</p>
+<h1 id="此参数确定些日志文件所用的内存大小，以M为单位。缓冲区更大能提高性能，但意外的故障将会丢失数据。MySQL开发人员建议设置为1－8M之间"><a href="#此参数确定些日志文件所用的内存大小，以M为单位。缓冲区更大能提高性能，但意外的故障将会丢失数据。MySQL开发人员建议设置为1－8M之间" class="headerlink" title="此参数确定些日志文件所用的内存大小，以M为单位。缓冲区更大能提高性能，但意外的故障将会丢失数据。MySQL开发人员建议设置为1－8M之间"></a>此参数确定些日志文件所用的内存大小，以M为单位。缓冲区更大能提高性能，但意外的故障将会丢失数据。MySQL开发人员建议设置为1－8M之间</h1><p>innodb_log_file_size = 32M</p>
+<h1 id="此参数确定数据日志文件的大小，更大的设置可以提高性能，但也会增加恢复故障数据库所需的时间"><a href="#此参数确定数据日志文件的大小，更大的设置可以提高性能，但也会增加恢复故障数据库所需的时间" class="headerlink" title="此参数确定数据日志文件的大小，更大的设置可以提高性能，但也会增加恢复故障数据库所需的时间"></a>此参数确定数据日志文件的大小，更大的设置可以提高性能，但也会增加恢复故障数据库所需的时间</h1><p>innodb_log_files_in_group = 3</p>
+<h1 id="为提高性能，MySQL可以以循环方式将日志文件写到多个文件。推荐设置为3"><a href="#为提高性能，MySQL可以以循环方式将日志文件写到多个文件。推荐设置为3" class="headerlink" title="为提高性能，MySQL可以以循环方式将日志文件写到多个文件。推荐设置为3"></a>为提高性能，MySQL可以以循环方式将日志文件写到多个文件。推荐设置为3</h1><p>innodb_max_dirty_pages_pct = 90</p>
+<h1 id="innodb主线程刷新缓存池中的数据，使脏数据比例小于90"><a href="#innodb主线程刷新缓存池中的数据，使脏数据比例小于90" class="headerlink" title="innodb主线程刷新缓存池中的数据，使脏数据比例小于90%"></a>innodb主线程刷新缓存池中的数据，使脏数据比例小于90%</h1><p>innodb_lock_wait_timeout = 120</p>
+<h1 id="InnoDB事务在被回滚之前可以等待一个锁定的超时秒数。InnoDB在它自己的锁定表中自动检测事务死锁并且回滚事务。InnoDB用LOCK-TABLES语句注意到锁定设置。默认值是50秒"><a href="#InnoDB事务在被回滚之前可以等待一个锁定的超时秒数。InnoDB在它自己的锁定表中自动检测事务死锁并且回滚事务。InnoDB用LOCK-TABLES语句注意到锁定设置。默认值是50秒" class="headerlink" title="InnoDB事务在被回滚之前可以等待一个锁定的超时秒数。InnoDB在它自己的锁定表中自动检测事务死锁并且回滚事务。InnoDB用LOCK TABLES语句注意到锁定设置。默认值是50秒"></a>InnoDB事务在被回滚之前可以等待一个锁定的超时秒数。InnoDB在它自己的锁定表中自动检测事务死锁并且回滚事务。InnoDB用LOCK TABLES语句注意到锁定设置。默认值是50秒</h1><p>bulk_insert_buffer_size = 8M</p>
+<h1 id="批量插入缓存大小，-这个参数是针对MyISAM存储引擎来说的。适用于在一次性插入100-1000-条记录时，-提高效率。默认值是8M。可以针对数据量的大小，翻倍增加。"><a href="#批量插入缓存大小，-这个参数是针对MyISAM存储引擎来说的。适用于在一次性插入100-1000-条记录时，-提高效率。默认值是8M。可以针对数据量的大小，翻倍增加。" class="headerlink" title="批量插入缓存大小， 这个参数是针对MyISAM存储引擎来说的。适用于在一次性插入100-1000+条记录时， 提高效率。默认值是8M。可以针对数据量的大小，翻倍增加。"></a>批量插入缓存大小， 这个参数是针对MyISAM存储引擎来说的。适用于在一次性插入100-1000+条记录时， 提高效率。默认值是8M。可以针对数据量的大小，翻倍增加。</h1><p>myisam_sort_buffer_size = 8M</p>
+<h1 id="MyISAM设置恢复表之时使用的缓冲区的尺寸，当在REPAIR-TABLE或用CREATE-INDEX创建索引或ALTER-TABLE过程中排序-MyISAM索引分配的缓冲区"><a href="#MyISAM设置恢复表之时使用的缓冲区的尺寸，当在REPAIR-TABLE或用CREATE-INDEX创建索引或ALTER-TABLE过程中排序-MyISAM索引分配的缓冲区" class="headerlink" title="MyISAM设置恢复表之时使用的缓冲区的尺寸，当在REPAIR TABLE或用CREATE INDEX创建索引或ALTER TABLE过程中排序 MyISAM索引分配的缓冲区"></a>MyISAM设置恢复表之时使用的缓冲区的尺寸，当在REPAIR TABLE或用CREATE INDEX创建索引或ALTER TABLE过程中排序 MyISAM索引分配的缓冲区</h1><p>myisam_max_sort_file_size = 10G</p>
+<h1 id="如果临时文件会变得超过索引，不要使用快速排序索引方法来创建一个索引。注释：这个参数以字节的形式给出"><a href="#如果临时文件会变得超过索引，不要使用快速排序索引方法来创建一个索引。注释：这个参数以字节的形式给出" class="headerlink" title="如果临时文件会变得超过索引，不要使用快速排序索引方法来创建一个索引。注释：这个参数以字节的形式给出"></a>如果临时文件会变得超过索引，不要使用快速排序索引方法来创建一个索引。注释：这个参数以字节的形式给出</h1><p>myisam_repair_threads = 1</p>
+<h1 id="如果该值大于1，在Repair-by-sorting过程中并行创建MyISAM表索引-每个索引在自己的线程内"><a href="#如果该值大于1，在Repair-by-sorting过程中并行创建MyISAM表索引-每个索引在自己的线程内" class="headerlink" title="如果该值大于1，在Repair by sorting过程中并行创建MyISAM表索引(每个索引在自己的线程内)"></a>如果该值大于1，在Repair by sorting过程中并行创建MyISAM表索引(每个索引在自己的线程内)</h1><p>interactive_timeout = 28800</p>
+<h1 id="服务器关闭交互式连接前等待活动的秒数。交互式客户端定义为在mysql-real-connect-中使用CLIENT-INTERACTIVE选项的客户端。默认值：28800秒（8小时）"><a href="#服务器关闭交互式连接前等待活动的秒数。交互式客户端定义为在mysql-real-connect-中使用CLIENT-INTERACTIVE选项的客户端。默认值：28800秒（8小时）" class="headerlink" title="服务器关闭交互式连接前等待活动的秒数。交互式客户端定义为在mysql_real_connect()中使用CLIENT_INTERACTIVE选项的客户端。默认值：28800秒（8小时）"></a>服务器关闭交互式连接前等待活动的秒数。交互式客户端定义为在mysql_real_connect()中使用CLIENT_INTERACTIVE选项的客户端。默认值：28800秒（8小时）</h1><p>wait_timeout = 28800</p>
+<h1 id="服务器关闭非交互连接之前等待活动的秒数。在线程启动时，根据全局wait-timeout值或全局interactive-timeout值初始化会话wait-timeout值，"><a href="#服务器关闭非交互连接之前等待活动的秒数。在线程启动时，根据全局wait-timeout值或全局interactive-timeout值初始化会话wait-timeout值，" class="headerlink" title="服务器关闭非交互连接之前等待活动的秒数。在线程启动时，根据全局wait_timeout值或全局interactive_timeout值初始化会话wait_timeout值，"></a>服务器关闭非交互连接之前等待活动的秒数。在线程启动时，根据全局wait_timeout值或全局interactive_timeout值初始化会话wait_timeout值，</h1><h1 id="取决于客户端类型-由mysql-real-connect-的连接选项CLIENT-INTERACTIVE定义-。参数默认值：28800秒（8小时）"><a href="#取决于客户端类型-由mysql-real-connect-的连接选项CLIENT-INTERACTIVE定义-。参数默认值：28800秒（8小时）" class="headerlink" title="取决于客户端类型(由mysql_real_connect()的连接选项CLIENT_INTERACTIVE定义)。参数默认值：28800秒（8小时）"></a>取决于客户端类型(由mysql_real_connect()的连接选项CLIENT_INTERACTIVE定义)。参数默认值：28800秒（8小时）</h1><h1 id="MySQL服务器所支持的最大连接数是有上限的，因为每个连接的建立都会消耗内存，因此我们希望客户端在连接到MySQL-Server处理完相应的操作后，"><a href="#MySQL服务器所支持的最大连接数是有上限的，因为每个连接的建立都会消耗内存，因此我们希望客户端在连接到MySQL-Server处理完相应的操作后，" class="headerlink" title="MySQL服务器所支持的最大连接数是有上限的，因为每个连接的建立都会消耗内存，因此我们希望客户端在连接到MySQL Server处理完相应的操作后，"></a>MySQL服务器所支持的最大连接数是有上限的，因为每个连接的建立都会消耗内存，因此我们希望客户端在连接到MySQL Server处理完相应的操作后，</h1><h1 id="应该断开连接并释放占用的内存。如果你的MySQL-Server有大量的闲置连接，他们不仅会白白消耗内存，而且如果连接一直在累加而不断开，"><a href="#应该断开连接并释放占用的内存。如果你的MySQL-Server有大量的闲置连接，他们不仅会白白消耗内存，而且如果连接一直在累加而不断开，" class="headerlink" title="应该断开连接并释放占用的内存。如果你的MySQL Server有大量的闲置连接，他们不仅会白白消耗内存，而且如果连接一直在累加而不断开，"></a>应该断开连接并释放占用的内存。如果你的MySQL Server有大量的闲置连接，他们不仅会白白消耗内存，而且如果连接一直在累加而不断开，</h1><h1 id="最终肯定会达到MySQL-Server的连接上限数，这会报’too-many-connections’的错误。对于wait-timeout的值设定，应该根据系统的运行情况来判断。"><a href="#最终肯定会达到MySQL-Server的连接上限数，这会报’too-many-connections’的错误。对于wait-timeout的值设定，应该根据系统的运行情况来判断。" class="headerlink" title="最终肯定会达到MySQL Server的连接上限数，这会报’too many connections’的错误。对于wait_timeout的值设定，应该根据系统的运行情况来判断。"></a>最终肯定会达到MySQL Server的连接上限数，这会报’too many connections’的错误。对于wait_timeout的值设定，应该根据系统的运行情况来判断。</h1><h1 id="在系统运行一段时间后，可以通过show-processlist命令查看当前系统的连接状态，如果发现有大量的sleep状态的连接进程，则说明该参数设置的过大，"><a href="#在系统运行一段时间后，可以通过show-processlist命令查看当前系统的连接状态，如果发现有大量的sleep状态的连接进程，则说明该参数设置的过大，" class="headerlink" title="在系统运行一段时间后，可以通过show processlist命令查看当前系统的连接状态，如果发现有大量的sleep状态的连接进程，则说明该参数设置的过大，"></a>在系统运行一段时间后，可以通过show processlist命令查看当前系统的连接状态，如果发现有大量的sleep状态的连接进程，则说明该参数设置的过大，</h1><h1 id="可以进行适当的调整小些。要同时设置interactive-timeout和wait-timeout才会生效。"><a href="#可以进行适当的调整小些。要同时设置interactive-timeout和wait-timeout才会生效。" class="headerlink" title="可以进行适当的调整小些。要同时设置interactive_timeout和wait_timeout才会生效。"></a>可以进行适当的调整小些。要同时设置interactive_timeout和wait_timeout才会生效。</h1><p>[mysqldump]</p>
+<p>quick</p>
+<p>max_allowed_packet = 16M #服务器发送和接受的最大包长度</p>
+<p>[myisamchk]</p>
+<p>key_buffer_size = 8M</p>
+<p>sort_buffer_size = 8M</p>
+<p>read_buffer = 4M</p>
+<p>write_buffer = 4M<br>源文:<a href="https://blog.linuxeye.com/379.html" target="_blank" rel="external">https://blog.linuxeye.com/379.html</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[命令总结(二): netstat]]></title>
+      <url>https://www.mufen.me/Docs-netstat.html</url>
+      <content type="html"><![CDATA[<p>netstat命令</p>
+<p>  netstat命令的功能是现实网络连接,路由表和网络接口的信息，可以让用户得知目前都有哪些网络正在连接和显示网络链接的信息与ss命令相似。</p>
+<p>常用命令:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">netstat -an</div><div class="line">netstat -rn</div><div class="line">netstat -tunlp</div><div class="line">\<span class="comment">##offen use</span></div><div class="line">netstat -an|awk <span class="string">'/^tcp/ &#123;++S[$NF]&#125; END &#123;for (a in S)print a,S[a]&#125;'</span><span class="comment">#统计TCP状态</span></div></pre></td></tr></table></figure></p>
+<p>参数说明:(netstat -h)</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; -r, –route &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;display routing table</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; -I, –interfaces=&lt;Iface&gt; &nbsp; display interface table for &lt;Iface&gt;&nbsp;</p>
+<pre><code>&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;    #解释直接natstat -I 现实所有接口的网络信息 使用--interfaces=&amp;lt;Iface&amp;gt; 显示指定网卡信息。
+
+&lt;!--more--&gt;
+</code></pre><p>&nbsp; &nbsp; &nbsp; &nbsp; -i, –interfaces &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; display interface table</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; -g, –groups &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; display multicast group memberships</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; -s, –statistics &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; display networking statistics (like SNMP)#显示每个协议的统计信息</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; -M, –masquerade &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; display masqueraded connections</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; -v, –verbose &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;be verbose</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; -n, –numeric &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;don’t resolve names#显示实际地址，而不是对地址的解释或显示主机</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; –numeric-hosts &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;don’t resolve host names</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; –numeric-ports &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;don’t resolve port names</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; –numeric-users &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;don’t resolve user names</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; -N, –symbolic &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; resolve hardware names</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; -e, –extend &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; display other/more information</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; -p, –programs &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; display PID/Program name for sockets#常用现实进程的名称及pid</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; -c, –continuous &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; continuous listing</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; -l, –listening &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;display listening server sockets</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; -a, –all, –listening &nbsp; &nbsp; display all sockets (default: connected)</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; -o, –timers &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; display timers</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; -F, –fib &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;display Forwarding Information Base (default)</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; -C, –cache &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;display routing cache instead of FIB</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; -T, –notrim &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; stop trimming long addresses</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; -Z, –context &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;display SELinux security context for sockets</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &lt;Socket&gt;={-t|–tcp} {-u|–udp} {-S|–sctp} {-w|–raw} {-x|–unix} –ax25 –ipx –netrom</p>
+<p>&nbsp;netstat -an参数中state(awk $NF)含义:</p>
+<p>&nbsp;参考TCP的状态转换</p>
+<p>&nbsp;State</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;The state of the socket. Since there are no states in raw mode and usually no &nbsp;states &nbsp;used</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;in UDP, this column may be left blank. Normally this can be one of several values:</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;ESTABLISHED</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The socket has an established connection.#一个打开的链接数，总数即并发数</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;SYN_SENT</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The socket is actively attempting to establish a connection.</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;SYN_RECV</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A connection request has been received from the network.</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;FIN_WAIT1</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The socket is closed, and the connection is shutting down.</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;FIN_WAIT2</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Connection &nbsp;is closed, and the socket is waiting for a shutdown from the remote end.</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;TIME_WAIT</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The socket is waiting after close to handle packets still in the network.</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; #等待足够的时间来确保远程TCP接收到连接中断请求的确认</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;CLOSED The socket is not being used.</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;CLOSE_WAIT</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The remote end has shut down, waiting for the socket to close.</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;LAST_ACK</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The remote end has shut down, and the socket is closed. Waiting for acknowledgement.</p>
+<p>&nbsp; LISTEN&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;         &nbsp;The &nbsp;socket is listening for incoming connections. &nbsp;Such sockets are not included in the output unless you specify the –listening (-l) or –all (-a) option.</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;         &nbsp;#监听来自远程主机的TCP端口的连接请求，服务器在等待进入呼叫</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;CLOSING</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Both sockets are shut down but we still don’t have all our data sent.</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;UNKNOWN</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The state of the socket is unknown.</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[命令总结（一): find]]></title>
+      <url>https://www.mufen.me/linux/shells-find%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93.html</url>
+      <content type="html"><![CDATA[<p>find算是平时使用比较频繁的命令<br>总结一下(参考书籍和man find)<br>find 命令<br>find命令的一般形式如下:</p>
+<pre>
+find pathname -option [- print -exec -ok ...]
+</pre>
+
+<p>pathname 就是查找的目录路径 . 就是当前路径<br>-print: 表示find 命令将匹配的文件输出的标准输出中<br>-exec: 表示find命令对匹配的文件执行该参数锁给出的shell命令。相应命令的形式为<br>‘command’ {} \ ; #因为{}在shell中又特殊意义，因此要用\来转义。<br>-ok: 作用和-exec相同，但是会在执行命令的时候给出询问。推荐在执行rm mv chmod的命令前添加-ok</p>
+<a id="more"></a>
+<p>-option:（<em>表示常用）<br>-name </em> 按照文件名查找文件<br>-perm * e.g. find . -perm 755 -exec ls -l {} \; 找出当前目录下755权限的文件<br>-prune 直接使用可以不再当前目录查找。不过可以配合-path -prune -o过滤指定目录。<br>-user 按照文件所有者来查找<br>-group 按照所属组<br>-nogroup<br>-nouser</p>
+<p>-mtime -n|+n 按照文件 更改 时间来查找 -n表示n天内，+n指n天前<br>-atime … 按照文件的 访问 时间来查找<br>-ctime … 按照文件 创建 时间 来查找</p>
+<p>还有对应的分钟级别的<br>-mmin<br>-amin<br>-cmin</p>
+<p>-type 查找某个类型的文件（目录也是文件linux一切皆文件）<br>b: 表示块设备文件 一般都是/dev/下的文件<br>d: <em> 表示目录<br>c: 表示字符设备文件 #比如/dev/null /dev/zero tty什么的。<br>p: 表示管道文件 #<br>l: </em> 表示符号链接文件<br>f: * 表示普通文件 最为常用 推荐使用，能加快查找速度</p>
+<p>-size +/- n[cwbkMG] 查找文件大小为指定的大小 +表示大于 e.g. find . -size +19M<br>-depth: 查找文件时，首先查找当前目录的文件，在查询子目录。<br>-fstype: 在指定的文件系统中查找文件.查询/etc/fstab查看系统文件系统。</p>
+<p>-mount: 表示在查找文件时不跨越文件系统mount点<br>-newer file1 !file2 查找更改时间比file1早 是比file2晚的文件</p>
+<p>-follow 如果查找到的文件是链接文件就追踪到指向的文件。</p>
+<p>参考:《构建高可用linux服务器》于洪春</p>
+<p>优秀博客:</p>
+<p><a href="http://www.cnblogs.com/wanqieddy/archive/2011/06/09/2076785.html" target="_blank" rel="external">http://www.cnblogs.com/wanqieddy/archive/2011/06/09/2076785.html</a></p>
+<p>&nbsp;</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[saltstack分发ssh公钥]]></title>
+      <url>https://www.mufen.me/Docs-salt-pub-ssh.html</url>
+      <content type="html"><![CDATA[<p>&nbsp;</p>
+<p>1，首先在master端创建公钥<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa</div></pre></td></tr></table></figure></p>
+<p>2，创建/srv/salt/ssh文件夹<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir -pv /srv/salt/ssh</div></pre></td></tr></table></figure></p>
+<p>3，将公钥拷贝到/srv/salt/ssh文件夹中<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp /root/.ssh/id_rsa.pub /srv/salt/ssh/</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>4，分发到minion端上<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">salt ‘*’ ssh.set_auth_key_from_file root salt://ssh/id_rsa.pub</div></pre></td></tr></table></figure></p>
+<p>这样就可以直接使用ssh不用密码登陆了，不过第一次使用ssh连接需要添加ssh_known.</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[goaccess 分析nginx日志]]></title>
+      <url>https://www.mufen.me/linux/shells/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7-goaccess%E5%88%86%E6%9E%90%E6%97%A5%E5%BF%97.html</url>
+      <content type="html"><![CDATA[<p>以我自己的阿里云主机为例<br>环境:<br>CentOS6.5<br>LAMP<br>运行的wordpress</p>
+<p>yum源:阿里云的epel源<br>地址:<br>**<a href="http://mirrors.aliyun.com/help/epel" target="_blank" rel="external">http://mirrors.aliyun.com/help/epel</a></p>
+<p>**</p>
+<p>goaccess官网<br><a href="http://goaccess.io/" target="_blank" rel="external">http://goaccess.io/</a></p>
+<a id="more"></a>
+<p>&nbsp;</p>
+<p>安装goaccess</p>
+<p><pre class="lang:sh decode:true ">yum install -y goaccess</pre><br>&nbsp;</p>
+<p>配置crontab 每天晚上11点生成分析文件<br><strong>crontab -e</strong><br>输入以下内容</p>
+<p><pre class="lang:sh decode:true ">0  23  <em>  </em>  * /usr/bin/goaccess -d -f /var/log/nginx/access.log -a  &gt;/www/log/nginxlog$(date +%y%m%d).html 2&gt;/dev/null</pre><br>&nbsp;<br>然后配置阿里云的解析，做个log主机</p>
+<p>配置个nginx虚拟主机就行了</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Linux监控用户的即时操作]]></title>
+      <url>https://www.mufen.me/linux-Linux%E7%9B%91%E6%8E%A7%E7%94%A8%E6%88%B7%E7%9A%84%E5%8D%B3%E6%97%B6%E6%93%8D%E4%BD%9C.html</url>
+      <content type="html"><![CDATA[<p>利用<br>PROMPT_COMMAND</p>
+<p>在/etc/profile添加</p>
+<p>PROMPT_COMMAND=”history -a; $PROMPT_COMMAND”<br><a id="more"></a></p>
+<p>&nbsp;</p>
+<p>这样用户完成命令后就回history-a 将记录保存到$HOME/.bash_history里面<br>写个脚本即时监控这些文件即可。<br>比如<br>先修改<br>默认history路径比较好<br>HISTORY_FILE=/var/log/usercmd/$(whoami).log<br>然后监控<br>tail -f /root/.bash_history &gt;/var/log/usercmd/root.log</p>
+<p>如果有监控平台比如<br>可以在平台上监控这个日志，可以即时打印出来，也挺不错的。（那输入密码怎么办。。。。？？？）</p>
+<p>&nbsp;</p>
+<p>补充:<br>    此方法只能监控到已经完成的命令，不过想想，要监控用户正在输入的内容还挺难的，不知道有没有实现方法。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[一个mv命令引发的思考]]></title>
+      <url>https://www.mufen.me/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99-%E4%B8%80%E4%B8%AAmv%E5%91%BD%E4%BB%A4%E5%BC%95%E5%8F%91%E7%9A%84%E6%80%9D%E8%80%83.html</url>
+      <content type="html"><![CDATA[<pre>mv /* /www/html</pre>
+
+<p>就是这个罪魁祸首，<br>前天帮忙同学在腾讯云上配置LAMP+WORDPRESS环境<br>本来因为轻车熟路，一路畅通，都完成了后，我同学因为是在学web开发的，就想让我建个虚拟主机，放他自己的源码自己的网站，<br>没问题，easy。因为当时要准备去食堂就是站着敲命令的就<br>赶紧安装个scp工具就开始上传。传完了。解压，放到网站目录下，授权<br><a id="more"></a></p>
+<p>ok。<br>然后ls一下<br>然后发现ls不能用了，所有命令不能用了。<br>然后我查了我终端日志。发现我多打了个/ 醉了，整个根目录GG。然后我就傻了，同学也看着一愣愣的。我犯大错了。还好是新系统，只能重新做系统，重新搭建了。</p>
+<p>虽然一会功夫我就完成了，没出错，但是我到现在2天过去了，心情都不能平复。这如果是我工作上的机器，那我不是GG了。这也是我从接触LINUX到现在第一次出现这种事情。<br>我好好的总结了：</p>
+<h3 id="1，一定要对自己敲的每一个命令负责任"><a href="#1，一定要对自己敲的每一个命令负责任" class="headerlink" title="1，一定要对自己敲的每一个命令负责任"></a>1，一定要对自己敲的每一个命令负责任</h3><h3 id="2，能不用root操作的任务，坚决不适用root登录系统（都怪CentOS默认root）"><a href="#2，能不用root操作的任务，坚决不适用root登录系统（都怪CentOS默认root）" class="headerlink" title="2，能不用root操作的任务，坚决不适用root登录系统（都怪CentOS默认root）"></a>2，能不用root操作的任务，坚决不适用root登录系统（都怪CentOS默认root）</h3><h3 id="3，关键业务机器，要做好及时的备份，快照。"><a href="#3，关键业务机器，要做好及时的备份，快照。" class="headerlink" title="3，关键业务机器，要做好及时的备份，快照。"></a>3，关键业务机器，要做好及时的备份，快照。</h3><h3 id="4，3大命令必须非常谨慎-rm-rf-mv-chmod"><a href="#4，3大命令必须非常谨慎-rm-rf-mv-chmod" class="headerlink" title="4，3大命令必须非常谨慎 rm -rf     mv        chmod"></a>4，3大命令必须非常谨慎 rm -rf     mv        chmod</h3><p>&nbsp;</p>
+<p>2015.12.24<br>from OS X by skipper use Blogo</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[keepalived 安装]]></title>
+      <url>https://www.mufen.me/linux-keepalive%E5%AE%89%E8%A3%85.html</url>
+      <content type="html"><![CDATA[<p><a href="http://www.inpeace.cn/wp-content/uploads/2015/12/1450957123.gif" target="_blank" rel="external"><img src="http://www.inpeace.cn/wp-content/uploads/2015/12/1450957123.gif" alt=""></a></p>
+<p>keepalived<br>软件类型：高可用集群软件</p>
+<pre><code>VRRP协议介绍
+    虚拟路由器冗余协议
+    通过竞选协议机制，解决静态路由的单点故障
+    使用IP多播方式实现通信
+    master发送数据包，备份收数据包，当备一定时间内收不到的时候，接管master
+</code></pre><a id="more"></a>
+<p>功能<br>        healthcheck</p>
+<p>failover</p>
+<p>安装配置<br>    依赖openssl</p>
+<p><strong>yum install openssl openssl-devel -y</strong></p>
+<p>下载<br>     <strong>wget <a href="http://www.keepalived.org/software/keepalived-1.1.19.tar.gz" target="_blank" rel="external">http://www.keepalived.org/software/keepalived-1.1.19.tar.gz</a>
+</strong><br>    <strong> tar xf ke~<br>     cd keepaliv~</strong></p>
+<p><strong> ./configure</strong><br>         编译参数 –sysconf=/etc</p>
+<p><strong>make &amp;&amp; make install </strong></p>
+<p>配置</p>
+<p>拷贝启动脚本<br>     <strong>cp /usr/local/etc/rc.d/init.d/keepalived /etc/init.d/</strong></p>
+<p>拷贝系统配置文件<br>     <strong>cp /usr/local/etc/sysconfig/keepalived /etc/sysconfig/</strong></p>
+<p>创建keepalived配置文件目录<br>    <strong> mkdir -p /etc/keepalived</strong></p>
+<p><strong>cp /usr/local/etc/keepalived/keepalived.conf /etc/keepalived/</strong></p>
+<p><strong> cp /usr/local/sbin/keepalived /usr/sbin/</strong></p>
+<pre><code> 启动
+** /etc/init.d/keepalived start
+ ps -ef|grep keep**
+</code></pre><p>关闭<br>     **/etc/init.d/keepalived stop</p>
+<p>**</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[tcpdump]]></title>
+      <url>https://www.mufen.me/Docs-tcpdump.html</url>
+      <content type="html"><![CDATA[<p><a href="http://www.cnblogs.com/ggjucheng/archive/2012/01/14/2322659.html" target="_blank" rel="external">http://www.cnblogs.com/ggjucheng/archive/2012/01/14/2322659.html</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[正则表达式]]></title>
+      <url>https://www.mufen.me/Docs-python-reg.html</url>
+      <content type="html"><![CDATA[<p><a href="http://deerchao.net/tutorials/regex/regex.htm" target="_blank" rel="external">http://deerchao.net/tutorials/regex/regex.htm</a></p>
+<p>python正则<br><a href="http://www.cnblogs.com/fnng/archive/2013/05/20/3089816.html" target="_blank" rel="external">python正则表达式</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[选择自己的学习路线]]></title>
+      <url>https://www.mufen.me/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99-%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF.html</url>
+      <content type="html"><![CDATA[<p>既然是个学习路线，应该是主线带从线，要先找到自己的主线，在主线的学习过程中，扩展开来。<br>不能学一个丢一个。要复合式，以应用为目的的学习。要以自己想要解决的问题为出发点去获取知识，解决问题。<br>当然这是我自己的。<br>我想我应该有自己的路线。<br>加油。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[date 命令]]></title>
+      <url>https://www.mufen.me/Docs-date%E5%91%BD%E4%BB%A4.html</url>
+      <content type="html"><![CDATA[<p>e.g.,<br>&nbsp;<br><strong><pre class="lang:sh decode:true ">echo “skipper” &gt;&gt;yes.$(date +%y%m%d-%H%M%S).thankyou<br></pre></strong></p>
+<p>date 在shell中使用的标准格式一般是</p>
+<pre class="lang:sh decode:true ">date + %char</pre> 
+
+<p>char 可以是以下内容（date –help）<br><a id="more"></a><br>  <pre><br>  %%   a literal %<br>  %a   locale’s abbreviated weekday name (e.g., Sun)<br>  %A   locale’s full weekday name (e.g., Sunday)<br>  %b   locale’s abbreviated month name (e.g., Jan)<br>  %B   locale’s full month name (e.g., January)<br>  %c   locale’s date and time (e.g., Thu Mar  3 23:05:25 2005)<br>  %C   century; like %Y, except omit last two digits (e.g., 20)<br>  %d   day of month (e.g, 01)<br>  %D   date; same as %m/%d/%y<br>  %e   day of month, space padded; same as %_d<br>  %F   full date; same as %Y-%m-%d<br>  %g   last two digits of year of ISO week number (see %G)<br>  %G   year of ISO week number (see %V); normally useful only with %V<br>  %h   same as %b<br>  %H   hour (00..23)<br>  %I   hour (01..12)<br>  %j   day of year (001..366)<br>  %k   hour ( 0..23)<br>  %l   hour ( 1..12)<br>  %m   month (01..12)<br>  %M   minute (00..59)<br>  %n   a newline<br>  %N   nanoseconds (000000000..999999999)<br>  %p   locale’s equivalent of either AM or PM; blank if not known<br>  %P   like %p, but lower case<br>  %r   locale’s 12-hour clock time (e.g., 11:11:04 PM)<br>  %R   24-hour hour and minute; same as %H:%M<br>  %s   seconds since 1970-01-01 00:00:00 UTC<br>  %S   second (00..60)<br>  %t   a tab<br>  %T   time; same as %H:%M:%S<br>  %u   day of week (1..7); 1 is Monday<br>  %U   week number of year, with Sunday as first day of week (00..53)<br>  %V   ISO week number, with Monday as first day of week (01..53)<br>  %w   day of week (0..6); 0 is Sunday<br>  %W   week number of year, with Monday as first day of week (00..53)<br>  %x   locale’s date representation (e.g., 12/31/99)<br>  %X   locale’s time representation (e.g., 23:13:48)<br>  %y   last two digits of year (00..99)<br>  %Y   year<br>  %z   +hhmm numeric timezone (e.g., -0400)<br>  %:z  +hh:mm numeric timezone (e.g., -04:00)<br>  %::z  +hh:mm:ss numeric time zone (e.g., -04:00:00)<br>  %:::z  numeric time zone with : to necessary precision (e.g., -04, +05:30)<br>  %Z   alphabetic time zone abbreviation (e.g., E<br></pre></p>
+<p>个人常用:</p>
+<pre class="lang:sh decode:true " title="e.g.">date +%F    #  %F   full date; same as %Y-%m-%d
+date +%X    #  %X   locale's time representation (e.g., 23:13:48)</pre> ]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[pip 更换aliyun的源]]></title>
+      <url>https://www.mufen.me/Docs-pip-use-aliyun-mirrors.html</url>
+      <content type="html"><![CDATA[<p> 执行以下一条命令即可</p>
+<p> pip</p>
+<pre class="lang:sh decode:true ">mkdir $HOME/.pip 2&gt;/dev/null;printf "[global]\nindex-url=http://mirrors.aliyun.com/pypi/simple\n[install]\ntrusted-host=mirrors.aliyun.com" > $HOME/.pip/pip.conf</pre> 
+
+<p>easy_install</p>
+<pre class="lang:sh decode:true ">printf "[easy_install]\nindex-url=http://mirrors.aliyun.com/pypi/simple" &gt;$HOME/.pydistutils.cfg</pre> ]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[mysql单实例安装配置]]></title>
+      <url>https://www.mufen.me/linux/mysql/%E9%85%8D%E7%BD%AE-mysql%E5%8D%95%E5%AE%9E%E4%BE%8B%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE.html</url>
+      <content type="html"><![CDATA[<p>mysql发布的版本<br>alpha beta RC GA</p>
+<p>升级版本过程<br>先评估版本，导出SQL，安装新版本，导入SQL</p>
+<p>主流版本<br>5.5<br>选择版本<br>选择发布6个月左右的没有大的bug修复的GA版本<br>mysql安装方法<br>1，yum<br>对mysql要求不太高的公司使用<br><em>大公司将编译好的软件打包成rpm包，搭建yum仓库，<br>2，常规方式编译安装<br>3，*</em>采用cmake方式编译安装MYSQL<br>4采用二进制方式免编译安装MySQL<br>cmake方法介绍<br><a id="more"></a></p>
+<p>cmake软件</p>
+<pre class="lang:sh decode:true ">wget http://file.inpeace.cn/sqllearn/cmake-2.8.8.tar.gz
+tar xf cmake-2.8.8.tar.gz
+cd cmake-2.8.8
+./configure</pre>
+等输出以下结果的时候
+bootstrapped. Now run gmake.
+执行
+<pre class="lang:sh decode:true  ">make &amp;&amp; make install
+完成后执行
+cd ../</pre>
+准备编译mysql5.5
+<pre class="lang:sh decode:true ">**依赖包
+yum install ncurses-devel -y
+
+下载mysql5.5
+wget http://file.inpeace.cn/sqllearn/mysql-5.5.32.tar.gz</pre>
+创建用户和组
+<pre class="lang:sh decode:true ">groupadd mysql
+useradd mysql -s /sbin/nologin -M -g mysql</pre>
+解压编译MySQL
+<pre class="lang:sh decode:true ">tar zxf mysql-5.5.32.tar.gz
+cd mysql-5.5.32
+
+cmake . -DCMAKE_INSTALL_PREFIX=/apps/mysql-5.5.32 \
+-DMYSQL_DATADIR=/apps/mysql-5.5.32/data \
+-DMYSQL_UNIX_ADDR=/apps/mysql-5.5.32/tmp/mysql.sock \
+-DDEFAULT_CHARSET=utf8 \
+-DDEFAULT_COLLATION=utf8_general_ci \
+-DEXTRA_CHARSETS=gbk,gb2312,utf8,ascii \
+-DENABLED_LOCAL_INFILE=ON \
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \
+-DWITH_FEDERATED_STORAGE_ENGINE=1 \
+-DWITH_BLACKHOLE_STORAGE_ENGINE=1 \
+-DWITHOUT_EXAMPLE_STORAGE_ENGINE=1 \
+-DWITHOUT_PARTITION_STORAGE_ENGINE=1 \
+-DWITH_FAST_MUTEXES=1 \
+-DWITH_ZLIB=bundled \
+-DENABLED_LOCAL_INFILE=1 \
+-DWITH_READLINE=1 \
+-DWITH_EMBEDDED_SERVER=1 \
+-DWITH_DEBUG=0</pre>
+编译安装
+<pre class="lang:sh decode:true ">make &amp;&amp; make install</pre>
+设置环境变量
+<pre class="lang:sh decode:true ">echo 'export PATH="/apps/mysql-5.5.32/bin:$PATH"' &gt;&gt;/etc/profile
+source /etc/profile</pre>
+链接
+<pre class="lang:sh decode:true ">ln -s /apps/mysql-5.5.32 /apps/mysql
+</pre>
+权限
+<pre class="lang:sh decode:true ">chown -R mysql:mysql /apps/mysql-5.5.32/
+chmod -R 1777 /tmp/
+</pre>
+标准单实例
+初始化
+<pre class="lang:sh decode:true ">cd /apps/mysql/scripts/
+./mysql_install_db --basedir=/apps/mysql --datadir=/apps/mysql/data/ --user=mysql
+</pre>
+初始化成功的输出：
+<pre class="lang:sh decode:true ">To start mysqld at boot time you have to copy
+support-files/mysql.server to the right place for your system
+
+PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER !
+To do so, start the server, then issue the following commands:
+**
+/apps/mysql/bin/mysqladmin -u root password 'new-password'
+/apps/mysql/bin/mysqladmin -u root -h mysql password 'new-password'
+
+Alternatively you can run:
+/apps/mysql/bin/mysql_secure_installation
+
+which will also give you the option of removing the test
+databases and anonymous user created by default. This is
+strongly recommended for production servers.
+
+See the manual for more instructions.
+
+You can start the MySQL daemon with:
+cd /apps/mysql ; /apps/mysql/bin/mysqld_safe &amp;amp;
+
+You can test the MySQL daemon with mysql-test-run.pl
+cd /apps/mysql/mysql-test ; perl mysql-test-run.pl</pre>
+复制配置文件
+<pre class="lang:sh decode:true ">cp /apps/mysql/support-files/my-small.cnf /etc/my.cnf</pre>
+复制启动脚本
+<pre class="lang:sh decode:true ">cp /apps/mysql/support-files/mysql.server /etc/init.d/mysqld</pre>
+添加权限
+<pre class="lang:sh decode:true ">chmod +x /etc/init.d/mysqld</pre>
+启动
+<pre class="lang:sh decode:true ">/etc/init.d/mysqld start</pre>
+设置开机启动
+<pre class="lang:sh decode:true ">chkconfig mysqld on</pre>
+查看端口
+<pre class="lang:sh decode:true ">netstat -tunlp|grep 3306
+lsof -i :3306</pre>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[echo $? 检测命令成功还是失败]]></title>
+      <url>https://www.mufen.me/linux-%E5%88%A4%E6%96%AD%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C.html</url>
+      <content type="html"><![CDATA[<p>FOR BEGINNER</p>
+<p>当你做个很长的命令，比如编译啊，安装啊，或者什么的时候，新手看太懂输出的时候，请在执行完成后</p>
+<p>在执行以下命令</p>
+<p><pre class="lang:sh decode:true ">echo $?</pre><br>&nbsp;</p>
+<p>0 表示成功</p>
+<p>非0表示失败</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[CentOS安装开发环境]]></title>
+      <url>https://www.mufen.me/linux/%E9%85%8D%E7%BD%AE-CentOS%E5%AE%89%E8%A3%85%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83.html</url>
+      <content type="html"><![CDATA[<p><pre class="lang:sh decode:true ">包括gcc 开发库，为以后编译各种软件做准备</pre></p>
+<p>yum groupinstall “Compatibility libraries” “Base” “Development tools” -y</p>
+<p>yum groupinstall “debugging Tools” “Dial-up Networking Support” -y<br>&nbsp;</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[mysql安全用户的做法，删除root账户]]></title>
+      <url>https://www.mufen.me/mysql-mysql%E5%AE%89%E5%85%A8%E7%94%A8%E6%88%B7%E7%9A%84%E5%81%9A%E6%B3%95.html</url>
+      <content type="html"><![CDATA[<p>全部删除用户，添加额外管理员</p>
+<pre class="lang:mysql decode:true ">
+delete from mysql.user;
+grant all privileges on *.* to system@'localhost' identified by 'new-password' with grant option;
+flush privileges;</pre> 
+
+<pre><code>修改密码
+</code></pre><pre class="lang:mysql decode:true ">
+update mysql.user set password=PASSWORD('yourpw') where user='user';
+flush privileges;</pre> 
+
+<pre><code>重新登录
+</code></pre><pre class="lang:mysql decode:true ">
+mysql -u system -p</pre> ]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[xshell 或SecureCRT传输文件工具]]></title>
+      <url>https://www.mufen.me/OSX-lrzsz%E4%BD%BF%E7%94%A8.html</url>
+      <content type="html"><![CDATA[<p>lrzsz</p>
+<p>安装方法<br>centos</p>
+<pre class="lang:sh decode:true "> yum install -y lrzsz</pre> 
+
+<p>使用方法</p>
+<pre class="lang:sh decode:true ">sz file 将文件发送出来
+rz -y 将文件传输都linux中去</pre> ]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[判断linux系统是32位还是64位的一个命令]]></title>
+      <url>https://www.mufen.me/linux-%E5%88%A4%E6%96%ADcpu%E6%9E%B6%E6%9E%84.html</url>
+      <content type="html"><![CDATA[ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">getconf LONG_BIT</div></pre></td></tr></table></figure>
+<p>使用uname -m 也是可以的但是偶然发现的这个命令,感觉高大上</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[vim 配置tab为4个空格]]></title>
+      <url>https://www.mufen.me/Docs-vim-tab-4-space.html</url>
+      <content type="html"><![CDATA[<p>在用户目录下新建<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim ~/.vimrc</div></pre></td></tr></table></figure></p>
+<p>添加以下代码后，重启vim即可实现按TAB产生4个空格<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">set</span> ts=4  </div><div class="line"><span class="built_in">set</span> expandtab</div></pre></td></tr></table></figure></p>
+<p>以后再文档里在详细研究vim的配置.</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[学习是个反复的回顾的历程，学习记录非常关键]]></title>
+      <url>https://www.mufen.me/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99-%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%80%9D%E8%80%83.html</url>
+      <content type="html"><![CDATA[<p>学习的过程，如果没有复习，那么感觉=只是知道并没有会，<span id="transmark" style="display: none; width: 0px; height: 0px;"></span></p>
+<p>会这个词，可能因人而异，有人认为会就是我知道是什么东西，给我时间我能搞定，</p>
+<p>曾经我也是这样认为，我一直要求自己要多了解，认为，忘记是正常的，但是我却忘记了，给自己复习留下很好的记录。</p>
+<p>我一直都是潦草的，零散的记录，有写在onenote，有写在os x note,还有写在文本文件里面。</p>
+<p>今天我做iptables的实验的时候，感觉乱七八糟的，不能很有效的找到记录，快速的回想起来内容，</p>
+<p>这不是我想要的结果。</p>
+<p>所以以后要对学习记录，包括代码，笔记，能做统一的管理。有条理性。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[用python设定saltstack的自定义grains]]></title>
+      <url>https://www.mufen.me/linux/python-%E7%94%A8python%E8%AE%BE%E5%AE%9Asaltstack%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89grains.html</url>
+      <content type="html"><![CDATA[<p>参考官方文档<br><a href="http://docs.saltstack.cn/zh_CN/latest/topics/targeting/grains.html#targeting-grains" target="_blank" rel="external">http://docs.saltstack.cn/zh_CN/latest/topics/targeting/grains.html#targeting-grains</a><br>The grains interface is derived by executing all of the “public” functions found in the modules located in the grains package or the custom grains directory. The functions in the modules of the grains must return a Python dict, where the keys in the dict are the names of the grains and the values are the values.</p>
+<p>Custom grains should be placed in a _grains directory located under the file_roots specified by the master config file. The default path would be /srv/salt/_grains. Custom grains will be distributed to the minions when <strong>state.highstat</strong>e is run, or by executing the <strong>saltutil.sync_grains</strong> or <strong>saltutil.sync_all</strong> functions.<br><a id="more"></a></p>
+<p>Grains are easy to write, and only need to return a dictionary. A common approach would be code something similar to the following:</p>
+<pre class="lang:default decode:true ">#!/usr/bin/env python
+def yourfunction():
+     # initialize a grains dictionary
+     grains = {}
+     # Some code for logic that sets grains like
+     grains['yourcustomgrain']=True
+     grains['anothergrain']='somevalue'
+     return grains
+</pre> 
+
+<p>举个例子：配置web服务用到的max_open_file</p>
+<pre class="lang:default decode:true ">#!/usr/bin/env python
+
+import os,sys,commands
+
+def Grains_openfile():
+        '''
+        use ulimit -n get max_open_file then return to grians
+        by skipper
+        inpeace.cn
+        '''
+        grains = {}
+        _open_file=65536
+        try:
+                getulimit=commands.getstatusoutput('source /etc/profile;ulimit -n')
+        except Exception,e:
+                pass
+        if getulimit[0]==0:
+                _open_file=int(getulimit[1])
+        grains['max_open_file'] = _open_file
+        return grains</pre> 
+
+<p>然后执行 </p>
+<pre class="lang:default decode:true ">salt '*' saltutil.sync_all</pre> 
+
+<p>使用 </p>
+<pre class="lang:default decode:true ">salt '*' grains.item max_open_file</pre> 
+
+<p>查看结果</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[linux备份文件权限]]></title>
+      <url>https://www.mufen.me/linux-linux%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90.html</url>
+      <content type="html"><![CDATA[<p>备份文件权限</p>
+<p>umount 所有不需要被处理的设备，例如NTFS/FAT 这类不能保存权限的分区，可能的话也umount 你的home（~），然后使用getfacl 保存所有文件的权限，例如</p>
+<pre class="lang:default decode:true ">sudo getfacl -R / &gt;sysfacl-root-$(date +%Y-%m-%d).facl </pre> 
+
+<p>保管好这个权限存档文件，有朝一日手滑之后你会想起来它的。<br>恢复文件权限</p>
+<a id="more"></a>
+<p>同样umount 所有不需要被处理的设备，然后从文件权限备份中批量恢复权限</p>
+<pre class="lang:default decode:true ">sudo setfacl --restore=ur_facl_bak_file</pre> 
+
+<p>没了，有效防止chmod -R 755 /etc 之类的灾难。<br>制约危险指令</p>
+<p>自不必说的首先就是 chmod 和 rm 这两个危险指令应该尽量受到制约，它们90% 悲剧的源头</p>
+<pre class="lang:default decode:true ">
+alias chmod='/usr/bin/env chmod --preserve-root'
+alias rm='/usr/bin/env rm -I --preserve-root'
+</pre> 
+
+<p>然而实质性的东西并没有改变，《UNIX痛恨者手册》中就花了很大的篇幅来批评 rm 这类不负责任的指令。Linux 把这些都一股脑推给了用户，然而并没有多少用户愿意去封装这些指令，或者干脆做一个更加安全的实现。这些原始的指令仍然被高频率使用。<br>类似的，你或许还要 alias 一些其他的指令：</p>
+<pre class="lang:default decode:true ">alias cp='/usr/bin/env cp -i'
+alias mv='/usr/bin/env mv -i'
+alias ln='/usr/bin/env ln -i'
+alias chown='/usr/bin/env chown --preserve-root'
+alias chgrp='/usr/bin/env chgrp --preserve-root'</pre> 
+
+<p>原帖<br><a href="http://blog.csdn.net/ispeller/article/details/45534323" target="_blank" rel="external">http://blog.csdn.net/ispeller/article/details/45534323</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[screen  一个实用的工具]]></title>
+      <url>https://www.mufen.me/Docs-screen-usage.html</url>
+      <content type="html"><![CDATA[<p>这几天因为水晶头的原因导致我登陆远程ssh的时候老是掉线，然后就是悲剧。就想找一个有没有能在我掉线的时候，帮我保存ssh状态的软件。果然让我找到了，就是这个screen。<br>centos/rhel 直接使用 </p>
+<pre class="lang:sh decode:true ">yum install screen</pre> 
+
+<p> 即可使用</p>
+<p>常用方法<br>用name创建一个screen</p>
+<pre class="lang:sh decode:true ">screen -S name </pre> 
+
+<p>退出可以使用exit<br><a id="more"></a></p>
+<p>如果想暂时离开一会还要用就用<br>ctrl -a d<br>就是按住ctrl 然后依次按下a和d</p>
+<p>screen -ls 查看已经有的screen</p>
+<pre class="lang:sh decode:true ">[root@xhmysql ~]# screen -ls
+There are screens on:
+ 21065.mysql (Detached)
+ 3909.x (Detached)
+ Sockets in /var/run/screen/S-root.</pre> 
+
+<p>恢复screen<br>screen -r pid 恢复screen</p>
+<pre class="lang:sh decode:true ">[root@xhmysql ~]# screen -D -r 21065
+</pre> 
+
+<p>tips:</p>
+<p>可以使用screen -D -r pid 恢复还被占用的screen.<br>&nbsp;</p>
+<p>&nbsp;</p>
+<p>一个IBM的文档写的非常好<br><a href="http://www.ibm.com/developerworks/cn/linux/l-cn-screen/" target="_blank" rel="external">http://www.ibm.com/developerworks/cn/linux/l-cn-screen/</a><br>这个也不错<br><a href="http://www.cnblogs.com/ywl925/p/3604530.html" target="_blank" rel="external">http://www.cnblogs.com/ywl925/p/3604530.html</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[linux proc目录学习（转）]]></title>
+      <url>https://www.mufen.me/linux-linux%20proc%20%E7%9B%AE%E5%BD%95.html</url>
+      <content type="html"><![CDATA[<pre><code>Linux-proc 
+
+proc 文件系统
+
+在Linux中有额外的机制可以为内核和内核模块将信息发送给进程-- /proc 文件系统。最初设计的目的是允许更方便的对进程信息进行访问（因此得名），现在它被每一个有有趣的东西报告的内核使用，例如/proc/modules 有模块的列表/proc/meminfo 有内存使用的统计表。
+</code></pre><a id="more"></a>
+<pre><code>　　使用proc 文件系统的方法和使用设备驱动程序非常相似--创建一个/proc 文件需要的所有信息的结构，包括任何处理函数的指针（在我们的例子中只有一个，当某人试图从/proc 文件读时调用的那一个）。然后，init_module 在内核中登记该结构而cleanup_module 注销它。
+
+　　我们使用proc_register_dynamic(这是在2.0 版中的情况，在2.2 版中如果我们将节点设置为0系统将自动为我们做到) 的原因是我们不想预先决定我们的文件的节点数字，而是为防止冲突而由内核决定它。通常的文件系统存在于磁盘上而不是内存中（/proc 在内存中），在这中情况下，节点数是是指向文件的索引节点所在的磁盘位置的指针。节点包含文件的信息（例如文件的存取权限）和指向磁盘位置或文件数据可以被找到的几个位置的指针。
+
+　　因为当文件被打开或关闭的时候不能得到调用，所以在这个模块中没有地方放置MOD_INC_USE_COUNT 和MOD_DEC_USE_COUNT，并且，如果文件被打开随后模块被移除，我们没有办法避免后果。在下一章我们会看到一个艰难的但更灵活的可以处理/proc文件的实现方式，它也可以让我们防止那个问题。
+
+http://www.2cto.com/os/201202/119552.html
+
+Linux 内核提供了一种通过/proc 文件系统，在运行时访问内核内部数据结构、改变内核设置的机制。尽管在各种硬件平台上的Linux 系统的/proc 文件系统的基本概念都是相同的，但本文只讨论基于intel x86 架构的Linux /proc 文件系统。
+
+_________________ _________________ _________________
+
+/proc --- 一个虚拟文件系统
+
+/proc 文件系统是一种内核和内核模块用来向进程(process) 发送信息的机制(所以叫做/proc)。这个伪文件系统让你可以和内核内部数据结构进行交互，获取 有关进程的有用信息，在运行中(on the fly) 改变设置(通过改变内核参数)。 与其他文件系统不同，/proc 存在于内存之中而不是硬盘上。如果你察看文件/proc/mounts (和mount 命令一样列出所有已经加载的文件系统)，你会看到其中 一行是这样的：
+
+grep proc /proc/mounts
+/proc /proc proc rw 0 0
+
+/proc 由内核控制，没有承载/proc 的设备。因为/proc 主要存放由内核控制的状态信息，所以大部分这些信息的逻辑位置位于内核控制的内存。对/proc 进行一次&apos;ls -l&apos; 可以看到大部分文件都是0 字节大的；不过察看这些文件的时候，确实可以看到一些信息。这怎么可能？这是因为/proc 文件系统和其他常规的文件系统一样把自己注册到虚拟文件系统层(VFS) 了。然而，直到当VFS 调用它，请求文件、目录的i-node 的时候，/proc 文件系统才根据内核中的信息建立相应的文件和目录。
+
+加载proc 文件系统
+
+如果系统中还没有加载proc 文件系统，可以通过如下命令加载proc 文件系统：
+
+mount -t proc proc /proc
+上述命令将成功加载你的proc 文件系统。更多细节请阅读mount 命令的man page。
+
+察看/proc 的文件
+
+/proc 的文件可以用于访问有关内核的状态、计算机的属性、正在运行的进程的状态等信息。大部分/proc 中的文件和目录提供系统物理环境最新的信息。尽管/proc 中的文件是虚拟的，但它们仍可以使用任何文件编辑器或像&apos;more&apos;, &apos;less&apos;或&apos;cat&apos;这样的程序来查看。当编辑程序试图打开一个虚拟文件时，这个文件就通过内核中的信息被凭空地(on the fly) 创建了。这是一些我从我的系统中得到的一些有趣结果：
+
+$ ls -l /proc/cpuinfo
+-r--r--r-- 1 root root 0 Dec 25 11:01 /proc/cpuinfo
+
+$ file /proc/cpuinfo
+/proc/cpuinfo: empty
+
+$ cat /proc/cpuinfo
+
+processor : 0
+vendor_id : GenuineIntel
+cpu family : 6
+model : 8
+model name : Pentium III (Coppermine)
+stepping : 6
+cpu MHz : 1000.119
+cache size : 256 KB
+fdiv_bug : no
+hlt_bug : no
+sep_bug : no
+f00f_bug : no
+coma_bug : no
+fpu : yes
+fpu_exception : yes
+cpuid level : 2
+wp : yes
+flags : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca
+cmov pat pse36 mmx fxsr xmm
+bogomips : 1998.85
+
+processor : 3
+vendor_id : GenuineIntel
+cpu family : 6
+model : 8
+model name : Pentium III (Coppermine)
+stepping : 6
+cpu MHz : 1000.119
+cache size : 256 KB
+fdiv_bug : no
+hlt_bug : no
+sep_bug : no
+f00f_bug : no
+coma_bug : no
+fpu : yes
+fpu_exception : yes
+cpuid level : 2
+wp : yes
+flags : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca
+cmov pat pse36 mmx fxsr xmm
+bogomips : 1992.29
+
+这是一个从双CPU 的系统中得到的结果，上述大部分的信息十分清楚地给出了这个系统的有用的硬件信息。有些/proc 的文件是经过编码的，不同的工具可以被用来解释这些编码过的信息并输出成可读的形式。这样的工具包括：&apos;top&apos;, &apos;ps&apos;, &apos;apm&apos; 等。
+
+得到有用的系统/内核信息
+
+proc 文件系统可以被用于收集有用的关于系统和运行中的内核的信息。下面是一些重要的文件：
+
+* /proc/cpuinfo - CPU 的信息(型号, 家族, 缓存大小等)
+* /proc/meminfo - 物理内存、交换空间等的信息
+* /proc/mounts - 已加载的文件系统的列表
+* /proc/devices - 可用设备的列表
+* /proc/filesystems - 被支持的文件系统
+* /proc/modules - 已加载的模块
+* /proc/version - 内核版本
+* /proc/cmdline - 系统启动时输入的内核命令行参数
+
+proc 中的文件远不止上面列出的这么多。想要进一步了解的读者可以对/proc 的每一个文件都&apos;more&apos;一下或读参考文献[1]获取更多的有关/proc 目录中的文件的信息。我建议使用&apos;more&apos;而不是&apos;cat&apos;，除非你知道这个文件很小，因为有些文件(比如kcore) 可能会非常长。
+
+有关运行中的进程的信息
+
+/proc 文件系统可以用于获取运行中的进程的信息。在/proc 中有一些编号的子目录。每个编号的目录对应一个进程id (PID)。这样，每一个运行中的进程/proc 中都有一个用它的PID 命名的目录。这些子目录中包含可以提供有关进程的状态和环境的重要细节信息的文件。让我们试着查找一个运行中的进程。
+
+$ ps -aef | grep mozilla
+root 32558 32425 8 22:53 pts/1 00:01:23 /usr/bin/mozilla
+
+上述命令显示有一个正在运行的mozilla 进程的PID 是32558。相对应的，/proc 中应该有一个名叫32558 的目录
+
+$ ls -l /proc/32558
+total 0
+-r--r--r-- 1 root root 0 Dec 25 22:59 cmdline
+-r--r--r-- 1 root root 0 Dec 25 22:59 cpu
+lrwxrwxrwx 1 root root 0 Dec 25 22:59 cwd -&gt; /proc/
+-r-------- 1 root root 0 Dec 25 22:59 environ
+lrwxrwxrwx 1 root root 0 Dec 25 22:59 exe -&gt; /usr/bin/mozilla*
+dr-x------ 2 root root 0 Dec 25 22:59 fd/
+-r--r--r-- 1 root root 0 Dec 25 22:59 maps
+-rw------- 1 root root 0 Dec 25 22:59 mem
+-r--r--r-- 1 root root 0 Dec 25 22:59 mounts
+lrwxrwxrwx 1 root root 0 Dec 25 22:59 root -&gt; //
+-r--r--r-- 1 root root 0 Dec 25 22:59 stat
+-r--r--r-- 1 root root 0 Dec 25 22:59 statm
+-r--r--r-- 1 root root 0 Dec 25 22:59 status
+
+文件&quot;cmdline&quot; 包含启动进程时调用的命令行。&quot;envir&quot; 进程的环境变两。&quot;status&quot; 是进程的状态信息，包括启动进程的用户的用户ID (UID) 和组ID(GID) ，父进程ID (PPID)，还有进程当前的状态，比如&quot;Sleelping&quot;和&quot;Running&quot;。每个进程的目录都有几个符号链接，&quot;cwd&quot;是指向进程当前工作目录的符号链接，&quot;exe&quot;指向运行的进程的可执行程序，&quot;root&quot;指向被这个进程看作是根目录的目录(通常是&quot;/&quot;)。目录&quot;fd&quot;包含指向进程使用的文件描述符的链接。&quot;cpu&quot;仅在运行SMP 内核时出现，里面是按CPU 划分的进程时间。
+
+/proc/self 是一个有趣的子目录，它使得程序可以方便地使用/proc 查找本进程地信息。/proc/self 是一个链接到/proc 中访问/proc 的进程所对应的PID 的目录的符号链接。
+
+通过/proc 与内核交互
+
+上面讨论的大部分/proc 的文件是只读的。而实际上/proc 文件系统通过/proc 中可读写的文件提供了对内核的交互机制。写这些文件可以改变内核的状态，因而要慎重改动这些文件。/proc/sys 目录存放所有可读写的文件的目录，可以被用于改变内核行为。
+
+/proc/sys/kernel - 这个目录包含反通用内核行为的信息。/proc/sys/kernel/{domainname, hostname} 存放着机器/网络的域名和主机名。这些文件可以用于修改这些名字。
+
+$ hostname
+machinename.domainname.com
+
+$ cat /proc/sys/kernel/domainname
+domainname.com
+
+$ cat /proc/sys/kernel/hostname
+machinename
+
+$ echo &quot;new-machinename&quot; &gt; /proc/sys/kernel/hostname
+
+$ hostname
+new-machinename.domainname.com
+
+这样，通过修改/proc 文件系统中的文件，我们可以修改主机名。很多其他可配置的文件存在于/proc/sys/kernel/。这里不可能列出所有这些文件，读者可以自己去这个目录查看以得到更多细节信息。
+另一个可配置的目录是/proc/sys/net。这个目录中的文件可以用于修改机器/网络的网络属性。比如，简单修改一个文件，你可以在网络上瘾藏匿的计算机。
+
+$ echo 1 &gt; /proc/sys/net/ipv4/icmp_echo_ignore_all
+
+这将在网络上瘾藏你的机器，因为它不响应icmp_echo。主机将不会响应其他主机发出的ping 查询。
+
+$ ping machinename.domainname.com
+no answer from machinename.domainname.com
+
+要改回缺省设置，只要
+
+$ echo 0 &gt; /proc/sys/net/ipv4/icmp_echo_ignore_all
+
+/proc/sys 下还有许多其它可以用于改变内核属性。读者可以通过参考文献[1], [2] 获取更多信息。
+
+结论
+
+/proc 文件系统提供了一个基于文件的Linux 内部接口。它可以用于确定系统的各种不同设备和进程的状态。对他们进行配置。因而，理解和应用有关这个文件系统的知识是理解你的Linux 系统的关键。
+
+原文：http://www.sudu.cn/info/html/edu/20070101/292381.html
+
+什么是proc文件系统
+proc文件系统是一个伪文件系统，它只存在内存当中，而不占用外存空间。它以文件系统的方式为访问系统内核数据的操作提供接口。用户和应用程序可以通过proc得到系统的信息，并可以改变内核的某些参数。由于系统的信息，如进程，是动态改变的，所以用户或应用程序读取proc文件时，proc文件系统是动态从系统内核读出所需信息并提交的。它的目录结构如下：
+目录名称 目录内容
+apm 高级电源管理信息
+cmdline 内核命令行
+Cpuinfo 关于Cpu信息
+Devices 可以用到的设备（块设备/字符设备）
+Dma 使用的DMA通道
+Filesystems 支持的文件系统
+Interrupts 中断的使用
+Ioports I/O端口的使用
+Kcore 内核核心印象
+Kmsg 内核消息
+Ksyms 内核符号表
+Loadavg 负载均衡
+Locks 内核锁
+Meminfo 内存信息
+Misc 杂项
+Modules 加载模块列表
+Mounts 加载的文件系统
+Partitions 系统识别的分区表
+Rtc 实时时钟
+Slabinfo Slab池信息
+Stat 全面统计状态表
+Swaps 对换空间的利用情况
+Version 内核版本
+Uptime 系统正常运行时间
+并不是所有这些目录在你的系统中都有，这取决于你的内核配置和装载的模块。另外，在/proc下还有三个很重要的目录：net，scsi和sys。Sys目录是可写的，可以通过它来访问或修改内核的参数（见下一部分），而net和scsi则依赖于内核配置。例如，如果系统不支持scsi，则scsi 目录不存在。
+除了以上介绍的这些，还有的是一些以数字命名的目录，它们是进程目录。系统中当前运行的每一个进程都有对应的一个目录在/proc下，以进程的PID号为目录名，它们是读取进程信息的接口。而self目录则是读取进程本身的信息接口，是一个link。Proc文件系统的名字就是由之而起。进程目录的结构如下：
+目录名称 目录内容
+Cmdline 命令行参数
+Environ 环境变量值
+Fd 一个包含所有文件描述符的目录
+Mem 进程的内存被利用情况
+Stat 进程状态
+Status 进程当前状态，以可读的方式显示出来
+Cwd 当前工作目录的链接
+Exe 指向该进程的执行命令文件
+Maps 内存映象
+Statm 进程内存状态信息
+Root 链接此进程的root目录
+用户如果要查看系统信息，可以用cat命令。例如：
+# cat /proc/interrupts
+CPU0
+0: 8728810 XT-PIC timer
+1: 8Array5 XT-PIC keyboard
+2: 0 XT-PIC cascade
+3: 5316Array5 XT-PIC aha152x
+4: 2014133 XT-PIC serial
+5: 44401 XT-PIC pcnet_cs
+8: 2 XT-PIC rtc
+11: 8 XT-PIC i82365
+12: 182Array18 XT-PIC Mouse
+13: 1 XT-PIC fpu PS/2
+14: 1232265 XT-PIC ide0
+15: 7 XT-PIC ide1
+NMI: 0
+用户还可以实现修改内核参数。在/proc文件系统中有一个有趣的目录：/proc/sys。它不仅提供了内核信息，而且可以通过它修改内核参数，来优化你的系统。但是你必须很小心，因为可能会造成系统崩溃。最好是先找一台无关紧要的机子，调试成功后再应用到你的系统上。
+要改变内核的参数，只要用vi编辑或echo参数重定向到文件中即可。下面有一个例子：
+# cat /proc/sys/fs/file-max
+40Array6
+# echo 81Array2 &gt; /proc/sys/fs/file-max
+# cat /proc/sys/fs/file-max
+81Array2
+如果你优化了参数，则可以把它们写成添加到文件rc.local中，使它在系统启动时自动完成修改。
+/proc文件系统中网络参数
+/proc/sys/kernel
+内核共享内存限制,默认最小为4M.两个参数可以改成一样.加大.
+/proc/sys/kernel/shmall 40Array6
+/proc/sys/kernel/shmmax 33554432
+
+/proc/sys/net/ipv4/
+该目录包含的是和tcp/ip协议相关的各种参数，下面我们就对这些网络参数加以详细的说明。
+ip_forward 参数类型：BOOLEAN
+0 - 关闭(默认值)
+not 0 - 打开ip转发
+在网络本地接口之间转发数据报。该参数非常特殊，对该参数的修改将导致其它所有相关配置参数恢复其默认值(对于主机参阅RFC1122，对于路由器参见RFC1812)
+/proc/sys/net/ipv4/ip_conntrack_max 65440 (默认)
+ip_default_ttl 参数类型：INTEGER
+默认值为64 。表示IP数据报的Time To Live值。
+ip_no_pmtu_disc 参数类型：BOOLEAN
+关闭路径MTU探测，默认值为FALSE
+ipfrag_high_thresh 参数类型：整型
+用来组装分段的IP包的最大内存量。当ipfrag_high_thresh数量的内存被分配来用来组装IP包，则IP分片处理器将丢弃数据报直到ipfrag_low_thresh数量的内存被用来组装IP包。
+ipfrag_low_thresh 参数类型：整型
+参见ipfrag_high_thresh。
+ipfrag_time 参数类型：整型
+保存一个IP分片在内存中的时间。
+inet_peer_threshold 参数类型：整型
+INET对端存储器某个合适值，当超过该阀值条目将被丢弃。该阀值同样决定生存时间以及废物收集通过的时间间隔。条目越多?存活期越低?GC 间隔越短
+inet_peer_minttl 参数类型：整型
+条目的最低存活期。在重组端必须要有足够的碎片(fragment)存活期。这个最低存活期必须保证缓冲池容积是否少于inet_peer_threshold。该值以jiffies为单位测量。
+inet_peer_maxttl 参数类型：整型
+条目的最大存活期。在此期限到达之后?如果缓冲池没有耗尽压力的话(例如?缓冲池中的条目数目非常少)?不使用的条目将会超时。该值以jiffies为单位测量。
+inet_peer_gc_mintime 参数类型：整型
+废物收集(GC)通过的最短间隔。这个间隔会影响到缓冲池中内存的高压力。 该值以jiffies为单位测量。
+inet_peer_gc_maxtime 参数类型：整型
+废物收集(GC)通过的最大间隔，这个间隔会影响到缓冲池中内存的低压力。 该值以jiffies为单位测量。
+tcp_syn_retries 参数类型：整型
+对于一个新建连接，内核要发送多少个SYN 连接请求才决定放弃。不应该大于255，默认值是5，对应于180秒左右。
+tcp_synack_retries 参数类型：整型
+对于远端的连接请求SYN，内核会发送SYN ＋ACK数据报，以确认收到上一个SYN连接请求包。这是所谓的三次握手( threeway handshake)机制的第二个步骤。这里决定内核在放弃连接之前所送出的SYN+ACK 数目。
+tcp_keepalive_time 参数类型：整型
+当keepalive打开的情况下，TCP发送keepalive消息的频率，默认值是2个小时。
+tcp_keepalive_probes 参数类型：整型
+TCP发送keepalive探测以确定该连接已经断开的次数，默认值是Array。
+tcp_keepalive_interval 参数类型：整型
+探测消息发送的频率，乘以tcp_keepalive_probes就得到对于从开始探测以来没有响应的连接杀除的时间。默认值为75秒，也就是没有活动的连接将在大约11分钟以后将被丢弃。
+tcp_retries1 参数类型：整型
+当出现可疑情况而必须向网络层报告这个可疑状况之前?需要进行多少次重试。最低的RFC 数值是3 ?这也是默认值?根据RTO的值大约在3秒- 8分钟之间。
+tcp_retries2 参数类型：整型
+在丢弃激活的TCP连接之前?需要进行多少次重试。RFC1122规定，该值必须大于100秒。默认值为15，根据RTO的值来决定，相当于13-30分钟，
+tcp_orphan_retries 参数类型：整型
+在近端丢弃TCP连接之前?要进行多少次重试。默认值是7 个?相当于50秒- 16分钟?视RTO 而定。如果您的系统是负载很大的web服务器?那么也许需要降低该值?这类sockets 可能会耗费大量的资源。另外参的考tcp_max_orphans 。
+tcp_fin_timeout 参数类型：整型
+对于本端断开的socket连接，TCP保持在FIN-WAIT-2状态的时间。对方可能会断开连接或一直不结束连接或不可预料的进程死亡。默认值为60 秒。过去在2.2版本的内核中是180 秒。您可以设置该值?但需要注意?如果您的机器为负载很重的web服务器?您可能要冒内存被大量无效数据报填满的风险?FIN-WAIT-2 sockets 的危险性低于FIN-WAIT-1 ?因为它们最多只吃1.5K 的内存?但是它们存在时间更长。另外参考tcp_max_orphans。
+tcp_max_tw_buckets 参数类型：整型
+系统在同时所处理的最大timewait sockets 数目。如果超过此数的话?time-wait socket 会被立即砍除并且显示警告信息。之所以要设定这个限制?纯粹为了抵御那些简单的DoS 攻击?千万不要人为的降低这个限制?不过?如果网络条件需要比默认值更多?则可以提高它(或许还要增加内存)。
+tcp_tw_recycle 参数类型：布尔
+打开快速TIME-WAIT sockets 回收。默认值是1。除非得到技术专家的建议或要求?请不要随意修改这个值。
+tcp_max_orphans 参数类型：整型
+系统所能处理不属于任何进程的TCP sockets最大数量。假如超过这个数量?那么不属于任何进程的连接会被立即reset，并同时显示警告信息。之所以要设定这个限制?纯粹为了抵御那些简单的DoS 攻击?千万不要依赖这个或是人为的降低这个限制
+tcp_abort_on_overflow 参数类型：布尔
+当守护进程太忙而不能接受新的连接，就象对方发送reset消息，默认值是false。这意味着当溢出的原因是因为一个偶然的猝发，那么连接将恢复状态。只有在你确信守护进程真的不能完成连接请求时才打开该选项，该选项会影响客户的使用。
+tcp_syncookies 参数类型：整型
+只有在内核编译时选择了CONFIG_SYNCOOKIES时才会发生作用。当出现syn等候队列出现溢出时象对方发送syncookies。目的是为了防止syn flood攻击。默认值是false。
+注意：该选项千万不能用于那些没有收到攻击的高负载服务器，如果在日志中出现synflood消息，但是调查发现没有收到synflood攻击，而是合法用户的连接负载过高的原因，你应该调整其它参数来提高服务器性能。参考: tcp_max_syn_backlog, tcp_synack_retries, tcp_abort_on_overflow.
+syncookie严重的违背TCP协议，不允许使用TCP扩展，可能对某些服务导致严重的性能影响(如SMTP转发)。
+tcp_stdurg 参数类型：整型
+使用TCP urg pointer 字段中的主机请求解释功能。大部份的主机都使用老旧的BSD解释，因此如果您在Linux 打开它?或会导致不能和它们正确沟通。默认值为为?FALSE
+tcp_max_syn_backlog 参数类型：整型
+对于那些依然还未获得客户端确认的连接请求?需要保存在队列中最大数目。对于超过128Mb 内存的系统?默认值是1024 ?低于128Mb 的则为128。如果服务器经常出现过载?可以尝试增加这个数字。警告?假如您将此值设为大于1024?最好修改include/net/tcp.h 里面的TCP_SYNQ_HSIZE ?以保持TCP_SYNQ_HSIZE*16 0)或者bytes-bytes/2^(-tcp_adv_win_scale)(如果tcp_adv_win_scale  128Mb 32768-61000
+0)则系统将忽略所有发送给自己的ICMP ECHO请求或那些广播地址的请求。
+icmp_destunreach_rate - 整数
+icmp_paramprob_rate - 整数
+icmp_timeexceed_rate - 整数
+icmp_echoreply_rate - 整数(not enabled per default)
+限制发向特定目标的ICMP数据报的最大速率。0表示没有任何限制，否则表示jiffies数据单位中允许发送的个数。
+icmp_ignore_bogus_error_responses - 布尔类型
+某些路由器违背RFC1122标准，其对广播帧发送伪造的响应来应答。这种违背行为通常会被以告警的方式记录在系统日志中。如果该选项设置为True，内核不会记录这种警告信息。默认值为False。
+(1) Jiffie: 内核使用的内部时间单位，在i386系统上大小为1/100s，在Alpha中为1/1024S。在/usr/include/asm/param.h中的HZ定义有特定系统的值。
+conf/interface/*:
+conf/all/*是特定的，用来修改所有接口的设置，is special and changes the settings for all interfaces.
+Change special settings per interface.
+log_martians - 布尔类型
+记录带有不允许的地址的数据报到内核日志中。
+accept_redirects - 布尔类型
+收发接收ICMP重定向消息。对于主机来说默认为True，对于用作路由器时默认值为False。
+forwarding - 布尔类型
+在该接口打开转发功能
+mc_forwarding - 布尔类型
+是否进行多播路由。只有内核编译有CONFIG_MROUTE并且有路由服务程序在运行该参数才有效。
+proxy_arp - 布尔类型
+打开proxy arp功能。
+shared_media - 布尔类型
+发送(路由器)或接收(主机) RFC1620 共享媒体重定向。覆盖ip_secure_redirects的值。默认为True。
+secure_redirects - 布尔类型
+仅仅接收发给默认网关列表中网关的ICMP重定向消息，默认值是TRUE。
+send_redirects - 布尔类型
+如果是router，发送重定向消息，默认值是TRUE
+bootp_relay - 布尔类型
+接收源地址为0.b.c.d，目的地址不是本机的数据报。用来支持BOOTP转发服务进程，该进程将捕获并转发该包。默认为False，目前还没有实现。
+accept_source_route - 布尔类型
+接收带有SRR选项的数据报。对于主机来说默认为False，对于用作路由器时默认值为True。
+rp_filter 参数类型
+1 - 通过反向路径回溯进行源地址验证(在RFC1812中定义)。对于单穴主机和stub网络路由器推荐使用该选项。
+0 - 不通过反向路径回溯进行源地址验证。
+默认值为0。某些发布在启动时自动将其打开。
+/proc/sys/net/ipv4/netfilter
+ip_conntrack_buckets
+ip_conntrack_count
+ip_conntrack_generic_timeout
+ip_conntrack_icmp_timeout
+ip_conntrack_log_invalid
+ip_conntrack_max 65536(默认)
+ip_conntrack_tcp_be_liberal
+ip_conntrack_tcp_loose
+ip_conntrack_tcp_max_retrans
+ip_conntrack_tcp_timeout_close
+ip_conntrack_tcp_timeout_close_wait
+ip_conntrack_tcp_timeout_established 432000(单位为秒,5天)
+ip_conntrack_tcp_timeout_fin_wait
+ip_conntrack_tcp_timeout_last_ack
+ip_conntrack_tcp_timeout_max_retrans
+ip_conntrack_tcp_timeout_syn_recv
+ip_conntrack_tcp_timeout_syn_sent
+ip_conntrack_tcp_timeout_time_wait
+ip_conntrack_udp_timeout
+ip_conntrack_udp_timeout_stream
+
+#
+
+#
+#
+
+Linux Linux Linux Linux 中/proc /proc /proc /proc 目录下文件详解
+声明：可以自由转载本文, 但请务必保留本文的完整性。
+作者：张子坚
+email:zhangzijian@163.com
+说明：本文所涉及示例均在fedora core3 下得到。
+--------------------------------------------------------------------------------
+/proc 文件系统下的多种文件提供的系统信息不是针对某个特定进程的, 而是能够在整个系统范围的上下文
+中使用。可以使用的文件随系统配置的变化而变化。命令procinfo 能够显示基于其中某些文件的多种系统
+信息。
+以下详细描述/proc 下的文件:
+--------------------------------------------------------------------------------
+/proc/cmdline 文件
+这个文件给出了内核启动的命令行。它和用于进程的cmdline 项非常相似。
+示例：
+[root@localhost proc]# cat cmdline
+ro root=LABEL=/ rhgb quiet
+--------------------------------------------------------------------------------
+/proc/cpuinfo 文件
+这个文件提供了有关系统CPU 的多种信息。这些信息是从内核里对CPU 的测试代码中得到的。文件列出
+了CPU 的普通型号 （386,486,586,686 等 ）, 以及能得到的更多特定信息 （ 制造商, 型号和版本 ） 。 文件还包含
+了以bogomips 表示的处理器速度, 而且如果检测到CPU 的多种特性或者bug, 文件还会包含相应的标志。这
+个文件的格式为：文件由多行构成, 每行包括一个域名称, 一个冒号和一个值。
+示例：
+[root@localhost proc]# cat cpuinfo
+processor : 0
+vendor_id : AuthenticAMD
+cpu family : 6
+model : 8
+model name : AMD Athlon(tm) XP 1800+
+stepping : 1
+cpu MHz : 1530.165
+cache size : 256 KB
+fdiv_bug : no
+hlt_bug : no
+f00f_bug : nocoma_bug : no
+fpu : yes
+fpu_exception : yes
+cpuid level : 1
+wp : yes
+flags : fpu vme de pse tsc msr pae mce cx8 apic mtrr pge mca cmov pat pse36 mmx fxsr sse syscall mmxext
+3dnowext 3dnow
+bogomips : 2998.27
+--------------------------------------------------------------------------------
+/proc/devices 文件
+这个文件列出字符和块设备的主设备号, 以及分配到这些设备号的设备名称。
+示例：
+[root@localhost /]# cat /proc/devices
+Character devices:
+1 mem
+4 /dev/vc/0
+4 tty
+4 ttyS
+5 /dev/tty
+5 /dev/console
+5 /dev/ptmx
+6 lp
+7 vcs
+10 misc
+13 input
+14 sound
+29 fb
+36 netlink
+116 alsa
+128 ptm
+136 pts
+180 usb
+Block devices:
+1 ramdisk
+2 fd
+3 ide0
+9 md
+22 ide1
+253 device-mapper
+254 mdp
+--------------------------------------------------------------------------------/proc/dma 文件
+这个文件列出由驱动程序保留的DMA 通道和保留它们的驱动程序名称 。casade 项供用于把次DMA 控制器
+从主控制器分出的DMA 行所使用; 这一行不能用于其它用途。
+示例：
+[root@localhost ~]# cat /proc/dma
+4: cascade
+--------------------------------------------------------------------------------
+/proc/filesystems 文件
+这个文件列出可供使用的文件系统类型, 一种类型一行 。 虽然它们通常是编入内核的文件系统类型, 但该文件
+还可以包含可加载的内核模块加入的其它文件系统类型。
+示例：
+[root@localhost proc]# cat /proc/filesystems
+nodev sysfs
+nodev rootfs
+nodev bdev
+nodev proc
+nodev sockfs
+nodev binfmt_misc
+nodev usbfs
+nodev usbdevfs
+nodev futexfs
+nodev tmpfs
+nodev pipefs
+nodev eventpollfs
+nodev devpts
+ext2
+nodev ramfs
+nodev hugetlbfs
+iso9660
+nodev mqueue
+nodev selinuxfs
+ext3
+nodev rpc_pipefs
+nodev autofs
+--------------------------------------------------------------------------------
+/proc/interrupts 文件
+这个文件的每一行都有一个保留的中断 。 每行中的域有 ： 中断号, 本行中断的发生次数, 可能带有一个加号的
+域（SA_INTERRUPT 标志设置）, 以及登记这个中断的驱动程序的名字。可以在安装新硬件前, 像查看
+/proc/dma 和/proc/ioports 一样用cat 命令手工查看手头的这个文件 。 这几个文件列出了当前投入使用的资源
+（但是不包括那些没有加载驱动程序的硬件所使用的资源 ） 。
+示例：
+[root@localhost SPECS]# cat /proc/interruptsCPU0
+0: 7039406 XT-PIC timer
+1: 6533 XT-PIC i8042
+2: 0 XT-PIC cascade
+3: 0 XT-PIC uhci_hcd
+5: 108 XT-PIC VIA8233, uhci_hcd
+8: 1 XT-PIC rtc
+9: 0 XT-PIC acpi
+10: 0 XT-PIC ehci_hcd
+11: 17412 XT-PIC uhci_hcd, eth0
+12: 140314 XT-PIC i8042
+14: 37897 XT-PIC ide0
+15: 60813 XT-PIC ide1
+NMI: 0
+ERR: 1
+--------------------------------------------------------------------------------
+/proc/ioports 文件
+这个文件列出了诸如磁盘驱动器, 以太网卡和声卡设备等多种设备驱动程序登记的许多I/O 端口范围。
+示例：
+[root@localhost SPECS]# cat /proc/ioports
+0000-001f : dma1
+0020-0021 : pic1
+0040-0043 : timer0
+0050-0053 : timer1
+0060-006f : keyboard
+0070-0077 : rtc
+0080-008f : dma page reg
+00a0-00a1 : pic2
+00c0-00df : dma2
+00f0-00ff : fpu
+0170-0177 : ide1
+01f0-01f7 : ide0
+0376-0376 : ide1
+0378-037a : parport0
+037b-037f : parport0
+03c0-03df : vga+
+03f6-03f6 : ide0
+03f8-03ff : serial
+0800-0803 : PM1a_EVT_BLK
+0804-0805 : PM1a_CNT_BLK
+0808-080b : PM_TMR
+0810-0815 : ACPI CPU throttle
+0820-0823 : GPE0_BLK0cf8-0cff : PCI conf1
+dc00-dcff : 0000:00:12.0
+dc00-dcff : via-rhine
+e000-e0ff : 0000:00:11.5
+e000-e0ff : VIA8233
+e400-e41f : 0000:00:10.0
+e400-e41f : uhci_hcd
+e800-e81f : 0000:00:10.1
+e800-e81f : uhci_hcd
+ec00-ec1f : 0000:00:10.2
+ec00-ec1f : uhci_hcd
+fc00-fc0f : 0000:00:11.1
+fc00-fc07 : ide0
+fc08-fc0f : ide1
+--------------------------------------------------------------------------------
+/proc/kcore 文件
+这个文件是系统的物理内存以core 文件格式保存的文件。例如,GDB 能用它考察内核的数据结构。它不是
+纯文本, 而是/proc 目录下为数不多的几个二进制格式的项之一。
+示例：
+暂无
+--------------------------------------------------------------------------------
+/proc/kmsg 文件
+这个文件用于检索用printk 生成的内核消息。任何时刻只能有一个具有超级用户权限的进程可以读取这个
+文件。也可以用系统调用syslog 检索这些消息。通常使用工具dmesg 或守护进程klogd 检索这些消息。
+示例：
+暂无
+--------------------------------------------------------------------------------
+/proc/ksyms 文件
+这个文件列出了已经登记的内核符号; 这些符号给出了变量或函数的地址 。 每行给出一个符号的地址, 符号名
+称以及登记这个符号的模块。程序ksyms,insmod 和kmod 使用这个文件。它还列出了正在运行的任务数,
+总任务数和最后分配的PID 。
+示例：
+暂无
+--------------------------------------------------------------------------------
+/proc/loadavg 文件
+这个文件给出以几个不同的时间间隔计算的系统平均负载, 这就如同uptime 命令显示的结果那样 。 前三个数
+字是平均负载 。 这是通过计算过去1 分钟,5 分钟,15 分钟里运行队列中的平均任务数得到的 。 随后是正在运行
+的任务数和总任务数。最后是上次使用的进程号。
+示例：[root@localhost ~]# cat /proc/loadavg
+0.11 0.16 0.14 3/126 3912
+--------------------------------------------------------------------------------
+/proc/locks 文件
+这个文件包含在打开的文件上的加锁信息。文件中的每一行描述了特定文件和文档上的加锁信息以及对文
+件施加的锁的类型。内核也可以需要时对文件施加强制性锁。
+示例：
+[root@localhost redhat]# cat /proc/locks
+1: POSIX ADVISORY READ 3822 03:0a:1067117 0 EOF
+2: POSIX ADVISORY READ 3822 03:0a:1067138 0 EOF
+3: POSIX ADVISORY WRITE 3326 03:0a:2326540 0 EOF
+4: POSIX ADVISORY WRITE 2639 03:0a:2966595 0 EOF
+5: FLOCK ADVISORY WRITE 2591 03:0a:2966586 0 EOF
+6: POSIX ADVISORY WRITE 2540 03:0a:2966578 0 EOF
+7: POSIX ADVISORY WRITE 2530 03:0a:2966579 0 EOF
+8: POSIX ADVISORY WRITE 2402 03:0a:2966563 0 EOF
+9: POSIX ADVISORY WRITE 2371 03:0a:2966561 0 EOF
+--------------------------------------------------------------------------------
+/proc/mdstat 文件
+这个文件包含了由md 设备驱动程序控制的RAID 设备信息。
+示例：
+[root@localhost ~]# cat /proc/mdstat
+Personalities :
+unused devices: &lt;none&gt;
+--------------------------------------------------------------------------------
+/proc/meminfo 文件
+这个文件给出了内存状态的信息 。 它显示出系统中空闲内存, 已用物理内存和交换内存的总量 。 它还显示出
+内核使用的共享内存和缓冲区总量。这些信息的格式和free 命令显示的结果类似。
+示例：
+[root@localhost ~]# cat /proc/meminfo
+MemTotal: 223812 kB
+MemFree: 3764 kB
+Buffers: 9148 kB
+Cached: 92112 kB
+SwapCached: 364 kB
+Active: 183640 kB
+Inactive: 17196 kB
+HighTotal: 0 kB
+HighFree: 0 kB
+LowTotal: 223812 kB
+LowFree: 3764 kBSwapTotal: 626524 kB
+SwapFree: 620328 kB
+Dirty: 12 kB
+Writeback: 0 kB
+Mapped: 142880 kB
+Slab: 12668 kB
+Committed_AS: 376732 kB
+PageTables: 2336 kB
+VmallocTotal: 3907576 kB
+VmallocUsed: 2968 kB
+VmallocChunk: 3904224 kB
+HugePages_Total: 0
+HugePages_Free: 0
+Hugepagesize: 4096 kB
+--------------------------------------------------------------------------------
+/proc/misc 文件
+这个文件报告用内核函数misc_register 登记的设备驱动程序。
+示例：
+[root@localhost ~]# cat /proc/misc
+63 device-mapper
+175 agpgart
+135 rtc
+--------------------------------------------------------------------------------
+/proc/modules 文件
+这个文件给出可加载内核模块的信息 。lsmod 程序用这些信息显示有关模块的名称, 大小, 使用数目方面的信
+息。
+示例：
+[root@localhost /]# cat /proc/modules
+md5 4033 1 - Live 0x10a7f000
+ipv6 232577 8 - Live 0x10b0c000
+parport_pc 24705 1 - Live 0x10a8b000
+lp 11565 0 - Live 0x10a7b000
+parport 41737 2 parport_pc,lp, Live 0x10a55000
+autofs4 24005 0 - Live 0x10a74000
+i2c_dev 10433 0 - Live 0x109d2000
+i2c_core 22081 1 i2c_dev, Live 0x10a6d000
+sunrpc 160421 1 - Live 0x10a9d000
+ipt_REJECT 6465 1 - Live 0x109da000
+ipt_state 1857 5 - Live 0x109eb000
+ip_conntrack 40693 1 ipt_state, Live 0x10a62000
+iptable_filter 2753 1 - Live 0x10896000
+ip_tables 16193 3 ipt_REJECT,ipt_state,iptable_filter, Live 0x109ed000dm_mod 54741 0 - Live 0x109f8000
+button 6481 0 - Live 0x10905000
+battery 8517 0 - Live 0x109d6000
+ac 4805 0 - Live 0x10908000
+uhci_hcd 31449 0 - Live 0x109dd000
+ehci_hcd 31557 0 - Live 0x10949000
+snd_via82xx 27237 2 - Live 0x10953000
+snd_ac97_codec 64401 1 snd_via82xx, Live 0x10912000
+snd_pcm_oss 47609 0 - Live 0x1093c000
+snd_mixer_oss 17217 2 snd_pcm_oss, Live 0x1090c000
+snd_pcm 97993 2 snd_via82xx,snd_pcm_oss, Live 0x10923000
+snd_timer 29765 1 snd_pcm, Live 0x108ec000
+snd_page_alloc 9673 2 snd_via82xx,snd_pcm, Live 0x108bd000
+gameport 4801 1 snd_via82xx, Live 0x108a6000
+snd_mpu401_uart 8769 1 snd_via82xx, Live 0x108b9000
+snd_rawmidi 26725 1 snd_mpu401_uart, Live 0x108e4000
+snd_seq_device 8137 1 snd_rawmidi, Live 0x1083b000
+snd 54053 11
+snd_via82xx,snd_ac97_codec,snd_pcm_oss,snd_mixer_oss,snd_pcm,snd_timer,snd_mpu401_uart,snd_rawmidi,sn
+d_seq_device, Live 0x108f6000
+soundcore 9889 2 snd, Live 0x1089b000
+via_rhine 23497 0 - Live 0x1089f000
+mii 4673 1 via_rhine, Live 0x10893000
+floppy 58609 0 - Live 0x108a9000
+ext3 116809 1 - Live 0x10875000
+jbd 74969 1 ext3, Live 0x10861000
+lsmod 命令显示结果如下：
+[root@localhost /]# lsmod
+Module Size Used by
+md5 4033 1
+ipv6 232577 8
+parport_pc 24705 1
+lp 11565 0
+parport 41737 2 parport_pc,lp
+autofs4 24005 0
+i2c_dev 10433 0
+i2c_core 22081 1 i2c_dev
+sunrpc 160421 1
+ipt_REJECT 6465 1
+ipt_state 1857 5
+ip_conntrack 40693 1 ipt_state
+iptable_filter 2753 1ip_tables 16193 3 ipt_REJECT,ipt_state,iptable_filter
+dm_mod 54741 0
+button 6481 0
+battery 8517 0
+ac 4805 0
+uhci_hcd 31449 0
+ehci_hcd 31557 0
+snd_via82xx 27237 2
+snd_ac97_codec 64401 1 snd_via82xx
+snd_pcm_oss 47609 0
+snd_mixer_oss 17217 2 snd_pcm_oss
+snd_pcm 97993 2 snd_via82xx,snd_pcm_oss
+snd_timer 29765 1 snd_pcm
+snd_page_alloc 9673 2 snd_via82xx,snd_pcm
+gameport 4801 1 snd_via82xx
+snd_mpu401_uart 8769 1 snd_via82xx
+snd_rawmidi 26725 1 snd_mpu401_uart
+snd_seq_device 8137 1 snd_rawmidi
+snd 54053 11
+snd_via82xx,snd_ac97_codec,snd_pcm_oss,snd_mixer_oss,snd_pcm,snd_timer,snd_mpu401_uart,snd_rawmidi,sn
+d_seq_device
+soundcore 9889 2 snd
+via_rhine 23497 0
+mii 4673 1 via_rhine
+floppy 58609 0
+ext3 116809 1
+jbd 74969 1 ext3
+--------------------------------------------------------------------------------
+/proc/mounts 文件
+这个文件以/etc/mtab 文件的格式给出当前系统所安装的文件系统信息。这个文件也能反映出任何手工安装
+从而在/etc/mtab 文件中没有包含的文件系统。
+示例：
+[root@localhost /]# cat /proc/mounts
+rootfs / rootfs rw 0 0
+/proc /proc proc rw,nodiratime 0 0
+none /dev tmpfs rw 0 0
+/dev/root / ext3 rw 0 0
+none /dev tmpfs rw 0 0
+none /selinux selinuxfs rw 0 0
+/proc /proc proc rw,nodiratime 0 0
+/proc/bus/usb /proc/bus/usb usbfs rw 0 0
+/sys /sys sysfs rw 0 0none /dev/pts devpts rw 0 0
+none /dev/shm tmpfs rw 0 0
+none /proc/sys/fs/binfmt_misc binfmt_misc rw 0 0
+sunrpc /var/lib/nfs/rpc_pipefs rpc_pipefs rw 0 0
+--------------------------------------------------------------------------------
+/proc/pci 文件
+这个文件给出PCI 设备的信息。用它可以方便地诊断PCI 问题。你可以从这个文件中检索到的信息包括诸
+如IDE 接口或USB 控制器这样的设备, 总线, 设备和功能编号, 设备延迟以及IRQ 编号。
+示例：
+[root@localhost /]# cat /proc/pci
+PCI devices found:
+Bus 0, device 0, function 0:
+Class 0600: PCI device 1106:3116 (rev 0).
+Master Capable. Latency=8.
+Prefetchable 32 bit memory at 0xe0000000 [0xe7ffffff].
+Bus 0, device 1, function 0:
+Class 0604: PCI device 1106:b091 (rev 0).
+Master Capable. No bursts. Min Gnt=12.
+Bus 0, device 16, function 2:
+Class 0c03: PCI device 1106:3038 (rev 12.
+IRQ 5.
+Master Capable. Latency=32.
+I/O at 0xec00 [0xec1f].
+Bus 0, device 16, function 1:
+Class 0c03: PCI device 1106:3038 (rev 12.
+IRQ 3.
+Master Capable. Latency=32.
+I/O at 0xe800 [0xe81f].
+Bus 0, device 16, function 0:
+Class 0c03: PCI device 1106:3038 (rev 12.
+IRQ 11.
+Master Capable. Latency=32.
+I/O at 0xe400 [0xe41f].
+Bus 0, device 16, function 3:
+Class 0c03: PCI device 1106:3104 (rev 130).
+IRQ 10.
+Master Capable. Latency=32.
+Non-prefetchable 32 bit memory at 0xdfffff00 [0xdfffffff].
+Bus 0, device 17, function 0:
+Class 0601: PCI device 1106:3177 (rev 0).
+Bus 0, device 17, function 1:Class 0101: PCI device 1106:0571 (rev 6).
+IRQ 255.
+Master Capable. Latency=32.
+I/O at 0xfc00 [0xfc0f].
+Bus 0, device 17, function 5:
+Class 0401: PCI device 1106:3059 (rev 80).
+IRQ 5.
+I/O at 0xe000 [0xe0ff].
+Bus 0, device 18, function 0:
+Class 0200: PCI device 1106:3065 (rev 116).
+IRQ 11.
+Master Capable. Latency=32\. Min Gnt=3.Max Lat=8.
+I/O at 0xdc00 [0xdcff].
+Non-prefetchable 32 bit memory at 0xdffffe00 [0xdffffeff].
+Bus 1, device 0, function 0:
+Class 0300: PCI device 5333:8d04 (rev 0).
+IRQ 11.
+Master Capable. Latency=32\. Min Gnt=4.Max Lat=255.
+Non-prefetchable 32 bit memory at 0xdfe80000 [0xdfefffff].
+Prefetchable 32 bit memory at 0xd0000000 [0xd7ffffff].
+--------------------------------------------------------------------------------
+/proc/stat 文件
+这个文件包含的信息有CPU 利用率, 磁盘, 内存页, 内存对换, 全部中断, 接触开关以及赏赐自举时间（自1970
+年1 月1 日起的秒数 ） 。
+示例：
+[root@localhost /]# cat /proc/stat
+cpu 31994 3898 7161 381600 15254 451 0
+cpu0 31994 3898 7161 381600 15254 451 0
+intr 4615930 4404290 3364 0 0 12 0 7 0 2 0 0 12618 112114 0 44142 39381
+ctxt 1310498
+btime 1148891913
+processes 4249
+procs_running 4
+procs_blocked 0
+--------------------------------------------------------------------------------
+/proc/uptime 文件
+这个文件给出自从上次系统自举以来的秒数, 以及其中有多少秒处于空闲 。 这主要供uptime 程序使用 。 比较
+这两个数字能够告诉你长期来看CPU 周期浪费的比例。
+示例：
+[root@localhost /]# cat /proc/uptime
+4477.04 4021.10--------------------------------------------------------------------------------
+/proc/version 文件
+这个文件只有一行内容, 说明正在运行的内核版本。可以用标准的编程方法进行分析获得所需的系统信息 。
+示例：
+[root@localhost /]# cat /proc/version
+Linux version 2.6.9-1.667 ( bhcompile@tweety.build.redhat.com ) (gcc version 3.4.2 20041017 (Red Hat
+3.4.2-6.fc3)) #1 Tue Nov 2 14:41:25 EST 2004
+--------------------------------------------------------------------------------
+/proc/net 子目录
+此目录下的文件描述或修改了联网代码的行为。可以通过使用 arp,netstat,route 和ipfwadm 命令设置或查询
+这些特殊文件中的许多文件。
+示例：
+[root@localhost /]# ls /proc/net
+anycast6 ip_conntrack mcfilter6 rt6_stats tcp
+arp ip_conntrack_expect netlink rt_acct tcp6
+dev ip_mr_cache netstat rt_cache udp
+dev_mcast ip_mr_vif packet snmp udp6
+dev_snmp6 ip_tables_matches psched snmp6 unix
+if_inet6 ip_tables_names raw sockstat wireless
+igmp ip_tables_targets raw6 sockstat6
+igmp6 ipv6_route route softnet_stat
+ip6_flowlabel mcfilter rpc stat
+--------------------------------------------------------------------------------
+以下摘要介绍此目录下文件的功能：
+arp
+转储每个网络接口的arp 表中dev 包的统计
+dev
+来自网络设备的统计
+dev_mcast
+列出二层（数据链路层）多播组
+igmp
+加入的IGMP 多播组
+netlink
+netlink 套接口的信息
+netstat
+网络流量的多种统计。第一行是信息头, 带有每个变量的名称。接下来的一行保存相应变量的值
+raw
+原始套接口的套接口表
+route
+静态路由表
+rpc
+包含RPC 信息的目录rt_cache
+路由缓冲
+snmp
+snmp agent 的ip/icmp/tcp/udp 协议统计; 各行交替给出字段名和值
+sockstat
+列出使用的tcp/udp/raw/pac/syc_cookies 的数量
+tcp
+TCP 连接的套接口
+udp
+UDP 连接的套接口表
+unix
+UNIX 域套接口的套接口表
+--------------------------------------------------------------------------------
+示例：[root@localhost /]# cat /proc/net/route
+Iface Destination Gateway Flags RefCnt Use Metric Mask MTU
+Window IRTT
+eth0 0035C2DA 00000000 0001 0 0 0 80FFFFF0
+eth0 0000FEA9 00000000 0001 0 0 0 0000FFF0
+eth0 00000000 0135C2DA 0003 0 0 0 00000000
+--------------------------------------------------------------------------------
+[root@localhost /]# cat /proc/net/tcp
+sl local_address rem_address st tx_queue rx_queue tr tm-&gt;when retrnsmt uid timeout inode
+0: 00000000:8000 00000000:0000 0A 00000000:00000000 00:00000000 00000000 29 0 9525 1
+0dde7500 3000 0 0 2 -1
+1: 00000000:006F 00000000:0000 0A 00000000:00000000 00:00000000 00000000 0 0 9484 1
+0dde79e0 3000 0 0 2 -1
+2: 0100007F:0277 00000000:0000 0A 00000000:00000000 00:00000000 00000000 0 0 10049 1
+0a8e3a00 3000 0 0 2 -1
+3: 0100007F:14D7 00000000:0000 0A 00000000:00000000 00:00000000 00000000 99 0 9847 1
+0dde7020 3000 0 0 2 -1
+4: 0100007F:0019 00000000:0000 0A 00000000:00000000 00:00000000 00000000 0 0 10286 1
+0a8e3520 3000 0 0 2 -1
+--------------------------------------------------------------------------------
+[root@localhost /]# cat /proc/net/arp
+IP address HW type Flags HW address Mask Device
+218.194.53.1 0x1 0x2 00:0D:BC:78:07:3F * eth0
+--------------------------------------------------------------------------------
+[root@localhost /]# cat /proc/net/udp
+sl local_address rem_address st tx_queue rx_queue tr tm-&gt;when retrnsmt uid timeout inode
+0: 00000000:8000 00000000:0000 07 00000000:00000000 00:00000000 00000000 29 0 9520 2
+0b4ef7c0
+105: 00000000:14E9 00000000:0000 07 00000000:00000000 00:00000000 00000000 99 0 10284 20b4ef040
+111: 00000000:006F 00000000:0000 07 00000000:00000000 00:00000000 00000000 0 0 9483 2
+0b4efcc0
+116: 00000000:02F4 00000000:0000 07 00000000:00000000 00:00000000 00000000 0 0 9511 2
+0b4efa40
+119: 00000000:0277 00000000:0000 07 00000000:00000000 00:00000000 00000000 0 0 10050 2
+0b4ef2c0
+--------------------------------------------------------------------------------
+/proc/scsi 子目录
+此目录下包含一个列出了所有检测到的SCSI 设备的文件, 并且为每种控制器驱动程序提供一个目录, 在这个
+目录下又为已安装的此种控制器的每个实例提供一个子目录。
+示例：
+由于本人的机器没有SCSI 设备, 顾暂时无法提供示例。
+--------------------------------------------------------------------------------
+/proc/sys 子目录
+在此目录下有许多子目录 。 此目录中的许多项都可以用来调整系统的性能 。 这个目录包含信息太多, 无法介
+绍全部。只在示例中展示目录下的一些文件。
+示例：[root@localhost /]# ls /proc/sys
+debug dev fs kernel net proc sunrpc vm
+--------------------------------------------------------------------------------
+[root@localhost ~]# ls /proc/sys/fs
+aio-max-nr dentry-state file-nr lease-break-time overflowgid
+aio-nr dir-notify-enable inode-nr leases-enable overflowuid
+binfmt_misc file-max inode-state mqueue quota
+--------------------------------------------------------------------------------
+[root@localhost ~]# ls /proc/sys/kernel
+acct hotplug panic sem
+cad_pid modprobe panic_on_oops shmall
+cap-bound msgmax pid_max shmmax
+core_pattern msgmnb print-fatal-signals shmmni
+core_uses_pid msgmni printk sysrq
+ctrl-alt-del ngroups_max printk_ratelimit tainted
+domainname osrelease printk_ratelimit_burst threads-max
+exec-shield ostype pty vdso
+exec-shield-randomize overflowgid random version
+hostname overflowuid real-root-dev
+--------------------------------------------------------------------------------
+[root@localhost ~]# ls /proc/sys/net
+core ethernet ipv4 ipv6 unix
+--------------------------------------------------------------------------------
+[root@localhost sys]# ls /proc/sys/vmblock_dump laptop_mode nr_pdflush_threads
+dirty_background_ratio legacy_va_layout overcommit_memory
+dirty_expire_centisecs lower_zone_protection overcommit_ratio
+dirty_ratio max_map_count page-cluster
+dirty_writeback_centisecs min_free_kbytes swappiness
+hugetlb_shm_group nr_hugepages vfs_cache_pressure
+--------------------------------------------------------------------------------
+[root@localhost sys]# ls /proc/sys/net/ipv4
+conf tcp_fack
+icmp_echo_ignore_all tcp_fin_timeout
+icmp_echo_ignore_broadcasts tcp_frto
+icmp_ignore_bogus_error_responses tcp_keepalive_intvl
+icmp_ratelimit tcp_keepalive_probes
+icmp_ratemask tcp_keepalive_time
+igmp_max_memberships tcp_low_latency
+igmp_max_msf tcp_max_orphans
+inet_peer_gc_maxtime tcp_max_syn_backlog
+inet_peer_gc_mintime tcp_max_tw_buckets
+inet_peer_maxttl tcp_mem
+inet_peer_minttl tcp_moderate_rcvbuf
+inet_peer_threshold tcp_no_metrics_save
+ip_autoconfig tcp_orphan_retries
+ip_conntrack_max tcp_reordering
+ip_default_ttl tcp_retrans_collapse
+ip_dynaddr tcp_retries1
+ip_forward tcp_retries2
+ipfrag_high_thresh tcp_rfc1337
+ipfrag_low_thresh tcp_rmem
+ipfrag_secret_interval tcp_sack
+ipfrag_time tcp_stdurg
+ip_local_port_range tcp_synack_retries
+ip_nonlocal_bind tcp_syncookies
+ip_no_pmtu_disc tcp_syn_retries
+neigh tcp_timestamps
+netfilter tcp_tso_win_divisor
+route tcp_tw_recycle
+tcp_abort_on_overflow tcp_tw_reuse
+tcp_adv_win_scale tcp_vegas_alpha
+tcp_app_win tcp_vegas_beta
+tcp_bic tcp_vegas_cong_avoid
+tcp_bic_fast_convergence tcp_vegas_gamma
+tcp_bic_low_window tcp_westwood
+tcp_dsack tcp_window_scalingtcp_ecn tcp_wmem
+--------------------------------------------------------------------------------
+[root@localhost sys]# cat /proc/sys/kernel/shmall
+2097152
+--------------------------------------------------------------------------------
+[root@localhost sys]# cat /proc/sys/kernel/osrelease
+2.6.9-1.667
+--------------------------------------------------------------------------------
+总结 ：/proc 文件系统包含了大量的有关当前系统状态的信息 。proc 的手册页中也有对这些文件的解释文档 。
+把文件和分析这些文件的工具产生的输出进行比较能够更加清晰地了解这些文件
+</code></pre>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[saltstack master端 刷新grains]]></title>
+      <url>https://www.mufen.me/Docs-salt-flush-grains.html</url>
+      <content type="html"><![CDATA[<p><a href="http://docs.saltstack.cn/zh_CN/latest/topics/targeting/grains.html" target="_blank" rel="external">http://docs.saltstack.cn/zh_CN/latest/topics/targeting/grains.html</a><br>4.2.8. 同步Grains</p>
+<p>Syncing grains can be done a number of ways, they are automatically synced when state.highstate is called, or (as noted above) the grains can be manually synced and reloaded by calling the  </p>
+<pre class="lang:default decode:true ">saltutil.sync_grains or saltutil.sync_all functions.</pre> 
+
+<p>具体<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">salt <span class="string">'*'</span> saltutil.sync_grains</div></pre></td></tr></table></figure></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[python排错module object has no attribute]]></title>
+      <url>https://www.mufen.me/%E6%8E%92%E9%94%99-python%E6%8E%92%E9%94%99.html</url>
+      <content type="html"><![CDATA[<p>一般是你的project名称和导入的模块名称重复了。<br>python文件在命名的时候要避免和已知的模块名称重复</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[os x 修改主机名和共享名称]]></title>
+      <url>https://www.mufen.me/Docs-osx-hostname.html</url>
+      <content type="html"><![CDATA[<p>2条命令搞定<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">scutil --set HostName MBP</div><div class="line">scutil --set ComputerName MBP</div></pre></td></tr></table></figure></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[lua编译报错libreadline.so: undefined reference to]]></title>
+      <url>https://www.mufen.me/linux/%E6%8E%92%E9%94%99-lua%E7%BC%96%E8%AF%91%E6%8A%A5%E9%94%99.html</url>
+      <content type="html"><![CDATA[<p>因为编译lua需要readline<br>readline又需要ncurses<br>修改lua安装包src/MakeFile 109行</p>
+<pre class="lang:default decode:true ">linux: $(MAKE) $(ALL) SYSCFLAGS="-DLUA_USE_LINUX" SYSLIBS="-Wl,-E -ldl -lreadline -lncurses"</pre> ]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[白日梦]]></title>
+      <url>https://www.mufen.me/%E9%9A%8F%E7%AC%94-dream.html</url>
+      <content type="html"><![CDATA[<p>我这人喜欢做白日梦，今天在公交车想到，关于人类飞行的问题。<br>首先我觉得喷气或者什么类似火箭技术，太LOW，既然是白日梦，我觉得从一个能实现的角度讲，<br>应该有什么物质，或者物质的什么状态是可以产生反引力，然后就是能控制这种状态。最好是类似半导体的，半引力体，哈哈。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[mycli 自动补全 语法高亮]]></title>
+      <url>https://www.mufen.me/mysql/OSX-mycli.html</url>
+      <content type="html"><![CDATA[<h4 id="nice-tool-for-mysql"><a href="#nice-tool-for-mysql" class="headerlink" title="nice tool for mysql"></a>nice tool for mysql</h4><p>安装指导<br><a href="http://mycli.net/install" target="_blank" rel="external">http://mycli.net/install</a></p>
+<pre class="lang:sh decode:true ">pip install mycli</pre>
+&nbsp;
+
+如果没有安装pip的话，先安装pip
+<pre class="lang:sh decode:true ">yum install -y python-pip</pre>
+或者使用
+<pre class="lang:sh decode:true ">easy_install mycli</pre>
+&nbsp;
+
+2种用法
+1,
+<pre class="lang:default decode:true ">mycli mysql://root@localhost:3306</pre>
+
+<pre class="lang:default decode:true ">mycli -h localhost -u root</pre>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[os x 删除java]]></title>
+      <url>https://www.mufen.me/Docs-osx-delete-java.html</url>
+      <content type="html"><![CDATA[<p>通过删除Java插件文件来卸载 Oracle Java<br>插件名字:<br>JavaAppletPlugin.plugin。</p>
+<p><em>要卸载 Java，必须具有管理员权限。</em></p>
+<ul>
+<li>单击位于停靠栏中的 Finder 图标</li>
+<li>单击边栏中的应用程序选项卡</li>
+<li>在搜索框中，输入 JavaAppletPlugin.plugin</li>
+<li>此命令将查找 JavaAppletPlugin.plugin 文件</li>
+<li>右键单击 JavaAppletPlugin.plugin，然后选择移到废纸篓</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[关于11月的计划]]></title>
+      <url>https://www.mufen.me/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99-%E5%85%B3%E4%BA%8E11%E6%9C%88%E7%9A%84%E8%AE%A1%E5%88%92.html</url>
+      <content type="html"><![CDATA[<p>还是要加强以下技术<br>一，python (《python核心编程》这本书要再研究,learn python the hard way 继续练习)<br>二，mysql (集群技术，读写分离，备份恢复，监控)<br>三，继续关注openstack还有docker技术，配置相关实例。<br>四，继续复习linux 主流服务的配置，（更新到博客上）</p>
+<p>可选<br>mongodb基本知识</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[有关未来工作]]></title>
+      <url>https://www.mufen.me/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99-%E5%85%B3%E4%BA%8E%E5%B7%A5%E4%BD%9C.html</url>
+      <content type="html"><![CDATA[<p>今天见了几个高中时代非常好的同学，聊到很多关于即将毕业，还有已经毕业找工作的问题。感触还是很多的。但问题无非就是：<br>工作不爽，想换。<br>工资低，想找个更好的。<br>自己不太清楚什么职业好，看见有人某人参加某培训后，工作如何OK，也想尝试。<br>我不太清楚未来我能找到什么工作。但我觉得我是真心喜欢这行。关注的很多新技术，新思想。而他们，我感觉他们只是想找个工资高的工作，并没有在意这个行业，或者说他们有他们想关注的，也许是生活上的，或者其他方面，或者自己也不清楚。<br>也许是现代大学教育本身如此，并不注重兴趣的培养，也许这原本就是小学老师要教的东西。也许说，现在提兴趣，提爱好，可能觉得我太天真。没被社会强奸过，我不懂。<br>不过对我这个也要走出校门的我来说。<br>正如我的博客地址。inpeace<br>静下心来，好好钻研自己想要学的东西。我想起码我不会后悔。<br>因为我真的是喜欢这行。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[python %r和%s的使用环境]]></title>
+      <url>https://www.mufen.me/Docs-python_r_s-usage.html</url>
+      <content type="html"><![CDATA[<p>一般情况两者相同<br>但是表现函数不一样<br>%s 是str()<br>%r 是rper()<br>参考<br><a href="http://stackoverflow.com/questions/6005159/when-to-use-r-instead-of-s-in-python" target="_blank" rel="external">http://stackoverflow.com/questions/6005159/when-to-use-r-instead-of-s-in-python</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[python中和，]]></title>
+      <url>https://www.mufen.me/Docs-python-print-tips-1.html</url>
+      <content type="html"><![CDATA[<p>\r表示 光标移动到开头 ，表示不换行<br>比如 </p>
+<pre class="lang:default decode:true ">print 'finally done\r',
+print 'aaaa\ri'
+print 'bbbbbbbbbbbbbbbbbb',
+print 'ccc'</pre> 
+
+<p>执行结果是</p>
+<p><pre class="lang:default decode:true ">[root@inpeace inpeace.cn]# python demo.py<br>iaaally done<br>bbbbbbbbbbbbbbbbbb ccc<br></pre><br><a id="more"></a></p>
+<p>比如这个</p>
+<p><pre class="lang:default decode:true ">while True:<br>    for i in [“/“,”-“,”|”,”\“,”|”]:<br>        print “%s\r” % i,</pre><br>官方解释<br>We put a , (comma) at the end of each print line. This is so print doesn’t end the line with a newline character and go to the next line.</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[关于博客]]></title>
+      <url>https://www.mufen.me/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99-%E5%85%B3%E4%BA%8E%E5%8D%9A%E5%AE%A2.html</url>
+      <content type="html"><![CDATA[<p>今天再配置以前非常熟悉的一个服务的时候发现还是，不能完全脱离资料。<br>突然觉得没必要强迫自己要背诵配置文件，以后博客还是要更新一写，常见的服务的配置资料，尤其是一些细节。<br>好记性不如烂笔头，还是有道理的。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[os x 挂载远程（不同网段)nfs]]></title>
+      <url>https://www.mufen.me/Docs-osx-nfs.html</url>
+      <content type="html"><![CDATA[<p>关于NFS服务器的配置，这里就不写了网上一大堆。<br>这里说一下/etc/exports的配置</p>
+<p><em>需要在exports文件中添加insecure选项，表示接受&gt;1024端口来的请求。因为一般路由器采用动态NAT会使用10000以上端口号连接。</em><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">vim /etc/exports</div><div class="line">/需要共享的目录 (rw,no_root_squash,no_all_squash,insecure)</div><div class="line">chmod /需要共享的目录 777 权限自己斟酌</div></pre></td></tr></table></figure></p>
+<p>OS X 配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo <span class="_">-s</span></div></pre></td></tr></table></figure></p>
+<p>输入密码,或者<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo mount -t nfs -o resvport <span class="string">ip:</span><span class="regexp">/共享目录 /</span>OSx的目录</div></pre></td></tr></table></figure></p>
+<p>关于开机启动<br>编写个autonfs.sh<br>将挂载命令复制进去</p>
+<p>保存<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">chmod a+x autonfs.<span class="keyword">sh</span></div><div class="line"><span class="keyword">cd</span> /Library/LaunchDaemons</div></pre></td></tr></table></figure></p>
+<p>vi autonfs.plist</p>
+<pre class="theme:terminal toolbar:1 lang:default decode:true ">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN"
+    "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+&lt;plist version="1.0"&gt;
+&lt;dict&gt;
+    &lt;key&gt;Label&lt;/key&gt;
+        &lt;string&gt;autonfs&lt;/string&gt;
+    &lt;key&gt;UserName&lt;/key&gt;
+        &lt;string&gt;root&lt;/string&gt;
+    &lt;key&gt;ProgramArguments&lt;/key&gt;
+    &lt;array&gt;
+         &lt;string&gt;/Users/skipper/Documents/autonfs.sh&lt;/string&gt;#写你脚本的绝对路径
+         &lt;string&gt;run&lt;/string&gt;
+    &lt;/array&gt;
+    &lt;key&gt;RunAtLoad&lt;/key&gt;
+    &lt;true/&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;         </pre> ]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[about mistakes]]></title>
+      <url>https://www.mufen.me/OSX-about-mistakes.html</url>
+      <content type="html"><![CDATA[<p>Remember that everyone makes mistakes. Programmers are like magicians who fool everyone into thinking they are perfect and never wrong, but it’s all an act. They make mistakes all the time.</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[The Knights]]></title>
+      <url>https://www.mufen.me/%E9%9A%8F%E7%AC%94-the-knights.html</url>
+      <content type="html"><![CDATA[<h3 id="I-will-be-kind-to-the-weak"><a href="#I-will-be-kind-to-the-weak" class="headerlink" title="I will be kind to the weak."></a>I will be kind to the weak.</h3><h3 id="I-will-be-brave-and-against-the-strong"><a href="#I-will-be-brave-and-against-the-strong" class="headerlink" title="I will be brave and against the strong."></a>I will be brave and against the strong.</h3><h3 id="I-will-fight-the-all-who-do-wrong"><a href="#I-will-fight-the-all-who-do-wrong" class="headerlink" title="I will fight the all who do wrong."></a>I will fight the all who do wrong.</h3><h3 id="I-will-fight-for-those-who-cannot-fight"><a href="#I-will-fight-for-those-who-cannot-fight" class="headerlink" title="I will fight for those who cannot fight."></a>I will fight for those who cannot fight.</h3><h3 id="I-will-help-those-who-call-me-for-help"><a href="#I-will-help-those-who-call-me-for-help" class="headerlink" title="I will help those who call me for help."></a>I will help those who call me for help.</h3><h3 id="I-will-harm-no-white-woman"><a href="#I-will-harm-no-white-woman" class="headerlink" title="I will harm no white woman."></a>I will harm no white woman.</h3><h3 id="I-will-help-my-brother-knight"><a href="#I-will-help-my-brother-knight" class="headerlink" title="I will help my brother knight."></a>I will help my brother knight.</h3><h3 id="I-will-be-true-to-my-friends"><a href="#I-will-be-true-to-my-friends" class="headerlink" title="I will be true to my friends."></a>I will be true to my friends.</h3><h3 id="I-will-be-faithful-in-love"><a href="#I-will-be-faithful-in-love" class="headerlink" title="I will be faithful in love."></a>I will be faithful in love.</h3>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[openwrt]]></title>
+      <url>https://www.mufen.me/Docs-openwrt-pkg-tip1.html</url>
+      <content type="html"><![CDATA[<p>Openwrt安装USB驱动挂载U盘</p>
+<pre class="toolbar:1 lang:default decode:true ">opkg update
+opkg install kmod-usb-core
+opkg install kmod-usb-ohci #安装usb ohci控制器驱动
+#opkg install kmod-usb-uhci 　#UHCI　USB控制器
+opkg install kmod-usb2 #安装usb2.0
+opkg install kmod-usb-storage #安装usb存储设备驱动
+opkg install usbutils #安装了这个后可以用 lsusb
+opkg install kmod-fs-ext2 #安装ext2分区支持
+opkg install kmod-fs-ext3 #安装ext3分区格式支持组件
+opkg install kmod-fs-ntfs #ntfs内核驱动
+opkg install kmod-nls-cp437    #非常关键
+opkg install kmod-nls-iso8859-1 #非常关键
+opkg install mount.ntfs-3g #挂载ntfs助手
+opkg install mount-utils #挂载卸载工具
+opkg install ntfs-3g #挂载NTFS
+opkg install kmod-fs-vfat #挂载FAT
+opkg install fdisk #硬盘分区管理工具
+</pre> 
+
+<p>挂载分区：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mount  /dev/sda1 /mnt/</div></pre></td></tr></table></figure></p>
+<p>开机自动挂载：</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[CenOS7 lvm扩容报错resize2fs: Bad magic number in super-block]]></title>
+      <url>https://www.mufen.me/%E6%8E%92%E9%94%99-CenOS7%20lvm%E6%89%A9%E5%AE%B9%E6%8A%A5%E9%94%99.html</url>
+      <content type="html"><![CDATA[<p>问题，用centos7对lv进行扩容操作时，执行</p>
+<p>resize2fs 命令时报错<br>resize2fs: Bad magic number in super-block<br>而且df查看文件系统没有扩容<br>但是lvdisplay能查看已经扩容成功</p>
+<p>解决：<br>centos7默认使用xfs文件系统<br>把resize2fs 换成 xfs_growfs<br>即可</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[focus!]]></title>
+      <url>https://www.mufen.me/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99-focus.html</url>
+      <content type="html"><![CDATA[<p>i have to focus on doing thing that i have to<br>get rid of anything make me unsuitable</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[python自动补全（tab）]]></title>
+      <url>https://www.mufen.me/Docs-python-auto-tab.html</url>
+      <content type="html"><![CDATA[<p>方法一：（python自动补全tab脚本 只在centos 和osx 测试过)<br>1,执行以下命令</p>
+<pre class="toolbar:1 lang:default decode:true ">wget http://file.inpeace.cn/autotab.sh</pre> 
+2,然后执行
+
+<pre class="lang:default decode:true ">source autotab.sh </pre> 
+
+<p>方法二：<br><a id="more"></a></p>
+<p>1，在~目录下创建 .pythonstartup文件。</p>
+<pre class="lang:default decode:true ">[root@7 ~]# vi .pythonstartup
+</pre> 
+
+<p>2,复制以下内容至.pythonstartup文件内</p>
+<pre class="theme:eclipse toolbar:1 toolbar-overlay:false lang:python decode:true ">
+#!/usr/bin/python 
+# python startup file 
+
+import sys
+import readline
+import rlcompleter
+import atexit
+import os
+
+readline.parse_and_bind('tab: complete')
+
+historyfile = os.path.join(os.environ['HOME'],'.pythonhistory')
+try:
+        readline.read_history_file(historyfile)
+except IOError:
+        pass
+atexit.register(readline.write_history_file,historyfile)
+del os,historyfile,readline,rlcompleter
+###from inpeace.cn</pre> 
+
+<p>3，打开bash环境变量配置文件</p>
+<pre class="lang:default decode:true ">[root@7 ~]# vi ~/.bashrc 
+</pre> 
+添加如下内容至文件末尾
+
+<pre class="lang:default decode:true ">export PYTHONSTARTUP=~/.pythonstartup
+</pre> 
+或者直接直接执行
+
+<pre class="lang:default decode:true ">echo "export PYTHONSTARTUP=~/.pythonstartup" &gt;&gt; ~/.bashrc
+</pre> 
+
+<p>4 使环境变量生效</p>
+<pre class="lang:default decode:true ">source ~/.bashrc</pre> 
+
+<p>查看结果</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[redhat7使用centos7的yum源和第三方rhel7源]]></title>
+      <url>https://www.mufen.me/Docs-redhat-use-centos-yum.html</url>
+      <content type="html"><![CDATA[<p>1、搜索redhat的yum软件包</p>
+<pre class="lang:default decode:true ">rpm -e yum 软件包名称</pre>
+2、卸载这些软件包
+<pre class="lang:default decode:true ">rpm -e yum 软件包名称</pre>
+3、找到centos下得yum包。注意*号，代表版本号，自行替换
+
+进入 /usr/local/src/
+
+<a id="more"></a>
+
+下载
+<pre class="lang:default decode:true ">[root@localhost ~]# wget https://mirrors.aliyun.com/centos/7/os/x86_64/Packages/yum-*.centos.noarch.rpm
+[root@localhost ~]# wget https://mirrors.aliyun.com/centos/7/os/x86_64/Packages/yum-metadata-parser-*.rpm
+[root@localhost ~]# wget https://mirrors.aliyun.com/centos/7/os/x86_64/Packages/yum-utils-*.noarch.rpm
+[root@localhost ~]# wget https://mirrors.aliyun.com/centos/7/os/x86_64/Packages/yum-updateonboot-*.noarch.rpm
+[root@localhost ~]# wget https://mirrors.aliyun.com/centos/7/os/x86_64/Packages/yum-plugin-fastestmirror-*.noarch.rpm</pre>
+4、安装这些yum软件包
+<pre class="lang:default decode:true ">rpm -ivh yum-*</pre>
+5、下载centos源
+<pre class="wrap:true lang:default decode:true ">wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo</pre>
+6、下载第三方redhat源
+<pre class="wrap:true lang:default decode:true ">yum -y install epel-release &amp;amp;&amp;amp; rpm -Uvh https://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-1.el7.nux.noarch.rpm</pre>]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[nginx server conf.conf]]></title>
+      <url>https://www.mufen.me/Docs-nginx-server-demo.html</url>
+      <content type="html"><![CDATA[<p>[default]<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line"></div><div class="line">listen 8000;</div><div class="line">\<span class="comment"># listen somename:8080;</span></div><div class="line">\<span class="comment"># server_name somename alias another.alias;</span></div><div class="line"></div><div class="line">location / &#123;</div><div class="line">root /www/html;</div><div class="line">index index.html index.htm index.php;</div><div class="line">autoindex on;</div><div class="line">autoindex_exact_size off;</div><div class="line">autoindex_localtime on;</div><div class="line">&#125;</div><div class="line">location ~ \.php$ &#123;</div><div class="line">root /www/html;</div><div class="line">fastcgi_pass 127.0.0.1:9000;</div><div class="line">fastcgi_index index.php;</div><div class="line">fastcgi_param SCRIPT_FILENAME <span class="variable">$document_root</span><span class="variable">$fastcgi_script_name</span>;</div><div class="line">include fastcgi_params;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"><span class="string">"/etc/nginx/conf.d/virtual.conf"</span> 25L, 594C</div></pre></td></tr></table></figure></p>
+<p>[/default]</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[ready to use markdown]]></title>
+      <url>https://www.mufen.me/Docs-learnmd.html</url>
+      <content type="html"><![CDATA[<h1 id="Heading-I"><a href="#Heading-I" class="headerlink" title="Heading I"></a>Heading I</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ curl -u skipper:iskipper file.inpeace.cn</div></pre></td></tr></table></figure>
+<h2 id="Heading-2"><a href="#Heading-2" class="headerlink" title="Heading 2"></a>Heading 2</h2><p><em>learn markdown is very important</em></p>
+<p>#####heading 4</p>
+<h2 id="架构优点"><a href="#架构优点" class="headerlink" title="架构优点"></a>架构优点</h2><ul>
+<li>部署更加方便简单</li>
+<li>维护更快速</li>
+<li>可以重复使用</li>
+</ul>
+<h4 id="docker-run-demo"><a href="#docker-run-demo" class="headerlink" title="docker run demo"></a>docker run demo</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">docker run <span class="_">-d</span> restart=always \</div><div class="line">-p 80:80 \</div><div class="line">-p 443:443 \</div><div class="line">-v /webconf:/home/belle8/webconf/vhost \</div><div class="line">--volumes-from phpenv \</div><div class="line">--name nginx \</div><div class="line">nginx:1.10</div></pre></td></tr></table></figure>
+<h4 id="非常简单的启动"><a href="#非常简单的启动" class="headerlink" title="非常简单的启动"></a>非常简单的启动</h4><p>More info: <a href="https://www.inpeace.cn" target="_blank" rel="external">Blog</a></p>
+]]></content>
+    </entry>
+    
+  
+  
+</search>
