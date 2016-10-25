@@ -1,7 +1,10 @@
-title: ready to use markdown
+title: ready to use hexo 
 date: 2016/10/23 11:39:20
-description: 新的技术，新的开始，
+description: 使用hexo 代替wordpress来写博客。
 categories: plan
+tags:
+ - markdown
+ - blog
 ---
 
 ## 新的开始，使用markdown来书写博客
@@ -17,11 +20,3 @@ categories: plan
 * 新博客将添加我的非工作学习内容，如娱乐之类。
 
 ## ready go
-
-``` python
-import os
-import sys
-
-
-print()
-```

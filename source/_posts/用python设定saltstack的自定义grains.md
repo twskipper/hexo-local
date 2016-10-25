@@ -3,10 +3,8 @@ title: 用python设定saltstack的自定义grains
 tags:
   - python
   - saltstack
-id: 200
 categories:
-  - linux
-  - python
+  - Docs
 date: 2015-12-02 09:53:35
 ---
 

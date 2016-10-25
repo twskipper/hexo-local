@@ -1,10 +1,9 @@
 ---
 title: 修复因为dpkg 导致的apt-get无法安装软件
-permalink: dpkg-rescure
+permalink: dpkg-rescure-apt
 tags:
-  - 排错
+  - errors
   - linux
-id: 543
 categories:
   - Docs
 date: 2016-05-06 13:53:50

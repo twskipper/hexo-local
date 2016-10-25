@@ -1,10 +1,9 @@
 ---
 title: about mistakes
 tags:
-  - 随笔
-id: 101
+  - 随便写写
 categories:
-  - OSX
+  - 随笔
 date: 2015-10-28 21:30:50
 ---
 
