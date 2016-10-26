@@ -1,5 +1,5 @@
 fancybox: true ## If you want to use fancybox please set the value to true.
-duoshuo: mufen ## Your duoshuo_shortname, e.g. username
+duoshuo: ## Your duoshuo_shortname, e.g. username
 disqus: ## Your disqus_shortname, e.g. username
 google_search: ## Use Google search, true/false.
 baidu_search: ## Use Baidu search, true/false.
@@ -42,6 +42,8 @@ links:
     url: http://www.belle8.com/
   - title: theme
     url: https://github.com/tufu9441/maupassant-hexo/
+  - title: email
+    url: mailto:i@inpeace.cn
 
 timeline:
   - num: 1
