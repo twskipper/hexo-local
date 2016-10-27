@@ -1,10 +1,11 @@
-title: ready to use hexo 
+title: ready to use hexo
 date: 2016/10/23 11:39:20
 description: 使用hexo 代替wordpress来写博客。
 categories: plan
 tags:
  - markdown
  - blog
+permalink: start-use-markdown
 ---
 
 ## 新的开始，使用markdown来书写博客
