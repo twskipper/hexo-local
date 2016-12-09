@@ -31,6 +31,7 @@ brew install lrzsz
 ![tex](../../s/09/1_full.png)
 
 添加两条触发
+``` plain
 第一条 发送
 Regular expression: rz waiting to receive.\*\*B0100
 Action: Run Silent Coprocess
@@ -42,7 +43,7 @@ Regular expression: \*\*B00000000000000
 Action: Run Silent Coprocess
 Parameters: /usr/local/bin/iterm2-recv-zmodem.sh
 Instant: checked
-
+``` 
 ![](../../s/09/2_full.png)
 
 然后就可以在iterm2里面使用rz sz命令了

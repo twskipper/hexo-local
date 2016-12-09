@@ -70,9 +70,9 @@ theme: maupassant
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: rsync
-  host: 111.161.65.47
+  host: 123.56.21.255
   user: skipper
-  root: /web/mufen.me
+  root: /home/hexo/web
   delete: true
   verbose: true
   ignore_errors: false
